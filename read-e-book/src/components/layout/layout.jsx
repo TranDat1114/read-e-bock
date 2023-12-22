@@ -5,6 +5,7 @@ import Header from './header';
 import Footer from './footer';
 
 
+
 const Layout = ({ children }) => {
     return (
         <div className='text-foreground bg-background bg-opacity-50 backdrop-blur-lg'>
