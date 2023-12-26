@@ -1,8 +1,459 @@
+import { PencilLine } from 'lucide-react';
+import { useState } from 'react';
 const HomePage = () => {
+
+    const [hoveredATag, setHoveredATag] = useState(false);
+    const [hoverCategoryTag, setHoverCategoryTag] = useState(false);
+    const [hoverTutorialTag, setHoverTutorialTag] = useState(false);
+
+
     return (
-        <>
-            <h1 className="text-primary-500">HomePage</h1>
-        </>
+        <div className="box-border">
+            <a className="no-underline bg-transparent">
+                <span className="bg-[url('https://static.cdnno.com/storage/topbox/81dc53cc8dd55ce0b0e0fe8e647e9625.jpg')] absolute z-0 left-0 overflow-hidden w-full h-96 bg-no-repeat bg-cover"></span>
+            </a>
+            <div className="pt-64 bg-none pb-6 block">
+                <div className="relative container px-4 mx-auto">
+                    <div className="page-content bg-white p-5 relative rounded-lg" >
+                        <div className="grid grid-cols-3 -mx-4" >
+                            <div className="ml-4 col-span-2"
+                                onMouseEnter={() => setHoveredATag(true)}
+                                onMouseLeave={() => setHoveredATag(false)}>
+                                <section className="block">
+                                    <div className="title-row mb-6 items-center flex">
+                                        <h2 className="text-xl font-semibold my-0">Biên tập viên đề cử</h2>
+                                        {hoveredATag && (
+                                            <a href="#" className="text-[#b78a28] ml-auto no-underline bg-transparent mr-4 hover:text-black/55">
+                                                Xem tất cả
+                                            </a>
+                                        )}
+                                    </div>
+                                    <div className='items-center flex'>
+                                        <div className='grid grid-cols-2 w-full gap-4'>
+                                            <div className='flex flex-col'>
+                                                <div className='flex items-start pl-2'>
+                                                    <a className='w-fit inline-block overflow-hidden relative mr-4 no-underline bg-transparent shadow-lg cursor-pointer'>
+                                                        <img
+                                                            className="w-40 h-40 object-cover align-middle mr-2"
+                                                            src="https://static.cdnno.com/poster/thi-vuong-quat-khoi-bat-dau-don-uc-van-huyet-nhuc/150.jpg?1681049593"
+                                                            alt="Book Cover"
+                                                        />
+                                                    </a>
+                                                    <div className='break-words truncate w-full'>
+                                                        <h2 className='text-balance mb-2 font-semibold'>
+                                                            <a className='block truncate no-underline hover:text-[#b78a28] cursor-pointer'>Thi Vương Quật Khởi, Bắt Đầu Độn Ức Vạn Huyết Nhục</a>
+                                                        </h2>
+                                                        <div className='text-sm truncate text-black/50'>
+                                                            【 tận thế + trùng sinh + độn vật tư + Zombie tiến hóa + bạo lực mỹ học 】Lâm Đông trùng sinh tại kinh khủng tận thế đêm trước, cũng thêm ra một cái không gian trữ vật.Nếu là người bình thường, khẳng định trữ hàng đại lượng vật tư, lương thực, nguồn nước, nhưng Lâm Đông lại mua đại lượng thịt tươi cùng máu tươi.Bởi vì. . . Hắn sắp biến thành một con Zombie!Huyết nhục chính là Zombie lực lượng nguồn suối, chỉ cần ăn thịt, liền có thể không ngừng tiến hóa.Một con có sung túc huyết nhục nuôi nấng Zombie, tốc độ phát triển khó có thể tưởng tượng kinh khủng.Muốn biến mạnh bao nhiêu, vậy phải xem Lâm Đông có thể ăn vào nhiều ít thịt, thế là, hắn bắt đầu trữ hàng ức vạn huyết nhục!
+                                                        </div>
+                                                        <div className='py-1 mt-2 flex items-center'>
+                                                            <div className='flex items-center text-black/75'>
+                                                                <PencilLine className='w-4 h-4 block align-middle mr-2' />
+                                                                <span className='truncate max-w-52'>Nhất Thiên Nhị Lưỡng Tửu</span>
+                                                            </div>
+                                                            <a className='ml-auto no-underline'>
+                                                                <span className='truncate text-[#b78a28] px-2 inline-block border-[#b78a28] border border-solid font-normal cursor-pointer'>Đô thị</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='flex flex-col'>
+                                                <div className='flex items-start pl-2'>
+                                                    <a className='w-fit inline-block overflow-hidden relative mr-4 no-underline bg-transparent shadow-lg cursor-pointer'>
+                                                        <img
+                                                            className="w-40 h-40 object-cover align-middle mr-2"
+                                                            src="https://static.cdnno.com/poster/tu-la-vu-than/150.jpg?1694906931"
+                                                            alt="Book Cover"
+                                                        />
+                                                    </a>
+                                                    <div className='break-words truncate w-full'>
+                                                        <h2 className='text-balance mb-2 font-semibold'>
+                                                            <a className='block truncate no-underline hover:text-[#b78a28] cursor-pointer'>Tu La Võ Thần</a>
+                                                        </h2>
+                                                        <div className='text-sm truncate text-black/50'>
+                                                            Luận tiềm lực, không tính thiên tài, có thể Huyền công võ kỹ, đều có thể vô sự tự thông.Luận mị lực, thiên kim tiểu thư tính là gì, yêu nữ Thánh nữ, đều yêu ta muốn ngừng mà không được.Luận thực lực , mặc cho ngươi có ngàn vạn chí bảo, nhưng định không địch lại ta giới linh đại quân.Ta là ai ? Thiên hạ chúng sinh xem ta vì Tu La, lại không biết, ta lấy Tu La thành Võ Thần.Đẳng cấp: Linh Vũ, Nguyên Vũ, Huyền Vũ, Thiên Vũ, Vũ Quân, Vũ Vương, Vũ Đế, Vũ Tổ. . . .
+                                                        </div>
+                                                        <div className='py-1 mt-2 flex items-center'>
+                                                            <div className='flex items-center text-black/75'>
+                                                                <PencilLine className='w-4 h-4 block align-middle mr-2' />
+                                                                <span className='truncate max-w-52'>Thiện Lương Mật Phong</span>
+                                                            </div>
+                                                            <a className='ml-auto no-underline'>
+                                                                <span className='truncate text-[#b78a28] px-2 inline-block border-[#b78a28] border border-solid font-normal cursor-pointer'>Huyền Huyễn</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr className='my-6 border-t border-solid border-[#eee] overflow-visible' />
+                                    <div className='items-center flex'>
+                                        <div className='grid grid-cols-2 w-full gap-4'>
+                                            <div className='flex flex-col'>
+                                                <div className='flex items-start pl-2'>
+                                                    <a className='w-fit inline-block overflow-hidden relative mr-4 no-underline bg-transparent shadow-lg cursor-pointer'>
+                                                        <img
+                                                            className="w-40 h-40 object-cover align-middle mr-2"
+                                                            src="https://static.cdnno.com/poster/ta-co-mot-than-bi-dong-ky/150.jpg?1673424712"
+                                                            alt="Book Cover"
+                                                        />
+                                                    </a>
+                                                    <div className='break-words truncate w-full'>
+                                                        <h2 className='text-balance mb-2 font-semibold'>
+                                                            <a className='block truncate no-underline hover:text-[#b78a28] cursor-pointer'>Ta Có Một Thân Bị Động Kỹ</a>
+                                                        </h2>
+                                                        <div className='text-sm truncate text-black/50'>
+                                                            Mạnh nhất trên thế giới kỹ năng, là cần chủ động thi triển kỹ năng sao?Sai! Là bị động kỹ!Cái gì là bị động kỹ?Bị động kỹ, là thuần phát chủ động kỹ, là không người sẽ đi phòng bị sát chiêu, là người chết mới có thể biết được cuối cùng át chủ bài!Có thể thông tục dễ hiểu chút?Phương pháp hô hấp, cường tráng, cảm giác ...Ha ha, liền cái này?Từ Tiểu Thụ một kiếm xé rách tinh hà, thế nhân phải sợ hãi ....Cái này mẹ nó vậy gọi bị động kỹ?Ân, kiếm thuật tinh thông .
+                                                        </div>
+                                                        <div className='py-1 mt-2 flex items-center'>
+                                                            <div className='flex items-center text-black/75'>
+                                                                <PencilLine className='w-4 h-4 block align-middle mr-2' />
+                                                                <span className='truncate max-w-52'>Ngao Dạ Cật Bình Quả</span>
+                                                            </div>
+                                                            <a className='ml-auto no-underline'>
+                                                                <span className='truncate text-[#b78a28] px-2 inline-block border-[#b78a28] border border-solid font-normal cursor-pointer'>Huyền Huyễn</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='flex flex-col'>
+                                                <div className='flex items-start pl-2'>
+                                                    <a className='w-fit inline-block overflow-hidden relative mr-4 no-underline bg-transparent shadow-lg cursor-pointer'>
+                                                        <img
+                                                            className="w-40 h-40 object-cover align-middle mr-2"
+                                                            src="https://static.cdnno.com/poster/dinh-cap-ngo-tinh-tu-co-so-quyen-phap-bat-dau/150.jpg?1675594275"
+                                                            alt="Book Cover"
+                                                        />
+                                                    </a>
+                                                    <div className='break-words truncate w-full'>
+                                                        <h2 className='text-balance mb-2 font-semibold'>
+                                                            <a className='block truncate no-underline hover:text-[#b78a28] cursor-pointer'>Đỉnh Cấp Ngộ Tính: Từ Cơ Sở Quyền Pháp Bắt Đầu</a>
+                                                        </h2>
+                                                        <div className='text-sm truncate text-black/50'>
+                                                            Xuyên qua thành Diệu Thủ viên học đồ Lục Trường Sinh, vốn định cố gắng làm hành y tế thế một đời thần y. Nhưng khi hắn bắt đầu luyện võ về sau, lại phát hiện mỗi luyện thành một môn võ công đến viên mãn, liền có thể tăng lên ngộ tính.Mà lại, ngộ tính tựa hồ có thể một mực tăng lên. Lục Trường Sinh muốn biết, ngộ tính hạn mức cao nhất đến cùng ở đâu?Thường thường không có gì lạ: So phế vật tốt hơn một chút một chút.Trung nhân chi tư: Chẳng khác người thường mà không biết.Rất có tiềm lực: Tiểu hà tài lộ tiêm tiêm giác.Tứ phương ca tụng: Phong mang tất lộ, duệ không thể đỡ!Rồng phượng trong loài người: Danh thiên tài truyền thiên hạ!Bách thế truyền tụng: Khai tông lập phái, xưng tông làm tổ!Thánh Nhân trời sinh: Vang dội cổ kim, vô xuất kỳ hữu!Vạn cổ vô nhất: Tiền vô cổ nhân hậu vô lai giả!Đỉnh cấp ngộ tính: Không thể nói, không thể xem, không thể nghe thấy!. . .
+                                                        </div>
+                                                        <div className='py-1 mt-2 flex items-center'>
+                                                            <div className='flex items-center text-black/75'>
+                                                                <PencilLine className='w-4 h-4 block align-middle mr-2' />
+                                                                <span className='truncate max-w-52'>Nguyệt Trung Âm</span>
+                                                            </div>
+                                                            <a className='ml-auto no-underline'>
+                                                                <span className='truncate text-[#b78a28] px-2 inline-block border-[#b78a28] border border-solid font-normal cursor-pointer'>Huyền Huyễn</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr className='my-6 border-t border-solid border-[#eee] overflow-visible' />
+                                    <div className='items-center flex'>
+                                        <div className='grid grid-cols-2 w-full gap-4'>
+                                            <div className='flex flex-col'>
+                                                <div className='flex items-start pl-2'>
+                                                    <a className='w-fit inline-block overflow-hidden relative mr-4 no-underline bg-transparent shadow-lg cursor-pointer'>
+                                                        <img
+                                                            className="w-40 h-40 object-cover align-middle mr-2"
+                                                            src="https://static.cdnno.com/poster/bat-diet-ba-the-quyet/150.jpg?1597055080"
+                                                            alt="Book Cover"
+                                                        />
+                                                    </a>
+                                                    <div className='break-words truncate w-full'>
+                                                        <h2 className='text-balance mb-2 font-semibold'>
+                                                            <a className='block truncate no-underline hover:text-[#b78a28] cursor-pointer'>Bất Diệt Bá Thể Quyết</a>
+                                                        </h2>
+                                                        <div className='text-sm truncate text-black/50'>
+                                                            Hèn mọn thiếu niên, ngoài ý muốn thức tỉnh trí nhớ kiếp trước, tu Bất Diệt Bá Thể Quyết, có được hậu thiên giác tỉnh huyết mạch năng lực. Người khác nhất sinh chỉ có thể thức tỉnh một loại huyết mạch, mà hắn lại có thể thức tỉnh mười cái, trăm cái, còn có thể tùy ý dung hợp, cuối cùng đúc Tựu Bất Diệt Bá Thể! Ta lấy xác phàm đúc Bá Thể, một tay che trời trấn thế gian! Cửu Cực Thánh Thể? Hoang Thiên Cổ Thể? Thái Thượng Vương Thể? Mặc cho ngươi thể chất cả thế gian vô song, lại sao địch ta Bất Diệt Bá Thể!
+                                                        </div>
+                                                        <div className='py-1 mt-2 flex items-center'>
+                                                            <div className='flex items-center text-black/75'>
+                                                                <PencilLine className='w-4 h-4 block align-middle mr-2' />
+                                                                <span className='truncate max-w-52'>Bát Dị</span>
+                                                            </div>
+                                                            <a className='ml-auto no-underline'>
+                                                                <span className='truncate text-[#b78a28] px-2 inline-block border-[#b78a28] border border-solid font-normal cursor-pointer'>Huyền Huyễn</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='flex flex-col'>
+                                                <div className='flex items-start pl-2'>
+                                                    <a className='w-fit inline-block overflow-hidden relative mr-4 no-underline bg-transparent shadow-lg cursor-pointer'>
+                                                        <img
+                                                            className="w-40 h-40 object-cover align-middle mr-2"
+                                                            src="https://static.cdnno.com/poster/thien-su-ta-co-mot-the-gioi-khac/150.jpg?1689645868"
+                                                            alt="Book Cover"
+                                                        />
+                                                    </a>
+                                                    <div className='break-words truncate w-full'>
+                                                        <h2 className='text-balance mb-2 font-semibold'>
+                                                            <a className='block truncate no-underline hover:text-[#b78a28] cursor-pointer'>Thiên Sư, Ta Có Một Thế Giới Khác</a>
+                                                        </h2>
+                                                        <div className='text-sm truncate text-black/50'>
+                                                            Một trận cơ duyên,Lưỡng giới đi tới đi lui. Từ nay về sau, vinh hoa phú quý...
+                                                        </div>
+                                                        <div className='py-1 mt-2 flex items-center'>
+                                                            <div className='flex items-center text-black/75'>
+                                                                <PencilLine className='w-4 h-4 block align-middle mr-2' />
+                                                                <span className='truncate max-w-52'>Mông Diện Quái Khách</span>
+                                                            </div>
+                                                            <a className='ml-auto no-underline'>
+                                                                <span className='truncate text-[#b78a28] px-2 inline-block border-[#b78a28] border border-solid font-normal cursor-pointer'>Đô Thị</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr className='my-6 border-t border-solid border-[#eee] overflow-visible' />
+                                    <div className='items-center flex'>
+                                        <div className='grid grid-cols-2 w-full gap-4'>
+                                            <div className='flex flex-col'>
+                                                <div className='flex items-start pl-2'>
+                                                    <a className='w-fit inline-block overflow-hidden relative mr-4 no-underline bg-transparent shadow-lg cursor-pointer'>
+                                                        <img
+                                                            className="w-40 h-40 object-cover align-middle mr-2"
+                                                            src="https://static.cdnno.com/poster/cau-tai-yeu-vo-loan-the-tu-tien/150.jpg?1675827437"
+                                                            alt="Book Cover"
+                                                        />
+                                                    </a>
+                                                    <div className='break-words truncate w-full'>
+                                                        <h2 className='text-balance mb-2 font-semibold'>
+                                                            <a className='block truncate no-underline hover:text-[#b78a28] cursor-pointer'>Cẩu Tại Yêu Võ Loạn Thế Tu Tiên</a>
+                                                        </h2>
+                                                        <div className='text-sm truncate text-black/50'>
+                                                            Phương Tịch xuyên rồi, mà lại là nhị xuyên!Tại tu tiên giới ta khúm núm, tại dị thế giới ta trọng quyền xuất kích!Không nghĩ tới trăm ngàn năm về sau, tại tu tiên giới cũng thành đại lão!
+                                                        </div>
+                                                        <div className='py-1 mt-2 flex items-center'>
+                                                            <div className='flex items-center text-black/75'>
+                                                                <PencilLine className='w-4 h-4 block align-middle mr-2' />
+                                                                <span className='truncate max-w-52'>Văn Sao Công</span>
+                                                            </div>
+                                                            <a className='ml-auto no-underline'>
+                                                                <span className='truncate text-[#b78a28] px-2 inline-block border-[#b78a28] border border-solid font-normal cursor-pointer'>Tiên Hiệp</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='flex flex-col'>
+                                                <div className='flex items-start pl-2'>
+                                                    <a className='w-fit inline-block overflow-hidden relative mr-4 no-underline bg-transparent shadow-lg cursor-pointer'>
+                                                        <img
+                                                            className="w-40 h-40 object-cover align-middle mr-2"
+                                                            src="https://static.cdnno.com/poster/cuu-vuc-kiem-de/150.jpg?1702714063"
+                                                            alt="Book Cover"
+                                                        />
+                                                    </a>
+                                                    <div className='break-words truncate w-full'>
+                                                        <h2 className='text-balance mb-2 font-semibold'>
+                                                            <a className='block truncate no-underline hover:text-[#b78a28] cursor-pointer'>Cửu Vực Kiếm Đế</a>
+                                                        </h2>
+                                                        <div className='text-sm truncate text-black/50'>
+                                                            Vạn năm trước đó kiếm ý đệ nhất nhân Sở Kiếm Bạch, bị thất đại tông môn truy sát mà chết.Vạn năm về sau, hắn một lần nữa sống lại, đối mặt lại là một bộ xa lạ thân thể.Thất đại tông môn! Ta nhất định phải san bằng tất cả, trở thành Cửu Vực Đại Đế!* Các bạn ủng hộ bằng 3 phương thức:1. Bấm vào 5 sao bên phải màn hình.2. Bấm đề cử, chọn số Nguyệt phiếu. ( Chỉ áp dụng với bạn có Tài khoản của truyencv.com)3. Ấn nút Tặng đậu cuối chương.Chân thành cảm ơn!
+                                                        </div>
+                                                        <div className='py-1 mt-2 flex items-center'>
+                                                            <div className='flex items-center text-black/75'>
+                                                                <PencilLine className='w-4 h-4 block align-middle mr-2' />
+                                                                <span className='truncate max-w-52'>Thiệu Vũ</span>
+                                                            </div>
+                                                            <a className='ml-auto no-underline'>
+                                                                <span className='truncate text-[#b78a28] px-2 inline-block border-[#b78a28] border border-solid font-normal cursor-pointer'>Huyền Huyễn</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div className='col-span-1 mt-0.5 ml-8'>
+                                <section className='block'
+                                    onMouseEnter={() => setHoverCategoryTag(true)}
+                                    onMouseLeave={() => setHoverCategoryTag(false)}>
+                                    <div className="title-row mb-6 items-center flex">
+                                        <h2 className="text-xl font-semibold my-0">Đang đọc</h2>
+                                        {hoverCategoryTag && (
+                                            <a href="#" className="text-[#b78a28] ml-auto no-underline bg-transparent mr-4 hover:text-black/55">
+                                                Xem tất cả
+                                            </a>
+                                        )}
+                                    </div>
+                                    <ul className='m-0 pl-0 list-none'>
+                                        <li className='py-2 mb-1 items-center flex'>
+                                            <a className='w-8 inline-block relative mr-4 no-underline bg-transparent cursor-pointer'>
+                                                <img
+                                                    className='w-full h-auto object-cover align-middle'
+                                                    src='https://static.cdnno.com/poster/ta-co-mot-than-bi-dong-ky/150.jpg?1673424712'
+                                                />
+                                            </a>
+                                            <div className='flex-1'>
+                                                <h2 className='text-sm mb-1 font-semibold max-w-80'>
+                                                    <a href="/" className='no-underline bg-transparent cursor-pointer'>
+                                                        <div className='title-book truncate align-middle hover:text-[#b78a28]'>
+                                                            Ta Có Một Thân Bị Động Kỹ
+                                                        </div>
+                                                    </a>
+                                                </h2>
+                                                <div className='truncate align-middle text-black/50'>
+                                                    Đã đọc: 1
+                                                </div>
+                                            </div>
+                                            <a className='float-left no-underline bg-transparent mr-4'>
+                                                <small className='text-[#b78a28] text-balance font-normal'>Đọc tiếp</small>
+                                            </a>
+                                        </li>
+                                        <li className='py-2 mb-1 items-center flex'>
+                                            <a className='w-8 inline-block relative mr-4 no-underline bg-transparent cursor-pointer'>
+                                                <img
+                                                    className='w-full h-auto object-cover align-middle'
+                                                    src='https://static.cdnno.com/poster/phan-phai-cam-khu-than-tu-ta-di-san-thien-menh-dai-dao/150.jpg?1695972628'
+                                                />
+                                            </a>
+                                            <div className='flex-1'>
+                                                <h2 className='text-sm mb-1 font-semibold max-w-80'>
+                                                    <a href="/" className='no-underline bg-transparent cursor-pointer'>
+                                                        <div className='title-book truncate align-middle hover:text-[#b78a28]'>
+                                                            Phản Phái: Cấm Khu Thần Tử! Ta Đi Săn Thiên Mệnh Đại Đạo
+                                                        </div>
+                                                    </a>
+                                                </h2>
+                                                <div className='truncate align-middle text-black/50'>
+                                                    Đã đọc: 0/275
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li className='py-2 mb-1 items-center flex'>
+                                            <a className='w-8 inline-block relative mr-4 no-underline bg-transparent cursor-pointer'>
+                                                <img
+                                                    className='w-full h-auto object-cover align-middle'
+                                                    src='https://static.cdnno.com/poster/gia-toc-cua-ta-toan-vien-ngon-tay-vang/150.jpg?1671766031'
+                                                />
+                                            </a>
+                                            <div className='flex-1'>
+                                                <h2 className='text-sm mb-1 font-semibold max-w-80'>
+                                                    <a href="/" className='no-underline bg-transparent cursor-pointer'>
+                                                        <div className='title-book truncate align-middle hover:text-[#b78a28]'>
+                                                            Gia Tộc Của Ta Toàn Viên Ngón Tay Vàng
+                                                        </div>
+                                                    </a>
+                                                </h2>
+                                                <div className='truncate align-middle text-black/50'>
+                                                    Đã đọc: 0/704
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li className='py-2 mb-1 items-center flex'>
+                                            <a className='w-8 inline-block relative mr-4 no-underline bg-transparent cursor-pointer'>
+                                                <img
+                                                    className='w-full h-auto object-cover align-middle'
+                                                    src='https://static.cdnno.com/poster/tieng-long-bot-khi-khung-bi-mat-cua-nguoi-bai-lo/150.jpg?1698376861'
+                                                />
+                                            </a>
+                                            <div className='flex-1'>
+                                                <h2 className='text-sm mb-1 font-semibold max-w-80'>
+                                                    <a href="/" className='no-underline bg-transparent cursor-pointer'>
+                                                        <div className='title-book truncate align-middle hover:text-[#b78a28]'>
+                                                            Tiếng Lòng Bọt Khí Khung: Bí Mật Của Ngươi Bại Lộ!
+                                                        </div>
+                                                    </a>
+                                                </h2>
+                                                <div className='truncate align-middle text-black/50'>
+                                                    Đã đọc: 0/206
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li className='py-2 mb-1 items-center flex'>
+                                            <a className='w-8 inline-block relative mr-4 no-underline bg-transparent cursor-pointer'>
+                                                <img
+                                                    className='w-full h-auto object-cover align-middle'
+                                                    src='https://static.cdnno.com/poster/bat-dau-van-lan-tang-phuc-ta-thuc-su-qua-vo-dich/150.jpg?1675498250'
+                                                />
+                                            </a>
+                                            <div className='flex-1'>
+                                                <h2 className='text-sm mb-1 font-semibold max-w-80'>
+                                                    <a href="/" className='no-underline bg-transparent cursor-pointer'>
+                                                        <div className='title-book truncate align-middle hover:text-[#b78a28]'>
+                                                            Bắt Đầu Vạn Lần Tăng Phúc, Ta Thực Sự Quá Vô Địch
+                                                        </div>
+                                                    </a>
+                                                </h2>
+                                                <div className='truncate align-middle text-black/50'>
+                                                    Đã đọc: 0/627
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </section>
+                                <hr className='my-6 border-t border-solid border-[#eee] overflow-visible' />
+                                <section className='block'
+                                    onMouseEnter={() => setHoverTutorialTag(true)}
+                                    onMouseLeave={() => setHoverTutorialTag(false)}>
+                                    <div className="title-row mb-6 items-center flex">
+                                        <h2 className="text-xl font-semibold my-0">Hướng dẫn</h2>
+                                        {hoverTutorialTag && (
+                                            <a href="#" className="text-[#b78a28] ml-auto no-underline bg-transparent mr-4 hover:text-black/55">
+                                                Xem tất cả
+                                            </a>
+                                        )}
+                                    </div>
+                                    <ul className='m-0 px-5 list-disc'>
+                                        <li>
+                                            <a className='relative pl-4 py-1 mb-1 block no-underline bg-transparent cursor-pointer'>
+                                                <div className='max-w-96 truncate break-words hover:text-[#b78a28]'>
+                                                    Tôi muốn biết đang có bao nhiêu Kẹo, hạn sử dụng, đã sử dụng như nào thì phải làm sao?
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a className='relative pl-4 py-1 mb-1 block no-underline bg-transparent cursor-pointer'>
+                                                <div className='max-w-96 truncate break-words hover:text-[#b78a28]'>
+                                                    Vì sao tôi bị khóa tài khoản?
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a className='relative pl-4 py-1 mb-1 block no-underline bg-transparent cursor-pointer'>
+                                                <div className='max-w-96 truncate break-words hover:text-[#b78a28]'>
+                                                    Tôi muốn xem điểm hâm mộ của mình, vào đâu để xem?
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a className='relative pl-4 py-1 mb-1 block no-underline bg-transparent cursor-pointer'>
+                                                <div className='max-w-96 truncate break-words hover:text-[#b78a28]'>
+                                                    Quy định khi tặng Hoa
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a className='relative pl-4 py-1 mb-1 block no-underline bg-transparent cursor-pointer'>
+                                                <div className='max-w-96 truncate break-words hover:text-[#b78a28]'>
+                                                    Làm sao để có Hoa?
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a className='relative pl-4 py-1 mb-1 block no-underline bg-transparent cursor-pointer'>
+                                                <div className='max-w-96 truncate break-words hover:text-[#b78a28]'>
+                                                    Tôi còn thắc mắc khác?
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
 export default HomePage
