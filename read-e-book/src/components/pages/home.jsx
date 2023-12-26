@@ -1,4 +1,4 @@
-import { PencilLine } from 'lucide-react';
+import { ArrowUpFromLine, Glasses, Library, PencilLine, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 const HomePage = () => {
 
@@ -6,6 +6,9 @@ const HomePage = () => {
     const [hoverCategoryTag, setHoverCategoryTag] = useState(false);
     const [hoverTutorialTag, setHoverTutorialTag] = useState(false);
     const [hoverNewUpdate, setHoverNewUpdate] = useState(false);
+    const [hoverTopRead, setHoverTopRead] = useState(false);
+    const [hoverTopTrending, setHoverTopTrending] = useState(false);
+    const [hoverSuggestions, setHoverSuggestions] = useState(false);
 
 
     return (
@@ -557,7 +560,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm m-0 font-semibold'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Gia Tộc Của Ta Toàn Viên Ngón Tay Vàng
+                                                    Gia Tộc Của Ta Toàn Viên Ngón Tay Vàng
                                                 </span>
                                             </a>
                                         </h2>
@@ -566,7 +569,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Chương 704: Có lẽ công tử chưa bao giờ nghĩ tới muốn thả qua Huyền Âm giáo
+                                                    Chương 704: Có lẽ công tử chưa bao giờ nghĩ tới muốn thả qua Huyền Âm giáo
                                                 </span>
                                             </a>
                                         </h2>
@@ -574,7 +577,7 @@ const HomePage = () => {
                                     <td className='border-0 p-3 text-black/85 align-middle'>
                                         <h2 className='truncate max-w-sm'>
                                             <span>
-                                            Trần Chu Lý Học
+                                                Trần Chu Lý Học
                                             </span>
                                         </h2>
                                     </td>
@@ -601,7 +604,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm m-0 font-semibold'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Tiếng Lòng Bọt Khí Khung: Bí Mật Của Ngươi Bại Lộ!
+                                                    Tiếng Lòng Bọt Khí Khung: Bí Mật Của Ngươi Bại Lộ!
                                                 </span>
                                             </a>
                                         </h2>
@@ -610,7 +613,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Chương 206: Ngươi cũng xứng?
+                                                    Chương 206: Ngươi cũng xứng?
                                                 </span>
                                             </a>
                                         </h2>
@@ -618,7 +621,7 @@ const HomePage = () => {
                                     <td className='border-0 p-3 text-black/85 align-middle'>
                                         <h2 className='truncate max-w-sm'>
                                             <span>
-                                            Tiểu Hùng Yếu Quật Khởi
+                                                Tiểu Hùng Yếu Quật Khởi
                                             </span>
                                         </h2>
                                     </td>
@@ -645,7 +648,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm m-0 font-semibold'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Bắt Đầu Vạn Lần Tăng Phúc, Ta Thực Sự Quá Vô Địch
+                                                    Bắt Đầu Vạn Lần Tăng Phúc, Ta Thực Sự Quá Vô Địch
                                                 </span>
                                             </a>
                                         </h2>
@@ -654,7 +657,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Chương 627: Thái Hư công tử thực lực! Chòm sao nát bấy mỹ lệ!
+                                                    Chương 627: Thái Hư công tử thực lực! Chòm sao nát bấy mỹ lệ!
                                                 </span>
                                             </a>
                                         </h2>
@@ -662,7 +665,7 @@ const HomePage = () => {
                                     <td className='border-0 p-3 text-black/85 align-middle'>
                                         <h2 className='truncate max-w-sm'>
                                             <span>
-                                            Phượng Tư Minh Vũ
+                                                Phượng Tư Minh Vũ
                                             </span>
                                         </h2>
                                     </td>
@@ -689,7 +692,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm m-0 font-semibold'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Ta Nói Bừa Công Pháp, Các Ngươi Làm Sao Đều Thành Đại Đế
+                                                    Ta Nói Bừa Công Pháp, Các Ngươi Làm Sao Đều Thành Đại Đế
                                                 </span>
                                             </a>
                                         </h2>
@@ -698,7 +701,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Chương 46: Tiêu Thần kiếm chấn mọi người
+                                                    Chương 46: Tiêu Thần kiếm chấn mọi người
                                                 </span>
                                             </a>
                                         </h2>
@@ -706,7 +709,7 @@ const HomePage = () => {
                                     <td className='border-0 p-3 text-black/85 align-middle'>
                                         <h2 className='truncate max-w-sm'>
                                             <span>
-                                            Phong Yên Túy
+                                                Phong Yên Túy
                                             </span>
                                         </h2>
                                     </td>
@@ -733,7 +736,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm m-0 font-semibold'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Nhân Đạo Đại Thánh
+                                                    Nhân Đạo Đại Thánh
                                                 </span>
                                             </a>
                                         </h2>
@@ -742,7 +745,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Chương 1987: Thôn phệ hết thảy
+                                                    Chương 1987: Thôn phệ hết thảy
                                                 </span>
                                             </a>
                                         </h2>
@@ -750,14 +753,14 @@ const HomePage = () => {
                                     <td className='border-0 p-3 text-black/85 align-middle'>
                                         <h2 className='truncate max-w-sm'>
                                             <span>
-                                            Mạc Mặc
+                                                Mạc Mặc
                                             </span>
                                         </h2>
                                     </td>
                                     <td className='border-0 p-3 text-black/55 align-middle'>
                                         <h2 className='truncate max-w-sm'>
                                             <span>
-                                            DarkHero
+                                                DarkHero
                                             </span>
                                         </h2>
                                     </td>
@@ -777,7 +780,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm m-0 font-semibold'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Linh Cảnh Hành Giả
+                                                    Linh Cảnh Hành Giả
                                                 </span>
                                             </a>
                                         </h2>
@@ -786,7 +789,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Chương 138: Kịch chiến
+                                                    Chương 138: Kịch chiến
                                                 </span>
                                             </a>
                                         </h2>
@@ -794,14 +797,14 @@ const HomePage = () => {
                                     <td className='border-0 p-3 text-black/85 align-middle'>
                                         <h2 className='truncate max-w-sm'>
                                             <span>
-                                            Mại Báo Tiểu Lang Quân
+                                                Mại Báo Tiểu Lang Quân
                                             </span>
                                         </h2>
                                     </td>
                                     <td className='border-0 p-3 text-black/55 align-middle'>
                                         <h2 className='truncate max-w-sm'>
                                             <span>
-                                            DarkHero
+                                                DarkHero
                                             </span>
                                         </h2>
                                     </td>
@@ -821,7 +824,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm m-0 font-semibold'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Đạp Tinh
+                                                    Đạp Tinh
                                                 </span>
                                             </a>
                                         </h2>
@@ -830,7 +833,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Chương 4850: Phần thưởng ngươi
+                                                    Chương 4850: Phần thưởng ngươi
                                                 </span>
                                             </a>
                                         </h2>
@@ -838,14 +841,14 @@ const HomePage = () => {
                                     <td className='border-0 p-3 text-black/85 align-middle'>
                                         <h2 className='truncate max-w-sm'>
                                             <span>
-                                            Tùy Tán Phiêu Phong
+                                                Tùy Tán Phiêu Phong
                                             </span>
                                         </h2>
                                     </td>
                                     <td className='border-0 p-3 text-black/55 align-middle'>
                                         <h2 className='truncate max-w-sm'>
                                             <span>
-                                            BloodRose
+                                                BloodRose
                                             </span>
                                         </h2>
                                     </td>
@@ -865,7 +868,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm m-0 font-semibold'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Võ Phu
+                                                    Võ Phu
                                                 </span>
                                             </a>
                                         </h2>
@@ -874,7 +877,7 @@ const HomePage = () => {
                                         <h2 className='truncate max-w-sm'>
                                             <a className='no-underline bg-transparent cursor-pointer'>
                                                 <span className='hover:text-[#b78a28]'>
-                                                Chương 265: Chúng ta cuối cùng đem hóa thành bụi đất
+                                                    Chương 265: Chúng ta cuối cùng đem hóa thành bụi đất
                                                 </span>
                                             </a>
                                         </h2>
@@ -882,14 +885,14 @@ const HomePage = () => {
                                     <td className='border-0 p-3 text-black/85 align-middle'>
                                         <h2 className='truncate max-w-sm'>
                                             <span>
-                                            Bình Sinh Vị Tri Hàn
+                                                Bình Sinh Vị Tri Hàn
                                             </span>
                                         </h2>
                                     </td>
                                     <td className='border-0 p-3 text-black/55 align-middle'>
                                         <h2 className='truncate max-w-sm'>
                                             <span>
-                                            BloodRose
+                                                BloodRose
                                             </span>
                                         </h2>
                                     </td>
@@ -907,7 +910,640 @@ const HomePage = () => {
                 </div>
             </div>
             <div className='home-ranking py-6'>
-                
+                <div className='relative container py-2 px-4 mx-auto'>
+                    <div className='grid grid-cols-3 -mx-4'>
+                        <div className='mr-6'>
+                            <section className='shadow-lg rounded-lg px-6 pt-4 pb-2 bg-[#fff] block'
+                                onMouseEnter={() => setHoverTopRead(true)}
+                                onMouseLeave={() => setHoverTopRead(false)}>
+                                <div className='py-1 flex items-center'>
+                                    <h2 className='font-semibold m-0 text-xl'>
+                                        Đọc nhiều tuần
+                                    </h2>
+                                    {hoverTopRead && (
+                                        <a href="#" className="text-[#b78a28] ml-auto no-underline bg-transparent mr-4 hover:text-black/55 translate-y-0.5">
+                                            Xem tất cả
+                                        </a>
+                                    )}
+                                </div>
+                                <ul className='m-0 pl-0 list-none'>
+                                    <li className='relative flex items-center mt-4'>
+                                        <div className='bottom-auto mb-14'>
+                                            <i className="w-6 h-8 bg-[url('https://metruyencv.com/assets/images/icons/medal-1.svg')] bg-no-repeat bg-auto inline-block"></i>
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] items-center flex'>
+                                            <div className='info py-4 ml-3'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-48 mb-1 font-semibold cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            Sư Huynh Của Ta Quá Mạnh
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                                <div className='text-green-600 mb-2 items-center flex'>
+                                                    <span className='mr-2'>64,310</span>
+                                                    <Glasses className='w-4 h-4 block align-middle' />
+                                                </div>
+                                                <div className='author text-sm flex items-center text-black/55'>
+                                                    <PencilLine className='w-4 h-4 align-middle block mr-2' />
+                                                    <span className='truncate max-w-40'>Khả Ninh</span>
+                                                </div>
+                                                <div className='author text-sm flex items-center truncate text-black/55'>
+                                                    <Library className='w-4 h-4 align-middle block mr-2' />
+                                                    <span className='truncate max-w-40'>Huyền Huyễn</span>
+                                                </div>
+                                            </div>
+                                            <div className='thumb ml-24 pl-4'>
+                                                <div className='book-cover'>
+                                                    <a className='relative z-10 inline-block shadow-xl border border-solid border-black/50 skew-y-12'>
+                                                        <img
+                                                            className='w-16 h-24 object-cover align-middle '
+                                                            src='https://static.cdnno.com/poster/su-huynh-cua-ta-qua-manh/150.jpg?1656784900'
+                                                        />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto pt-3'>
+                                            <i className="w-6 h-8 bg-[url('https://metruyencv.com/assets/images/icons/medal-2.svg')] bg-no-repeat bg-auto inline-block"></i>
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            Vạn Cổ Thần Đế
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto pt-3'>
+                                            <i className="w-6 h-8 bg-[url('https://metruyencv.com/assets/images/icons/medal-3.svg')] bg-no-repeat bg-auto inline-block"></i>
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            Bắt Đầu Đánh Dấu Hoang Cổ Thánh Thể
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            4
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 4
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            5
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 5
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            6
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'
+                                                        >
+                                                            truyện 6
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            7
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 7
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            8
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 8
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            9
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 9
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            10
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 10
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                        <div className='mx-2'>
+                            <section className='shadow-lg rounded-lg px-6 pt-4 pb-2 bg-[#fff] block'
+                                onMouseEnter={() => setHoverTopTrending(true)}
+                                onMouseLeave={() => setHoverTopTrending(false)}>
+                                <div className='py-1 flex items-center'>
+                                    <h2 className='font-semibold m-0 text-xl'>
+                                        Thịnh hành tuần
+                                    </h2>
+                                    {hoverTopTrending && (
+                                        <a href="#" className="text-[#b78a28] ml-auto no-underline bg-transparent mr-4 hover:text-black/55 translate-y-0.5">
+                                            Xem tất cả
+                                        </a>
+                                    )}
+                                </div>
+                                <ul className='m-0 pl-0 list-none'>
+                                    <li className='relative flex items-center mt-4'>
+                                        <div className='bottom-auto mb-14'>
+                                            <i className="w-6 h-8 bg-[url('https://metruyencv.com/assets/images/icons/medal-1.svg')] bg-no-repeat bg-auto inline-block"></i>
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] items-center flex'>
+                                            <div className='info py-4 ml-3'>
+                                                <h2 className='text-sm truncate min-w-52 max-w-52 mb-1 font-semibold cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            Kim Đan Là Hằng Tinh, Ngươi Quản Cái Này Gọi Tu Tiên?
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                                <div className='text-[#b78a32] mb-2 items-center flex'>
+                                                    <span className='mr-2'>64,310</span>
+                                                    <ArrowUpFromLine className='w-4 h-4 block align-middle' />
+                                                </div>
+                                                <div className='author text-sm flex items-center text-black/55'>
+                                                    <PencilLine className='w-4 h-4 align-middle block mr-2' />
+                                                    <span className='truncate max-w-40'>Tẩu Địa Hạc</span>
+                                                </div>
+                                                <div className='author text-sm flex items-center truncate text-black/55'>
+                                                    <Library className='w-4 h-4 align-middle block mr-2' />
+                                                    <span className='truncate max-w-40'>Huyền Huyễn</span>
+                                                </div>
+                                            </div>
+                                            <div className='thumb ml-24 pl-4'>
+                                                <div className='book-cover'>
+                                                    <a className='relative z-10 inline-block shadow-xl border border-solid border-black/50 skew-y-12'>
+                                                        <img
+                                                            className='w-16 h-24 object-cover align-middle '
+                                                            src='https://static.cdnno.com/poster/kim-dan-la-hang-tinh-nguoi-quan-cai-nay-goi-tu-tien/150.jpg?1694148320'
+                                                        />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto pt-3'>
+                                            <i className="w-6 h-8 bg-[url('https://metruyencv.com/assets/images/icons/medal-2.svg')] bg-no-repeat bg-auto inline-block"></i>
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            Bắt Đầu Hỗn Độn Kiếm Thể, Chế Tạo Bất Hủ Tiên Tộc
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto pt-3'>
+                                            <i className="w-6 h-8 bg-[url('https://metruyencv.com/assets/images/icons/medal-3.svg')] bg-no-repeat bg-auto inline-block"></i>
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            Khí Lực Của Ta Mỗi Ngày Gia Tăng 100 Cân
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            4
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 4
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            5
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 5
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            6
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'
+                                                        >
+                                                            truyện 6
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            7
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 7
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            8
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 8
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            9
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 9
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            10
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 10
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                        <div className='ml-6'>
+                            <section className='shadow-lg rounded-lg px-6 pt-4 pb-2 bg-[#fff] block'
+                                onMouseEnter={() => setHoverSuggestions(true)}
+                                onMouseLeave={() => setHoverSuggestions(false)}>
+                                <div className='py-1 flex items-center'>
+                                    <h2 className='font-semibold m-0 text-xl'>
+                                        Đề cử tuần
+                                    </h2>
+                                    {hoverSuggestions && (
+                                        <a href="#" className="text-[#b78a28] ml-auto no-underline bg-transparent mr-4 hover:text-black/55 translate-y-0.5">
+                                            Xem tất cả
+                                        </a>
+                                    )}
+                                </div>
+                                <ul className='m-0 pl-0 list-none'>
+                                    <li className='relative flex items-center mt-4'>
+                                        <div className='bottom-auto mb-14'>
+                                            <i className="w-6 h-8 bg-[url('https://metruyencv.com/assets/images/icons/medal-1.svg')] bg-no-repeat bg-auto inline-block"></i>
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] items-center flex'>
+                                            <div className='info py-4 ml-3'>
+                                                <h2 className='text-sm truncate min-w-52 max-w-52 mb-1 font-semibold cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                        Xích Tâm Tuần Thiên
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                                <div className='text-[#b78a32] mb-2 items-center flex'>
+                                                    <span className='mr-2'>195</span>
+                                                    <Sparkles className='w-4 h-4 block align-middle' />
+                                                </div>
+                                                <div className='author text-sm flex items-center text-black/55'>
+                                                    <PencilLine className='w-4 h-4 align-middle block mr-2' />
+                                                    <span className='truncate max-w-40'>Tình Hà Dĩ Thậm</span>
+                                                </div>
+                                                <div className='author text-sm flex items-center truncate text-black/55'>
+                                                    <Library className='w-4 h-4 align-middle block mr-2' />
+                                                    <span className='truncate max-w-40'>Tiên Hiệp</span>
+                                                </div>
+                                            </div>
+                                            <div className='thumb ml-24 pl-4'>
+                                                <div className='book-cover'>
+                                                    <a className='relative z-10 inline-block shadow-xl border border-solid border-black/50 skew-y-12'>
+                                                        <img
+                                                            className='w-16 h-24 object-cover align-middle '
+                                                            src='https://static.cdnno.com/poster/xich-tam-tuan-thien/150.jpg?1612524612'
+                                                        />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto pt-3'>
+                                            <i className="w-6 h-8 bg-[url('https://metruyencv.com/assets/images/icons/medal-2.svg')] bg-no-repeat bg-auto inline-block"></i>
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            Bắt Đầu Hỗn Độn Kiếm Thể, Chế Tạo Bất Hủ Tiên Tộc
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto pt-3'>
+                                            <i className="w-6 h-8 bg-[url('https://metruyencv.com/assets/images/icons/medal-3.svg')] bg-no-repeat bg-auto inline-block"></i>
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            Khí Lực Của Ta Mỗi Ngày Gia Tăng 100 Cân
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            4
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 4
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            5
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 5
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            6
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'
+                                                        >
+                                                            truyện 6
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            7
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 7
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            8
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 8
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            9
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 9
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                    <li className='relative flex items-center'>
+                                        <div className='bottom-auto mx-2 font-semibold'>
+                                            10
+                                        </div>
+                                        <div className='content border-b border-solid border-[#eee] py-1 flex items-center flex-1'>
+                                            <div className='break-words py-2 ml-3 flex-1'>
+                                                <h2 className='text-sm truncate min-w-48 max-w-80 font-normal cursor-pointer'>
+                                                    <a className='no-underline bg-transparent'>
+                                                        <span className='hover:text-[#b78a28]'>
+                                                            truyện 10
+                                                        </span>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <span className='text-black/85 ml-auto'>48,240</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
