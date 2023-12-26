@@ -5,6 +5,7 @@ const HomePage = () => {
     const [hoveredATag, setHoveredATag] = useState(false);
     const [hoverCategoryTag, setHoverCategoryTag] = useState(false);
     const [hoverTutorialTag, setHoverTutorialTag] = useState(false);
+    const [hoverNewUpdate, setHoverNewUpdate] = useState(false);
 
 
     return (
@@ -451,7 +452,462 @@ const HomePage = () => {
                             </div>
                         </div>
                     </div>
+                    <section className='py-4 block'
+                        onMouseEnter={() => setHoverNewUpdate(true)}
+                        onMouseLeave={() => setHoverNewUpdate(false)}>
+                        <div className='title mb-4 items-center flex'>
+                            <h2 className='mb-0 text-xl font-semibold'>Mới cập nhật</h2>
+                            {hoverNewUpdate && (
+                                <a href="#" className="text-[#b78a28] ml-4 no-underline bg-transparent mr-4 hover:text-black/55 translate-y-0.5">
+                                    Xem tất cả
+                                </a>
+                            )}
+                        </div>
+                        <table className='text-sm border-t border-solid border-[#eee] w-full mb-4 border-collapse'>
+                            <tbody>
+                                <tr className='hover:bg-black/5'>
+                                    <td className='border-0 p-3 text-black/65 align-middle'>
+                                        <span className='truncate'>Huyền Huyễn</span>
+                                    </td>
+                                    <td className='border-0 p-3 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm m-0 font-semibold'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>Cướp Lấy Các Lộ Cơ Duyên, Khí Vận Chi Tử Hỏng Mất</span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/75 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>Chương 223: Quang cướp trước không có ý nghĩa, thay cái mới cách chơi!</span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/85 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                Bất Ái Thanh Nịnh Mông
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                Vô Ưu
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle text-right'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                2 phút trước
+                                            </span>
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <tr className='hover:bg-black/5'>
+                                    <td className='border-0 p-3 text-black/65 align-middle'>
+                                        <span className='truncate'>Huyền Huyễn</span>
+                                    </td>
+                                    <td className='border-0 p-3 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm m-0 font-semibold'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                    Phản Phái: Cấm Khu Thần Tử! Ta Đi Săn Thiên Mệnh Đại Đạo
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/75 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                    Chương 275: Luân hồi vãng sinh lộ, đồ bỏ đi liền nên ở tại trong đất!
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/85 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                Khả Phá Tâm
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                Vô Ưu
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle text-right'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                5 phút trước
+                                            </span>
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <tr className='hover:bg-black/5'>
+                                    <td className='border-0 p-3 text-black/65 align-middle'>
+                                        <span className='truncate'>Huyền Huyễn</span>
+                                    </td>
+                                    <td className='border-0 p-3 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm m-0 font-semibold'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Gia Tộc Của Ta Toàn Viên Ngón Tay Vàng
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/75 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Chương 704: Có lẽ công tử chưa bao giờ nghĩ tới muốn thả qua Huyền Âm giáo
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/85 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                            Trần Chu Lý Học
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                Vô Ưu
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle text-right'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                7 phút trước
+                                            </span>
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <tr className='hover:bg-black/5'>
+                                    <td className='border-0 p-3 text-black/65 align-middle'>
+                                        <span className='truncate'>Huyền Huyễn</span>
+                                    </td>
+                                    <td className='border-0 p-3 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm m-0 font-semibold'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Tiếng Lòng Bọt Khí Khung: Bí Mật Của Ngươi Bại Lộ!
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/75 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Chương 206: Ngươi cũng xứng?
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/85 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                            Tiểu Hùng Yếu Quật Khởi
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                Vô Ưu
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle text-right'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                9 phút trước
+                                            </span>
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <tr className='hover:bg-black/5'>
+                                    <td className='border-0 p-3 text-black/65 align-middle'>
+                                        <span className='truncate'>Huyền Huyễn</span>
+                                    </td>
+                                    <td className='border-0 p-3 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm m-0 font-semibold'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Bắt Đầu Vạn Lần Tăng Phúc, Ta Thực Sự Quá Vô Địch
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/75 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Chương 627: Thái Hư công tử thực lực! Chòm sao nát bấy mỹ lệ!
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/85 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                            Phượng Tư Minh Vũ
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                Vô Ưu
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle text-right'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                9 phút trước
+                                            </span>
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <tr className='hover:bg-black/5'>
+                                    <td className='border-0 p-3 text-black/65 align-middle'>
+                                        <span className='truncate'>Huyền Huyễn</span>
+                                    </td>
+                                    <td className='border-0 p-3 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm m-0 font-semibold'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Ta Nói Bừa Công Pháp, Các Ngươi Làm Sao Đều Thành Đại Đế
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/75 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Chương 46: Tiêu Thần kiếm chấn mọi người
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/85 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                            Phong Yên Túy
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                Vô Ưu
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle text-right'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                11 phút trước
+                                            </span>
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <tr className='hover:bg-black/5'>
+                                    <td className='border-0 p-3 text-black/65 align-middle'>
+                                        <span className='truncate'>Huyền Huyễn</span>
+                                    </td>
+                                    <td className='border-0 p-3 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm m-0 font-semibold'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Nhân Đạo Đại Thánh
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/75 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Chương 1987: Thôn phệ hết thảy
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/85 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                            Mạc Mặc
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                            DarkHero
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle text-right'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                13 phút trước
+                                            </span>
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <tr className='hover:bg-black/5'>
+                                    <td className='border-0 p-3 text-black/65 align-middle'>
+                                        <span className='truncate'>Khoa Huyễn</span>
+                                    </td>
+                                    <td className='border-0 p-3 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm m-0 font-semibold'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Linh Cảnh Hành Giả
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/75 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Chương 138: Kịch chiến
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/85 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                            Mại Báo Tiểu Lang Quân
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                            DarkHero
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle text-right'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                16 phút trước
+                                            </span>
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <tr className='hover:bg-black/5'>
+                                    <td className='border-0 p-3 text-black/65 align-middle'>
+                                        <span className='truncate'>Huyền Huyễn</span>
+                                    </td>
+                                    <td className='border-0 p-3 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm m-0 font-semibold'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Đạp Tinh
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/75 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Chương 4850: Phần thưởng ngươi
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/85 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                            Tùy Tán Phiêu Phong
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                            BloodRose
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle text-right'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                18 phút trước
+                                            </span>
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <tr className='hover:bg-black/5'>
+                                    <td className='border-0 p-3 text-black/65 align-middle'>
+                                        <span className='truncate'>Huyền Huyễn</span>
+                                    </td>
+                                    <td className='border-0 p-3 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm m-0 font-semibold'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Võ Phu
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/75 w-1/4 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <a className='no-underline bg-transparent cursor-pointer'>
+                                                <span className='hover:text-[#b78a28]'>
+                                                Chương 265: Chúng ta cuối cùng đem hóa thành bụi đất
+                                                </span>
+                                            </a>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/85 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                            Bình Sinh Vị Tri Hàn
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                            BloodRose
+                                            </span>
+                                        </h2>
+                                    </td>
+                                    <td className='border-0 p-3 text-black/55 align-middle text-right'>
+                                        <h2 className='truncate max-w-sm'>
+                                            <span>
+                                                23 phút trước
+                                            </span>
+                                        </h2>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
                 </div>
+            </div>
+            <div className='home-ranking py-6'>
+                
             </div>
         </div>
     )
