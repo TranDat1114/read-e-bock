@@ -5,6 +5,7 @@ import Header from './header';
 import Footer from './footer';
 
 
+
 const Layout = ({ children }) => {
     return (
         <div className='text-foreground bg-background bg-opacity-50 backdrop-blur-lg'>
@@ -17,6 +18,6 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
     children: PropTypes.node,
-  };
+};
 
 export default Layout;
