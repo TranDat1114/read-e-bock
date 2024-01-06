@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 import Layout from "./components/layout/layout";
 import HomePage from "./components/pages/home/home-page";
 import CategoriesPage from "./components/pages/categories/categories-page";
+import DemoPage from './components/pages/demo/demo-page';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/categories" element={<CategoriesPage />} />
+            <Route path="/demo" element={<DemoPage />} />
             <Route
               path="*"
               element={
