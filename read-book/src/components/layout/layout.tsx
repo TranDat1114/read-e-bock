@@ -9,7 +9,8 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
     return (
         <>
-            <div className='text-foreground bg-background bg-opacity-50 backdrop-blur-lg'>
+            <div className='h-dvh'>
+                <img src="" alt="" />
                 <Header />
                 <main>{children}</main>
                 <Footer />
