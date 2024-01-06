@@ -10,7 +10,7 @@ const Layout = ({ children }: LayoutProps) => {
     return (
         <>
             <div className='h-dvh'>
-                <img src={background} alt="" />
+                {/* <img src={background} alt="" /> */}
                 <Header />
                 <main>{children}</main>
                 <Footer />
