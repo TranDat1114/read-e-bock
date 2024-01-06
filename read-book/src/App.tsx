@@ -6,7 +6,6 @@ import HomePage from "./components/pages/home/home-page";
 import CategoriesPage from "./components/pages/categories/categories-page";
 import DemoPage from './components/pages/demo/demo-page';
 import LoginPage from './components/pages/authen/login';
-
 function App() {
 
   return (
@@ -27,9 +26,6 @@ function App() {
                 </div>
               }
             />
-
-
-
           </Routes>
         </Layout>
       </Router>
