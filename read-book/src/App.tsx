@@ -19,7 +19,7 @@ function App() {
               element={
                 <div>
                   <h1>404</h1>
-                  <p>Page not 1 found</p>
+                  <p>Page not found</p>
                 </div>
               }
             />
