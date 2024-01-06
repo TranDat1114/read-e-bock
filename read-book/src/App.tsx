@@ -16,8 +16,16 @@ function App() {
             <Route path="/categories" element={<CategoriesPage />} />
             <Route
               path="*"
-              element={<HomePage />}
+              element={
+                <div>
+                  <h1>404</h1>
+                  <p>Page not found</p>
+                </div>
+              }
             />
+
+
+
           </Routes>
         </Layout>
       </Router>
