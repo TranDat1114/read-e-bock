@@ -1,5 +1,7 @@
 import Footer from "./footer";
 import Header from "./header";
+import bg from "../../../public/bg_1.png"
+
 
 interface LayoutProps {
     children: React.ReactNode
@@ -9,10 +11,10 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
     return (
         <>
-            <div className='h-dvh'>
-                {/* <img src={background} alt="" /> */}
+            <div className='h-dvh relative flex flex-col '>
+                <img className="-z-10 w-full h-dvh object-cover  absolute inset-0 object-center" src={bg} alt="background" />
                 <Header />
-                <main>{children}</main>
+                <main className="container">{children}</main>
                 <Footer />
             </div>
         </>

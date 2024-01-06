@@ -5,6 +5,7 @@ import Layout from "./components/layout/layout";
 import HomePage from "./components/pages/home/home-page";
 import CategoriesPage from "./components/pages/categories/categories-page";
 import DemoPage from './components/pages/demo/demo-page';
+import LoginPage from './components/pages/authen/login';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Layout >
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/demo" element={<DemoPage />} />
             <Route
