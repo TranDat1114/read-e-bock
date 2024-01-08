@@ -12,7 +12,7 @@ const Layout = ({ children }: LayoutProps) => {
     return (
         <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
 
-            <div className='h-dvh relative flex flex-col w-dvw'>
+            <div className='h-dvh flex flex-col w-dvw'>
                 <Header />
                 <main className="container">{children}</main>
                 <Footer />
