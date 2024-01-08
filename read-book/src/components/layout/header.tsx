@@ -138,8 +138,7 @@ const Header = () => {
     };
 
     return (
-        <>
-            <header className="bg-background w-full backdrop-blur-md static z-1">
+            <header className="bg-background w-full backdrop-blur-md static">
                 <div className='container flex justify-between items-center gap-4 h-16 '>
                     <div className="justify-between flex items-center gap-4">
                         <div className='md:hidden'>
@@ -373,7 +372,6 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-        </>
     )
 }
 
