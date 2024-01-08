@@ -20,10 +20,8 @@ import {
     NavigationMenu,
     NavigationMenuContent,
     NavigationMenuItem,
-    NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
-    navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 // import {
 //     Drawer,
@@ -39,31 +37,40 @@ import React from 'react';
 import { Input } from '../ui/input';
 const Header = () => {
     const [openSearchBox, setOpenSearchBox] = React.useState(false)
+
     return (
         <>
             <header className="bg-background w-full  backdrop-blur-md ">
                 <div className='container flex justify-between items-center gap-4  h-16 '>
 
                     <div className="justify-between flex items-center gap-4">
-                        <div className='block md:hidden'>
-
+                        <div className='md:hidden'>
                             <Sheet>
-                                <SheetTrigger>
-                                    <AlignJustify className='text-foreground' />
+                                <SheetTrigger >
+                                    <AlignJustify className='text-foreground mt-2' />
                                 </SheetTrigger>
-                                <SheetContent side={'left'}>
+                                <SheetContent side={'left'} >
                                     <SheetHeader>
-                                        <SheetTitle>Are you absolutely sure?</SheetTitle>
+                                        <SheetTitle>Thanh điều hướng</SheetTitle>
                                         <SheetDescription>
-                                            This action cannot be undone. This will permanently delete your account
-                                            and remove your data from our servers.
+                                            <div className='flex flex-col w-full gap-4'>
+                                                <Link to={"categories"}>
+                                                    Thể loại
+                                                </Link>
+                                                <Link to={"ranking"}>
+                                                    Bảng xếp hạng
+                                                </Link>
+                                                <Link to="/news" >
+                                                    Truyện mới
+                                                </Link>
+                                            </div>
                                         </SheetDescription>
                                     </SheetHeader>
                                 </SheetContent>
                             </Sheet>
                         </div>
                         <Link to={"/"}>
-                            <h1 className="font-bold text-foreground">LOGO</h1>
+                            <h1 className="font-bold text-foreground text-xl">LOGO</h1>
                         </Link>
 
                         <div className='hidden md:flex justify-between items-center gap-4'>
