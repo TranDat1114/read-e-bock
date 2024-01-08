@@ -13,7 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
     return (
         <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
 
-            <div className='h-dvh relative flex flex-col '>
+            <div className='h-dvh relative flex flex-col w-dvw'>
                 <img className="-z-10 w-full h-dvh object-cover  absolute inset-0 object-center" src={bg} alt="background" />
                 <Header />
                 <main className="container">{children}</main>
