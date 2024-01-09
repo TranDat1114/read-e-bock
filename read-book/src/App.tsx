@@ -1,11 +1,14 @@
 
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
+import { ReactNode } from 'react';
+
 
 import Layout from "./components/layout/layout";
 import HomePage from "./components/pages/home/home-page";
 import CategoriesPage from "./components/pages/categories/categories-page";
 import DemoPage from './components/pages/demo/demo-page';
 import LoginPage from './components/pages/authen/login';
+import Details from './components/pages/details/details-page';
 function App() {
 
   return (
@@ -18,6 +21,7 @@ function App() {
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path='news' element={<div>news</div>} />
             <Route path="/demo" element={<DemoPage />} />
+            <Route path="/details" element={<Details />} />
             <Route
               path="*"
               element={
