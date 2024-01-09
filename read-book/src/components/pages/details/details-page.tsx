@@ -261,7 +261,7 @@ const Details = () => {
                             <TableBody>
                                 {DemoData.map((data, index) => (
                                     <TableRow key={index}>
-                                        <TableCell className="font-medium">{data.title}</TableCell>
+                                        <TableCell className="font-normal hover:text-blue-500">{data.newChapter}</TableCell>
                                         <TableCell className="text-right italic">{data.updateDate}</TableCell>
                                     </TableRow>
                                 ))}
