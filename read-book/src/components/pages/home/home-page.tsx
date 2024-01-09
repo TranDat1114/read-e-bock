@@ -127,7 +127,7 @@ const HomePage = () => {
                                             </Tooltip>
                                         </TooltipProvider>
                                         <div className="text-sm text-gray-500 line-clamp-2">{data.describe}</div>
-                                        <div className="text-base line-clamp-2">{data.author}</div>
+                                        <Link className="text-base line-clamp-2 hover:text-blue-500" to={""}>{data.author}</Link>
                                         <div className="flex justify-between items-center">
                                             <div className="text-sm text-gray-500"><Eye /> {data.views}</div>
                                             <div className="text-sm text-gray-500"><Heart /> {data.likes}</div>
@@ -160,7 +160,7 @@ const HomePage = () => {
                                                 </TooltipContent>
                                             </Tooltip>
                                         </TooltipProvider>
-                                        <div className="text-base line-clamp-2">{data.author}</div>
+                                        <Link to={"/"} className="text-base line-clamp-2 hover:text-blue-500">{data.author}</Link>
                                         <div>
                                             {data.newChapter && <Link to={`detail:${data.newChapter}`} className="text-sm text-gray-500 hover:text-blue-500 line-clamp-2">{data.newChapter}</Link>}
                                         </div>
