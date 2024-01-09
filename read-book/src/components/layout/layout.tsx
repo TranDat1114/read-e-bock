@@ -4,6 +4,7 @@ import Header from "./header";
 import bg from "../../../public/background.png"
 
 import { ThemeProvider } from "@/components/theme/theme-provider"
+import { Card } from "../ui/card";
 interface LayoutProps {
     children: React.ReactNode
 
@@ -16,10 +17,13 @@ const Layout = ({ children }: LayoutProps) => {
             <div className='flex flex-col w-full relative'>
                 <Header />
                 <img src={bg} alt="cover" className="w-full h-96 object-cover" />
-                <main className="md:container px-2 my-4 min-h-dvh">{children}</main>
+                <main className="md:container my-8 min-h-dvh ">
+                    <Card className="p-4">
+                        {children}
+                    </Card>
+                </main>
                 <Footer />
             </div>
-
         </ThemeProvider>
     )
 }

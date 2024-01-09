@@ -81,7 +81,7 @@ const DemoData: Data[] = [
 const Details = () => {
     return (
         <div>
-            <div className="flex flex-col flex-wrap gap-y-2">
+            <div className="flex flex-col gap-y-2">
                 <div className="breadcrums pb-2">
                     <div className="flex gap-2 align-middle">
                         <Link to={"/"} className="text-blue-500 hover:underline">Trang chủ</Link>
@@ -92,12 +92,12 @@ const Details = () => {
                         <Link to={"/"} className="text-blue-500 hover:underline">{DemoData[0].title}</Link>
                     </div>
                 </div>
-                <div className="info flex flex-col items-center gap-3 relative">
+                <div className="info flex flex-col items-center gap-3 ">
                     <div className="title uppercase text-2xl font-normal font-sans">{DemoData[0].title}</div>
                     <div className="update text-sm italic font-normal font-sans">Cập nhật lúc: 2024-01-08 01:05:15</div>
-                    <div className="h-full w-full grid grid-cols-1">
-                        <AspectRatio ratio={2 / 3} className="h-full">
-                            <img src={DemoData[1].img} alt="Books cover" className="w-full h-full object-cover" />
+                    <div className="w-full grid grid-cols-1 justify-between items-center ">
+                        <AspectRatio ratio={2 / 3}>
+                            <img src={DemoData[1].img} alt="Books cover" className="w-full h-full object-cover rounded-md" />
                         </AspectRatio>
                     </div>
                 </div>
