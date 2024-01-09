@@ -1,7 +1,6 @@
 
 
 import book from "../../../../public/book.jpg"
-import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Eye, Heart, GanttChartSquare } from "lucide-react"
 
 import {
@@ -11,6 +10,7 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { Link } from "react-router-dom"
+import { AspectRatio } from "@/components/ui/aspect-ratio"
 
 interface Data {
     title: string,
@@ -92,16 +92,26 @@ const HomePage = () => {
     return (
         <div>
             <div className="grid grid-cols-12 justify-between gap-8">
-                <div id="section-1" className="flex flex-col gap-4 col-span-8">
-                    <h1 className="font-bold text-xl">Biên tập viên đề cử</h1>
-                    <div className="grid grid-cols-2 gap-4">
+                <div id="section-1" className="flex flex-col gap-4 col-span-12 lg:col-span-8 w-full">
+                    <div className="flex justify-between w-full">
+                        <p className="font-bold text-xl">Biên tập viên đề cử</p>
+                        <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {
                             DemoData.slice(0, 6).map((data, index) =>
                             (
-                                <div key={index} className="grid grid-cols-3 justify-between items-stretch gap-8">
-                                    <AspectRatio ratio={7 / 10} >
-                                        <img className="rounded-lg h-full w-full  object-cover object-center" src={book} alt="background" />
-                                    </AspectRatio>
+                                <div key={index} className="grid grid-cols-3 justify-between items-stretch gap-4">
+                                    {
+                                        data.img ?
+                                            <AspectRatio ratio={2 / 3}>
+                                                <img className="rounded-lg h-full w-full  object-cover object-center" src={data.img} />
+                                            </AspectRatio>
+                                            :
+                                            <AspectRatio ratio={2 / 3}>
+                                                <img className="rounded-lg h-full w-full object-cover object-center" src={book} alt="background" />
+                                            </AspectRatio>
+                                    }
                                     <div className="flex flex-col justify-between gap-2 max-w-prose col-span-2">
                                         <TooltipProvider>
                                             <Tooltip>
@@ -112,13 +122,15 @@ const HomePage = () => {
                                                     <div className="flex flex-row justify-between items-start gap-2">
                                                         {
                                                             data.img ?
-                                                                <AspectRatio ratio={7 / 10}  >
-                                                                    <img className="rounded-lg h-full w-full  object-cover object-center" src={data.img} />
+                                                                <AspectRatio ratio={2 / 3}>
+                                                                    <img className="rounded-lg h-20 w-16  object-cover object-center" src={data.img} />
                                                                 </AspectRatio>
                                                                 :
-                                                                <AspectRatio ratio={7 / 10} >
-                                                                    <img className="rounded-lg h-full w-full object-cover object-center" src={book} alt="background" />
+                                                                <AspectRatio ratio={2 / 3}>
+
+                                                                    <img className="rounded-lg h-20 w-16 object-cover object-center" src={book} alt="background" />
                                                                 </AspectRatio>
+
                                                         }
                                                         <p className="text-base font-bold">{data.title}</p>
 
@@ -139,17 +151,18 @@ const HomePage = () => {
                         }
                     </div>
                 </div>
-                <div id="section-2" className="col-span-4 flex flex-col gap-4">
-                    <h1 className="font-bold text-xl">Mới cập nhật</h1>
+                <div id="section-2" className="col-span-12 lg:col-span-4 flex flex-col gap-4 w-full">
+                <div className="flex justify-between w-full">
+                        <p className="font-bold text-xl">Chương mới cập nhật</p>
+                        <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                    </div>
                     <div className="flex flex-col gap-4">
                         {
                             DemoData.filter(p => p.newChapter != null).map((data, index) =>
                             (
-                                <div key={index} className="grid grid-cols-6 justify-between items-stretch gap-4">
-                                    <AspectRatio ratio={7 / 10} >
-                                        <img className="rounded-lg h-full w-full  object-cover object-center" src={book} alt="background" />
-                                    </AspectRatio>
-                                    <div className="flex flex-col justify-between gap-2 max-w-prose col-span-5">
+                                <div key={index} className="flex flex-row justify-between items-stretch gap-4 h-20">
+                                    <img className="rounded-lg w-16 h-20 object-cover object-center" src={book} alt="background" />
+                                    <div className="flex flex-col justify-between gap-2 max-w-prose w-full">
                                         <TooltipProvider>
                                             <Tooltip>
                                                 <TooltipTrigger>
@@ -169,6 +182,9 @@ const HomePage = () => {
                             ))
                         }
                     </div>
+                </div>
+                <div id="section-3" className="">
+
                 </div>
             </div>
         </div>

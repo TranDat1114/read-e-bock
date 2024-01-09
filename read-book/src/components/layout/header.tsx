@@ -153,8 +153,8 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-background w-full backdrop-blur-md static">
-            <div className='container flex justify-between items-center gap-4 h-16 '>
+        <header className="bg-background w-full backdrop-blur-md sticky top-0 z-50">
+            <div className='lg:container flex justify-between items-center gap-4 h-16 px-2'>
                 <div className="justify-between flex items-center gap-4">
                     <div className='md:hidden'>
                         <Sheet>
@@ -166,7 +166,7 @@ const Header = () => {
                                     <SheetTitle>Thanh điều hướng</SheetTitle>
                                     <SheetDescription>
                                         <div className='flex flex-col w-full gap-4'>
-                                            <Link to={"categories"}>
+                                            <Link to={"categories"} className='whitespace-nowrap'>
                                                 Thể loại
                                             </Link>
                                             <Link to={"ranking"}>
@@ -182,7 +182,7 @@ const Header = () => {
                         </Sheet>
                     </div>
                     <Link to={"/"}>
-                        <h1 className="font-bold text-foreground text-xl">LOGO</h1>
+                        <h1 className="font-bold text-foreground">LOGO</h1>
                     </Link>
 
                     <div className='hidden md:flex justify-between items-center gap-4'>
@@ -216,7 +216,7 @@ const Header = () => {
                                                     </p>
                                                 </div>
                                             </Link>
-                                            <Link to="/docs/primitives/typography" title="Typography">
+                                            <Link to="/docs/primitives/typography" title="Typography" className='whitespace-nowrap'>
                                                 <div className='flex flex-col justify-center items-start'>
                                                     <p className='font-bold'>
                                                         Truyện ngôn tình
@@ -231,7 +231,7 @@ const Header = () => {
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <NavigationMenuTrigger>
-                                        <Link to={"ranking"}>
+                                        <Link to={"ranking"} className='whitespace-nowrap'>
                                             Xếp hạng
                                         </Link>
                                     </NavigationMenuTrigger>
@@ -240,7 +240,7 @@ const Header = () => {
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <Link to="/news" >
+                                    <Link to="/news" className='whitespace-nowrap' >
                                         Truyện mới
                                     </Link>
                                 </NavigationMenuItem>
@@ -250,7 +250,7 @@ const Header = () => {
                     </div>
                 </div>
 
-                <div className='w-full max-w-64 inline-flex justify-between bg-background border px-4 py-2 rounded-md items-center cursor-pointer'>
+                <div className='w-full lg:max-w-64 inline-flex justify-end lg:justify-center bg-background border px-4 py-2 rounded-md items-center cursor-pointer'>
                     <Dialog open={openSearchBox} onOpenChange={setOpenSearchBox}>
                         <DialogTrigger asChild>
                             <div className='w-full flex justify-between items-center'>
@@ -292,10 +292,10 @@ const Header = () => {
                         </DialogContent>
                     </Dialog>
                 </div>
-                <div className=" hidden md:flex justify-between items-center gap-4">
+                <div className="hidden md:flex justify-end items-center gap-4">
                     <Dialog>
                         <DialogTrigger asChild>
-                            <Button>Đăng nhập</Button>
+                            <Button>Đăng nhập / Đăng ký</Button>
                         </DialogTrigger>
                         <DialogContent className="sm:max-w-[425px]">
                             <Tabs defaultValue="login" className='pt-4'>
@@ -422,7 +422,9 @@ const Header = () => {
                             </Tabs>
                         </DialogContent>
                     </Dialog>
+
                 </div>
+
             </div>
         </header >
     )
