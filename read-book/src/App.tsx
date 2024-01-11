@@ -1,6 +1,5 @@
 
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
-import { ReactNode } from 'react';
 
 
 import Layout from "./components/layout/layout";
@@ -9,6 +8,7 @@ import CategoriesPage from "./components/pages/categories/categories-page";
 import DemoPage from './components/pages/demo/demo-page';
 import LoginPage from './components/pages/authen/login';
 import Details from './components/pages/details/details-page';
+import ReadBook from './components/pages/read/read-book';
 function App() {
 
   return (
@@ -22,6 +22,7 @@ function App() {
             <Route path='news' element={<div>news</div>} />
             <Route path="/demo" element={<DemoPage />} />
             <Route path="/details" element={<Details />} />
+            <Route path='/read' element={<ReadBook />} />
             <Route
               path="*"
               element={
