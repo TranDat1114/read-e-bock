@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ALargeSmall, AlignJustify, ArrowLeft, ArrowRight, Book, BookHeart, Bookmark, CaseSensitive, CaseUpper, Clock, Heart, MessageCircleMore, Palette, Settings, } from "lucide-react";
+import { ALargeSmall, AlertCircle, AlignJustify, ArrowLeft, ArrowRight, Book, BookHeart, Bookmark, CaseSensitive, CaseUpper, Clock, Flower2, Gift, Heart, MessageCircleMore, Palette, Settings, Star, } from "lucide-react";
 import {
     Dialog,
     DialogContent,
@@ -34,6 +34,9 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer"
 import { Button } from "@/components/ui/button"
+import { Link } from "react-router-dom";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 
 const textFont = [
     { text: 16 },
@@ -256,13 +259,56 @@ const ReadBook = () => {
                     <p>{DemoData[0].updateDate}</p>
                 </div>
             </div>
-            <div className="pt-6 flex-wrap flex items-center justify-start max-w-prose">
+            <div className="pt-6 flex-wrap flex items-center justify-start max-w-prose pb-10">
                 <p className={`${fontSize} font-sans text-foreground`}>
                     {DemoData[0].describe}
                 </p>
             </div>
-
-            <div className="sticky bottom-0 flex items-center justify-between bg-black/50 p-2 px-4 rounded-lg">
+            <div className="divider border-t-2 border-solid border-black/30"></div>
+            <div className="suggest-books pt-6">
+                <p>
+                    Đọc thêm những câu chuyện hấp dãn khác&nbsp;
+                    <Link to={"/"} className="text-blue-500 hover:underline">tại đây</Link>
+                </p>
+            </div>
+            <div>
+                <div className="p-4 px-28">
+                    <div className="flex items-center justify-between">
+                        <div className="start">
+                            <Star className="w-6 h-6 block align-middle" />
+                        </div>
+                        <div className="flower">
+                            <Flower2 className="w-6 h-6 block align-middle" />
+                        </div>
+                        <div className="gift">
+                            <Gift className="w-6 h-6 block align-middle" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="footer border-t border-solid border-black/25">
+                <div className="flex items-center justify-between p-4">
+                    <div className="pre-chapter flex items-center text-black/50">
+                        <ArrowLeft className="w-4 h-4 align-middle block mr-2" />
+                        <p className="font-medium text-base">Chương trước</p>
+                    </div>
+                    <div className="alert flex items-center">
+                        <AlertCircle className="w-4 h-4 align-middle block mr-2" />
+                    </div>
+                    <div className="last-chapter flex items-center">
+                        <p className="font-medium text-base mr-2">Chương sau</p>
+                        <ArrowRight className="w-4 h-4 align-middle block" />
+                    </div>
+                </div>
+            </div>
+            <div className="img">
+                <AspectRatio ratio={16 / 9}>
+                    <img className="h-auto w-full object-cover object-center"
+                        src="https://static.cdnno.com/storage/topbox/d38e53dc47be5859d93c263e8fe6db99.jpg"
+                        alt="background" />
+                </AspectRatio>
+            </div>
+            <div className="sticky bottom-0 flex items-center justify-between bg-gray-200/60 p-2 px-4 rounded-lg">
                 <Dialog>
                     <DialogTrigger asChild>
                         <div className="list-chapter">
