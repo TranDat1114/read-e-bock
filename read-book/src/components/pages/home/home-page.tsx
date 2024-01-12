@@ -169,84 +169,116 @@ const HomePage = () => {
                         }
                     </div>
                 </div>
-                
 
+                <div id="section-3" className="flex gap-4 w-full col-span-12 lg:col-span-4">
+                    <Tabs defaultValue="mostInWeek" className="w-[400px]">
+                        <TabsList className="grid w-full grid-cols-3">
+                            <TabsTrigger value="mostInWeek">Đọc nhiều tuần</TabsTrigger>
+                            <TabsTrigger value="mostAllWeek">Thịnh hành tuần</TabsTrigger>
+                            <TabsTrigger value="recommendOfWeek">Đề cử tuần</TabsTrigger>
+                        </TabsList>
+                        <TabsContent value="mostInWeek">
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle>Đọc nhiều trong tuần</CardTitle>
+                                    <CardDescription>
+                                        Make changes to your account here. Click save when you're done.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent className="space-y-2">
+                                    <div className="space-y-1">
+                                        <Label htmlFor="name">Name</Label>
+                                        <Input id="name" defaultValue="Pedro Duarte" />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <Label htmlFor="username">Username</Label>
+                                        <Input id="username" defaultValue="@peduarte" />
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </TabsContent>
+                        <TabsContent value="mostAllWeek">
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle>Password</CardTitle>
+                                    <CardDescription>
+                                        Change your password here. After saving, you'll be logged out.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent className="space-y-2">
+                                    <div className="space-y-1">
+                                        <Label htmlFor="current">Current password</Label>
+                                        <Input id="current" type="password" />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <Label htmlFor="new">New password</Label>
+                                        <Input id="new" type="password" />
+                                    </div>
+                                </CardContent>
+                                <CardFooter>
+                                    <Button>Save password</Button>
+                                </CardFooter>
+                            </Card>
+                        </TabsContent>
+                        <TabsContent value="recommendOfWeek">
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle>Password</CardTitle>
+                                    <CardDescription>
+                                        Change your password here. After saving, you'll be logged out.
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent className="space-y-2">
+                                    <div className="space-y-1">
+                                        <Label htmlFor="current">Current password</Label>
+                                        <Input id="current" type="password" />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <Label htmlFor="new">New password</Label>
+                                        <Input id="new" type="password" />
+                                    </div>
+                                </CardContent>
+                                <CardFooter>
+                                    <Button>Save password</Button>
+                                </CardFooter>
+                            </Card>
+                        </TabsContent>
+                    </Tabs>
+                </div>
             </div>
-            <div id="section-3" className="flex gap-4 w-full">
-                <Tabs defaultValue="mostInWeek" className="w-[400px]">
-                    <TabsList className="grid w-full grid-cols-3">
-                        <TabsTrigger value="mostInWeek">Đọc nhiều tuần</TabsTrigger>
-                        <TabsTrigger value="mostAllWeek">Thịnh hành tuần</TabsTrigger>
-                        <TabsTrigger value="recommendOfWeek">Đề cử tuần</TabsTrigger>
-                    </TabsList>
-                    <TabsContent value="mostInWeek">
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Account</CardTitle>
-                                <CardDescription>
-                                    Make changes to your account here. Click save when you're done.
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent className="space-y-2">
-                                <div className="space-y-1">
-                                    <Label htmlFor="name">Name</Label>
-                                    <Input id="name" defaultValue="Pedro Duarte" />
+            <div id="section-3" className=" flex flex-col gap-4 w-full">
+                <div className="flex justify-between w-full">
+                    <p className="font-bold text-xl">Chương mới cập nhật</p>
+                    <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                </div>
+                <div className="flex flex-col gap-4">
+                    {
+                        DemoData.filter(p => p.newChapter != null).map((data, index) =>
+                        (
+                            <div key={index} className="flex flex-row justify-between items-stretch gap-4 h-20">
+                                <img className="rounded-lg w-16 h-20 object-cover object-center" src={book} alt="background" />
+                                <div className="flex flex-col justify-between gap-2 max-w-prose w-full">
+                                    <TooltipProvider>
+                                        <Tooltip>
+                                            <TooltipTrigger>
+                                                <div className="text-base text-start font-bold truncate hover:text-blue-500">{data.title}</div>
+                                            </TooltipTrigger>
+                                            <TooltipContent>
+                                                <p className="text-base font-bold">{data.title}</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </TooltipProvider>
+                                    <Link to={"/"} className="text-base line-clamp-2 hover:text-blue-500">{data.author}</Link>
+                                    <div>
+                                        {data.newChapter && <Link to={`detail:${data.newChapter}`} className="text-sm text-gray-500 hover:text-blue-500 line-clamp-2">{data.newChapter}</Link>}
+                                    </div>
                                 </div>
-                                <div className="space-y-1">
-                                    <Label htmlFor="username">Username</Label>
-                                    <Input id="username" defaultValue="@peduarte" />
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </TabsContent>
-                    <TabsContent value="mostAllWeek">
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Password</CardTitle>
-                                <CardDescription>
-                                    Change your password here. After saving, you'll be logged out.
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent className="space-y-2">
-                                <div className="space-y-1">
-                                    <Label htmlFor="current">Current password</Label>
-                                    <Input id="current" type="password" />
-                                </div>
-                                <div className="space-y-1">
-                                    <Label htmlFor="new">New password</Label>
-                                    <Input id="new" type="password" />
-                                </div>
-                            </CardContent>
-                            <CardFooter>
-                                <Button>Save password</Button>
-                            </CardFooter>
-                        </Card>
-                    </TabsContent>
-                    <TabsContent value="recommendOfWeek">
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Password</CardTitle>
-                                <CardDescription>
-                                    Change your password here. After saving, you'll be logged out.
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent className="space-y-2">
-                                <div className="space-y-1">
-                                    <Label htmlFor="current">Current password</Label>
-                                    <Input id="current" type="password" />
-                                </div>
-                                <div className="space-y-1">
-                                    <Label htmlFor="new">New password</Label>
-                                    <Input id="new" type="password" />
-                                </div>
-                            </CardContent>
-                            <CardFooter>
-                                <Button>Save password</Button>
-                            </CardFooter>
-                        </Card>
-                    </TabsContent>
-                </Tabs>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
+
         </div>
     )
 }
