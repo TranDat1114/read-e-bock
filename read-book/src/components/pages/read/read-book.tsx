@@ -385,14 +385,14 @@ const ReadBook = () => {
                                     <p className="font-normal">Font chữ</p>
                                 </div>
                                 <div className="flex items-center justify-center col-span-2">
-                                    <Select>
+                                    <Select onValueChange={handleFontChange}>
                                         <SelectTrigger className="w-full">
                                             <SelectValue placeholder="Chọn font chữ" />
                                         </SelectTrigger>
                                         <SelectContent>
                                             <SelectGroup>
                                                 <SelectItem value="palatino">Palatino Linotype</SelectItem>
-                                                <SelectItem value="roboto" onClick={handleFontChange}>Roboto</SelectItem>
+                                                <SelectItem value="roboto">Roboto</SelectItem>
                                             </SelectGroup>
                                         </SelectContent>
                                     </Select>
