@@ -208,7 +208,14 @@ const ReadBook = () => {
     const [fontSize, setFontSize] = useState('text-base');
     const handleFontSizeChange = () => {
         // Khi người dùng nhấn vào button, chuyển đổi kích cỡ chữ
+        // text-4xl
         setFontSize(fontSize === 'text-base' ? 'text-lg' : 'text-base');
+    };
+
+    const [font, setFont] = useState('font-sans');
+    const handleFontChange = () => {
+        // Khi người dùng nhấn vào button, chuyển đổi font chữ
+        setFont(font === 'font-sans' ? 'font-serif' : 'font-sans');
     };
 
     const [text, setText] = useState(16)
@@ -260,7 +267,7 @@ const ReadBook = () => {
                 </div>
             </div>
             <div className="pt-6 flex-wrap flex items-center justify-start max-w-prose pb-10">
-                <p className={`${fontSize} font-sans text-foreground`}>
+                <p className={`${fontSize} ${font} text-foreground`}>
                     {DemoData[0].describe}
                 </p>
             </div>
@@ -385,7 +392,7 @@ const ReadBook = () => {
                                         <SelectContent>
                                             <SelectGroup>
                                                 <SelectItem value="palatino">Palatino Linotype</SelectItem>
-                                                <SelectItem value="roboto">Roboto</SelectItem>
+                                                <SelectItem value="roboto" onClick={handleFontChange}>Roboto</SelectItem>
                                             </SelectGroup>
                                         </SelectContent>
                                     </Select>
