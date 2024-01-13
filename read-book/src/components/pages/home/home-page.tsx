@@ -108,12 +108,12 @@ const DemoData: Data[] = [
 
 const HomePage = () => {
     return (
-        <div className="">
+        <div className="flex flex-col gap-4">
             <div className="grid grid-cols-12 justify-between gap-8">
                 <div id="section-1" className="flex flex-col gap-4 col-span-12 lg:col-span-8 w-full">
-                    <div className="flex justify-between w-full">
+                    <div className="flex justify-start gap-4 items-center w-full">
                         <p className="font-bold text-xl">Biên tập viên đề cử</p>
-                        <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                        <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {
@@ -171,7 +171,7 @@ const HomePage = () => {
                 </div>
 
                 <div id="section-3" className="flex gap-4 w-full col-span-12 lg:col-span-4">
-                    <Tabs defaultValue="mostInWeek" className="w-[400px]">
+                    <Tabs defaultValue="mostInWeek" className="w-full">
                         <TabsList className="grid w-full grid-cols-3">
                             <TabsTrigger value="mostInWeek">Đọc nhiều tuần</TabsTrigger>
                             <TabsTrigger value="mostAllWeek">Thịnh hành tuần</TabsTrigger>
@@ -181,18 +181,59 @@ const HomePage = () => {
                             <Card>
                                 <CardHeader>
                                     <CardTitle>Đọc nhiều trong tuần</CardTitle>
-                                    <CardDescription>
-                                        Make changes to your account here. Click save when you're done.
-                                    </CardDescription>
                                 </CardHeader>
-                                <CardContent className="space-y-2">
-                                    <div className="space-y-1">
-                                        <Label htmlFor="name">Name</Label>
-                                        <Input id="name" defaultValue="Pedro Duarte" />
-                                    </div>
-                                    <div className="space-y-1">
-                                        <Label htmlFor="username">Username</Label>
-                                        <Input id="username" defaultValue="@peduarte" />
+                                <CardContent>
+                                    <div className="flex flex-col">
+                                        {
+                                            DemoData.slice(0, 10).map((data, index) =>
+                                            (
+                                                <div key={index} className="grid grid-cols-12 justify-between items-stretch gap-2 border-b-2 py-2 w-full">
+
+                                                    {index < 3 &&
+                                                        <div className="flex col-span-1 justify-center items-center rounded-full bg-yellow-500 px-2 text-white font-bold">{index + 1}
+                                                        </div>
+                                                    }
+                                                    {
+                                                        index >= 3 && <div className="flex justify-center items-center px-2 font-bold">
+                                                            {index + 1}
+                                                        </div>
+                                                    }
+                                                    <div className={`flex flex-col justify-between gap-2 w-full ${index==0?"col-span-8":"col-span-9"}`}>
+                                                        <TooltipProvider>
+                                                            <Tooltip>
+                                                                <TooltipTrigger>
+                                                                    <div className="text-base text-start">
+                                                                        <p className="font-bold truncate hover:text-blue-500">
+                                                                            {data.title}
+                                                                        </p>
+                                                                        {index < 1 && <div className="flex flex-col justify-center">
+                                                                            <div className="flex gap-2 items-center"><Eye />  <p className="text-sm text-gray-500 line-clamp-2">{data.views}</p></div>
+                                                                            <div>
+                                                                                <p className="text-sm text-gray-500 line-clamp-2">{data.author}</p>
+                                                                            </div>
+                                                                        </div>}
+
+                                                                    </div>
+                                                                </TooltipTrigger>
+                                                                <TooltipContent>
+                                                                    <p className="text-base font-bold">{data.title}</p>
+                                                                </TooltipContent>
+                                                            </Tooltip>
+                                                        </TooltipProvider>
+                                                    </div>
+
+                                                    {index < 1
+                                                        && <img className="rounded-lg w-full  col-span-3 object-cover object-center" src={book} alt="background" />
+                                                    }
+
+                                                    {index >= 1 &&
+                                                        <div className="col-span-2 "><p className="text-sm text-gray-500 line-clamp-2">{data.views}</p>
+                                                        </div>}
+
+                                                </div>
+
+                                            ))
+                                        }
                                     </div>
                                 </CardContent>
                             </Card>
@@ -251,7 +292,7 @@ const HomePage = () => {
                     <p className="font-bold text-xl">Chương mới cập nhật</p>
                     <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                 </div>
-                <div className="flex flex-col gap-4">
+                <div className="grid grid-cols-4 gap-4">
                     {
                         DemoData.filter(p => p.newChapter != null).map((data, index) =>
                         (
@@ -278,7 +319,6 @@ const HomePage = () => {
                     }
                 </div>
             </div>
-
         </div>
     )
 }
