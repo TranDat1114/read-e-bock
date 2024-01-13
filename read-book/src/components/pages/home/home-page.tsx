@@ -289,7 +289,7 @@ const HomePage = () => {
             </div>
             <div id="section-3" className=" flex flex-col gap-4 w-full">
                 <div className="flex justify-between w-full">
-                    <p className="font-bold text-xl">Chương mới cập nhật</p>
+                    <p className="font-bold text-xl">Chương mới cập nhật -1</p>
                     <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                 </div>
                 <div className="grid grid-cols-4 gap-4">
