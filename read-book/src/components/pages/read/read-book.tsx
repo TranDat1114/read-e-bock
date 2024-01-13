@@ -26,9 +26,9 @@ import {
 import { MinusIcon, PlusIcon } from "@radix-ui/react-icons"
 import {
     Drawer,
-    DrawerClose,
+    // DrawerClose,
     DrawerContent,
-    DrawerFooter,
+    // DrawerFooter,
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
@@ -36,7 +36,6 @@ import {
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { set } from "react-hook-form";
 
 
 interface textFont {
