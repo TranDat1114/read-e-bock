@@ -227,52 +227,56 @@ const ReadBook = () => {
     }
 
     return (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 md:px-14 relative ">
+            <div className="fixed right-0 rounded-lg h-20  bg-background border">
+                <div className="mb-4">dcm may khanh</div>
+                {/* Thêm các thành phần navbar khác ở đây nếu cần */}
+            </div>
             <div className="chapter flex justify-between items-center py-2">
                 <div className="pre-chapter flex items-center text-black/50">
-                    <ArrowLeft className="w-4 h-4 align-middle block mr-2" />
-                    <p className="font-medium text-base">Chương trước</p>
+                    <ArrowLeft className="w-4 h-4 align-middle block mr-2 md:translate-y-0.5" />
+                    <p className="font-medium text-base md:text-2xl">Chương trước</p>
                 </div>
                 <div className="last-chapter flex items-center">
-                    <p className="font-medium text-base mr-2">Chương sau</p>
-                    <ArrowRight className="w-4 h-4 align-middle block" />
+                    <p className="font-medium text-base mr-2 md:text-2xl">Chương sau</p>
+                    <ArrowRight className="w-4 h-4 align-middle block md:translate-y-0.5" />
                 </div>
             </div>
             <div className="divider border-t border-solid border-t-black/25 py-2"></div>
             <div className="info space-y-3">
-                <div className="chapter-title text-2xl text-black/75 font-normal">
+                <div className="chapter-title text-2xl text-black/75 font-normal md:text-5xl md:font-serif">
                     <p>{DemoData[0].newChapter}</p>
                 </div>
-                <div className="book-title text-sm text-black/65 font-normal flex items-center">
-                    <Book className="w-4 h-4 block align-middle mr-2" />
+                <div className="book-title text-sm text-black/65 font-normal flex items-center md:text-3xl">
+                    <Book className="w-4 h-4 block align-middle mr-3 md:translate-y-0.5" />
                     <p>{DemoData[0].title}</p>
                 </div>
-                <div className="grid grid-cols-3 gap-2">
-                    <div className="author text-sm text-black/65 flex items-center">
+                <div className="grid grid-cols-12 gap-2">
+                    <div className="author col-span-4 text-sm text-black/65 flex items-center w-full md:text-2xl md:col-span-8">
                         <BookHeart className="w-4 h-4 block align-middle mr-2" />
-                        <p className="truncate max-w-24">{DemoData[0].author}</p>
+                        <p className="truncate">{DemoData[0].author}</p>
                     </div>
-                    <div className="text-counter text-center text-black/65 flex justify-center items-center">
-                        <ALargeSmall className="w-4 h-4 block align-middle mr-2" />
-                        <p className="truncate max-w-24">12 chữ</p>
+                    <div className="text-counter col-span-4 text-center text-black/65 flex justify-center items-center md:text-2xl md:col-span-2">
+                        <ALargeSmall className="w-4 h-4 block align-middle mr-2 md:translate-y-0.5" />
+                        <p className="truncate">12 chữ</p>
                     </div>
-                    <div className="reaction text-right text-black/65 flex items-center justify-center">
-                        <Heart className="w-4 h-4 block align-middle mr-2" />
-                        <p className="truncate max-w-24">{DemoData[0].reaction} cảm xúc</p>
+                    <div className="reaction col-span-4 text-right text-black/65 flex items-center justify-center md:text-2xl md:col-span-2">
+                        <Heart className="w-4 h-4 block align-middle mr-2 md:translate-y-0.5" />
+                        <p className="truncate">{DemoData[0].reaction} cảm xúc</p>
                     </div>
                 </div>
-                <div className="timeline-update flex items-center text-black/65">
+                <div className="timeline-update flex items-center italic text-black/65 md:text-xl">
                     <Clock className="w-4 h-4 block align-middle mr-2" />
                     <p>{DemoData[0].updateDate}</p>
                 </div>
             </div>
-            <div className="pt-6 flex-wrap flex items-center justify-start max-w-prose pb-10">
+            <div className="pt-6 flex-wrap flex items-center justify-start max-w-prose pb-10 md:max-w-full">
                 <p className={`${fontSize.text} ${font} text-foreground`}>
                     {DemoData[0].describe}
                 </p>
             </div>
             <div className="divider border-t-2 border-solid border-black/30"></div>
-            <div className="suggest-books pt-6">
+            <div className="suggest-books pt-6 md:text-2xl">
                 <p>
                     Đọc thêm những câu chuyện hấp dãn khác&nbsp;
                     <Link to={"/"} className="text-blue-500 hover:underline">tại đây</Link>
@@ -296,15 +300,15 @@ const ReadBook = () => {
             <div className="footer border-t border-solid border-black/25">
                 <div className="flex items-center justify-between p-4">
                     <div className="pre-chapter flex items-center text-black/50">
-                        <ArrowLeft className="w-4 h-4 align-middle block mr-2" />
-                        <p className="font-medium text-base">Chương trước</p>
+                        <ArrowLeft className="w-4 h-4 align-middle block mr-2 md:translate-y-0.5" />
+                        <p className="font-medium text-base md:text-2xl">Chương trước</p>
                     </div>
                     <div className="alert flex items-center">
                         <AlertCircle className="w-4 h-4 align-middle block mr-2" />
                     </div>
                     <div className="last-chapter flex items-center">
-                        <p className="font-medium text-base mr-2">Chương sau</p>
-                        <ArrowRight className="w-4 h-4 align-middle block" />
+                        <p className="font-medium text-base mr-2 md:text-2xl">Chương sau</p>
+                        <ArrowRight className="w-4 h-4 align-middle block md:translate-y-0.5" />
                     </div>
                 </div>
             </div>
@@ -315,7 +319,8 @@ const ReadBook = () => {
                         alt="background" />
                 </AspectRatio>
             </div>
-            <div className="sticky bottom-0 flex items-center justify-between bg-gray-200/60 p-2 px-4 rounded-lg">
+
+            <div className="sticky bottom-3 flex items-center justify-between bg-background border p-2 px-4 rounded-lg md:hidden">
                 <Dialog>
                     <DialogTrigger asChild>
                         <div className="list-chapter">
@@ -443,14 +448,6 @@ const ReadBook = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            {/* <DrawerFooter>
-                                                <DrawerClose asChild>
-                                                    <Button onClick={handleFontSizeChange}>Xác nhận</Button>
-                                                </DrawerClose>
-                                                <DrawerClose asChild>
-                                                    <Button variant="outline">Hủy</Button>
-                                                </DrawerClose>
-                                            </DrawerFooter> */}
                                         </DrawerContent>
                                     </Drawer>
                                 </div>

@@ -1,7 +1,7 @@
 import Footer from "./footer";
 import Header from "./header";
 
-import bg from "../../../public/background.png"
+import bg from "../../../public/bg_1.png"
 
 import { ThemeProvider } from "@/components/theme/theme-provider"
 import { Card } from "../ui/card";
