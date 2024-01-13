@@ -36,19 +36,21 @@ import {
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { set } from "react-hook-form";
 
 
-const textFont = [
-    { text: 16 },
-    { text: 18 },
-    { text: 20 },
-    { text: 22 },
-    { text: 24 },
-    { text: 26 },
-    { text: 28 },
-    { text: 30 },
-    { text: 32 }
-];
+interface textFont {
+    text: string | "text-base" | "text-lg" | "text-xl",
+    fontSize: number | 16 | 18 | 20
+}
+
+const textFont: textFont[] = [
+    { text: "text-base", fontSize: 16 },
+    { text: "text-lg", fontSize: 18 },
+    { text: "text-xl", fontSize: 20 },
+    { text: "text-2xl", fontSize: 24 },
+    { text: "text-3xl", fontSize: 30 }
+]
 
 interface Categories {
     name: string,
@@ -205,12 +207,10 @@ const DemoData: Data[] = [
 
 const ReadBook = () => {
 
-    const [fontSize, setFontSize] = useState('text-base');
-    const handleFontSizeChange = () => {
-        // Khi người dùng nhấn vào button, chuyển đổi kích cỡ chữ
-        // text-4xl
-        setFontSize(fontSize === 'text-base' ? 'text-lg' : 'text-base');
-    };
+    const [fontSize, setFontSize] = useState<textFont>(textFont[0]);
+
+
+
 
     const [font, setFont] = useState('font-sans');
     const handleFontChange = () => {
@@ -221,9 +221,10 @@ const ReadBook = () => {
     const [text, setText] = useState(16)
 
     function onClick(adjustment: number) {
-        const currentIndex = textFont.findIndex(item => item.text === text);
+        const currentIndex = textFont.findIndex((item) => item.text === fontSize.text);
         const newIndex = Math.max(0, Math.min(textFont.length - 1, currentIndex + adjustment));
-        setText(textFont[newIndex].text);
+        setText(textFont[newIndex].fontSize);
+        setFontSize(textFont[newIndex]);
     }
 
     return (
@@ -267,7 +268,7 @@ const ReadBook = () => {
                 </div>
             </div>
             <div className="pt-6 flex-wrap flex items-center justify-start max-w-prose pb-10">
-                <p className={`${fontSize} ${font} text-foreground`}>
+                <p className={`${fontSize.text} ${font} text-foreground`}>
                     {DemoData[0].describe}
                 </p>
             </div>
@@ -409,7 +410,7 @@ const ReadBook = () => {
                                             <Button variant="outline">{`${text}px`}</Button>
                                         </DrawerTrigger>
                                         <DrawerContent>
-                                            <div className="mx-auto w-full max-w-sm">
+                                            <div className="mx-auto w-full max-w-sm pb-4">
                                                 <DrawerHeader>
                                                     <DrawerTitle>Cỡ chữ</DrawerTitle>
                                                 </DrawerHeader>
@@ -420,7 +421,7 @@ const ReadBook = () => {
                                                             size="icon"
                                                             className="h-8 w-8 shrink-0 rounded-full"
                                                             onClick={() => onClick(-1)}
-                                                            disabled={text <= textFont[0].text}
+                                                            disabled={text <= textFont[0].fontSize}
                                                         >
                                                             <MinusIcon className="h-4 w-4" />
                                                             <span className="sr-only">Giảm</span>
@@ -435,7 +436,7 @@ const ReadBook = () => {
                                                             size="icon"
                                                             className="h-8 w-8 shrink-0 rounded-full"
                                                             onClick={() => onClick(1)}
-                                                            disabled={text >= textFont[textFont.length - 1].text}
+                                                            disabled={text >= textFont[textFont.length - 1].fontSize}
                                                         >
                                                             <PlusIcon className="h-4 w-4" />
                                                             <span className="sr-only">Tăng</span>
@@ -443,14 +444,14 @@ const ReadBook = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <DrawerFooter>
+                                            {/* <DrawerFooter>
                                                 <DrawerClose asChild>
                                                     <Button onClick={handleFontSizeChange}>Xác nhận</Button>
                                                 </DrawerClose>
                                                 <DrawerClose asChild>
                                                     <Button variant="outline">Hủy</Button>
                                                 </DrawerClose>
-                                            </DrawerFooter>
+                                            </DrawerFooter> */}
                                         </DrawerContent>
                                     </Drawer>
                                 </div>
