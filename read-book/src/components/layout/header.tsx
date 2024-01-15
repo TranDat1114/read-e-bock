@@ -297,7 +297,7 @@ const Header = () => {
                         <DialogTrigger asChild>
                             <Button variant={'ghost'}>Đăng nhập / Đăng ký</Button>
                         </DialogTrigger>
-                        <DialogContent className="sm:max-w-[425px]">
+                        <DialogContent className="sm:max-w-[425px] h-[55%]">
                             <Tabs defaultValue="login" className='pt-4'>
                                 <TabsList className="grid w-full grid-cols-2">
                                     <TabsTrigger value="login">Đăng nhập</TabsTrigger>
