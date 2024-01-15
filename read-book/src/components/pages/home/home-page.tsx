@@ -12,17 +12,12 @@ import {
 import { Link } from "react-router-dom"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 
-import { Button } from "@/components/ui/button"
 import {
     Card,
     CardContent,
-    CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import {
     Tabs,
     TabsContent,
@@ -39,6 +34,8 @@ interface Data {
     author: string,
     newChapter?: string,
     img?: string,
+    lastUpdate?: string,
+    updateBy?: string,
 }
 
 const DemoData: Data[] = [
@@ -50,6 +47,8 @@ const DemoData: Data[] = [
         comments: 100,
         author: "J. R. R. Tolkien",
         newChapter: "Chapter 1: A Long-expected Party",
+        lastUpdate: "1 ngày trước",
+        updateBy: "Trần Hoàng",
     },
     {
         title: "Harry Potter",
@@ -75,7 +74,9 @@ const DemoData: Data[] = [
         likes: 100,
         comments: 100,
         author: "J. R. R. Tolkien",
-        newChapter: "Chapter 8: A Long-expected Party"
+        newChapter: "Chapter 8: A Long-expected Party",
+        lastUpdate: "20 phút trước",
+        updateBy: "Trần Hoàng",
     },
     {
         title: "Alice's Adventures in Wonderland",
@@ -108,8 +109,8 @@ const DemoData: Data[] = [
 
 const HomePage = () => {
     return (
-        <div className="flex flex-col gap-4">
-            <div className="grid grid-cols-12 justify-between gap-8">
+        <div className="flex flex-col gap-y-16">
+            <div className="grid grid-cols-12 justify-between gap-y-16 md:gap-x-8">
                 <div id="section-1" className="flex flex-col gap-4 col-span-12 lg:col-span-8 w-full">
                     <div className="flex justify-start gap-4 items-center w-full">
                         <p className="font-bold text-xl">Biên tập viên đề cử</p>
@@ -180,10 +181,10 @@ const HomePage = () => {
                         <TabsContent value="mostInWeek">
                             <Card>
                                 <CardHeader>
-                                    <CardTitle>Đọc nhiều trong tuần</CardTitle>
+                                    <CardTitle className="font-bold text-xl">Đọc nhiều trong tuần</CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <div className="flex flex-col">
+                                    <div className="flex flex-col gap-2">
                                         {
                                             DemoData.slice(0, 10).map((data, index) =>
                                             (
@@ -198,21 +199,21 @@ const HomePage = () => {
                                                             {index + 1}
                                                         </div>
                                                     }
-                                                    <div className={`flex flex-col justify-between gap-2 w-full ${index==0?"col-span-8":"col-span-9"}`}>
+                                                    <div className={`flex flex-col justify-between gap-2 w-full h-full ${index == 0 ? "col-span-8" : "col-span-9"}`}>
                                                         <TooltipProvider>
                                                             <Tooltip>
                                                                 <TooltipTrigger>
-                                                                    <div className="text-base text-start">
+                                                                    <div className="flex flex-col h-full text-start gap-2">
                                                                         <p className="font-bold truncate hover:text-blue-500">
                                                                             {data.title}
                                                                         </p>
-                                                                        {index < 1 && <div className="flex flex-col justify-center">
-                                                                            <div className="flex gap-2 items-center"><Eye />  <p className="text-sm text-gray-500 line-clamp-2">{data.views}</p></div>
-                                                                            <div>
+                                                                        {index < 1 &&
+                                                                            <div className="flex flex-col justify-end items-baseline gap-2">
+                                                                                <div className="flex gap-2 items-center"><Eye />  <p className="text-sm text-gray-500 line-clamp-2">{data.views}</p></div>
+
                                                                                 <p className="text-sm text-gray-500 line-clamp-2">{data.author}</p>
                                                                             </div>
-                                                                        </div>}
-
+                                                                        }
                                                                     </div>
                                                                 </TooltipTrigger>
                                                                 <TooltipContent>
@@ -223,7 +224,21 @@ const HomePage = () => {
                                                     </div>
 
                                                     {index < 1
-                                                        && <img className="rounded-lg w-full  col-span-3 object-cover object-center" src={book} alt="background" />
+                                                        &&
+                                                        <div className="col-span-3">
+                                                            {
+                                                                data.img ?
+                                                                    <AspectRatio ratio={2 / 3}>
+                                                                        <img className="rounded-lg h-full w-full object-cover object-center" src={data.img} />
+                                                                    </AspectRatio>
+                                                                    :
+                                                                    <AspectRatio ratio={2 / 3}>
+
+                                                                        <img className="rounded-lg h-full w-full object-cover object-center" src={book} alt="background" />
+                                                                    </AspectRatio>
+
+                                                            }
+                                                        </div>
                                                     }
 
                                                     {index >= 1 &&
@@ -241,64 +256,179 @@ const HomePage = () => {
                         <TabsContent value="mostAllWeek">
                             <Card>
                                 <CardHeader>
-                                    <CardTitle>Password</CardTitle>
-                                    <CardDescription>
-                                        Change your password here. After saving, you'll be logged out.
-                                    </CardDescription>
+                                    <CardTitle className="font-bold text-xl">Thịnh hành tuần</CardTitle>
                                 </CardHeader>
-                                <CardContent className="space-y-2">
-                                    <div className="space-y-1">
-                                        <Label htmlFor="current">Current password</Label>
-                                        <Input id="current" type="password" />
-                                    </div>
-                                    <div className="space-y-1">
-                                        <Label htmlFor="new">New password</Label>
-                                        <Input id="new" type="password" />
+                                <CardContent>
+                                    <div className="flex flex-col gap-2">
+                                        {
+                                            DemoData.slice(0, 10).map((data, index) =>
+                                            (
+                                                <div key={index} className="grid grid-cols-12 justify-between items-stretch gap-2 border-b-2 py-2 w-full">
+
+                                                    {index < 3 &&
+                                                        <div className="flex col-span-1 justify-center items-center rounded-full bg-yellow-500 px-2 text-white font-bold">{index + 1}
+                                                        </div>
+                                                    }
+                                                    {
+                                                        index >= 3 && <div className="flex justify-center items-center px-2 font-bold">
+                                                            {index + 1}
+                                                        </div>
+                                                    }
+                                                    <div className={`flex flex-col justify-between gap-2 w-full h-full ${index == 0 ? "col-span-8" : "col-span-9"}`}>
+                                                        <TooltipProvider>
+                                                            <Tooltip>
+                                                                <TooltipTrigger>
+                                                                    <div className="flex flex-col h-full text-start gap-2">
+                                                                        <p className="font-bold truncate hover:text-blue-500">
+                                                                            {data.title}
+                                                                        </p>
+                                                                        {index < 1 &&
+                                                                            <div className="flex flex-col justify-end items-baseline gap-2">
+                                                                                <div className="flex gap-2 items-center"><Eye />  <p className="text-sm text-gray-500 line-clamp-2">{data.views}</p></div>
+
+                                                                                <p className="text-sm text-gray-500 line-clamp-2">{data.author}</p>
+                                                                            </div>
+                                                                        }
+                                                                    </div>
+                                                                </TooltipTrigger>
+                                                                <TooltipContent>
+                                                                    <p className="text-base font-bold">{data.title}</p>
+                                                                </TooltipContent>
+                                                            </Tooltip>
+                                                        </TooltipProvider>
+                                                    </div>
+
+                                                    {index < 1
+                                                        &&
+                                                        <div className="col-span-3">
+                                                            {
+                                                                data.img ?
+                                                                    <AspectRatio ratio={2 / 3}>
+                                                                        <img className="rounded-lg h-full w-full object-cover object-center" src={data.img} />
+                                                                    </AspectRatio>
+                                                                    :
+                                                                    <AspectRatio ratio={2 / 3}>
+
+                                                                        <img className="rounded-lg h-full w-full object-cover object-center" src={book} alt="background" />
+                                                                    </AspectRatio>
+
+                                                            }
+                                                        </div>
+                                                    }
+
+                                                    {index >= 1 &&
+                                                        <div className="col-span-2 "><p className="text-sm text-gray-500 line-clamp-2">{data.views}</p>
+                                                        </div>}
+
+                                                </div>
+
+                                            ))
+                                        }
                                     </div>
                                 </CardContent>
-                                <CardFooter>
-                                    <Button>Save password</Button>
-                                </CardFooter>
                             </Card>
                         </TabsContent>
                         <TabsContent value="recommendOfWeek">
                             <Card>
                                 <CardHeader>
-                                    <CardTitle>Password</CardTitle>
-                                    <CardDescription>
-                                        Change your password here. After saving, you'll be logged out.
-                                    </CardDescription>
+                                    <CardTitle className="font-bold text-xl">Đề cử tuần</CardTitle>
                                 </CardHeader>
-                                <CardContent className="space-y-2">
-                                    <div className="space-y-1">
-                                        <Label htmlFor="current">Current password</Label>
-                                        <Input id="current" type="password" />
-                                    </div>
-                                    <div className="space-y-1">
-                                        <Label htmlFor="new">New password</Label>
-                                        <Input id="new" type="password" />
+                                <CardContent>
+                                    <div className="flex flex-col gap-2">
+                                        {
+                                            DemoData.reverse().slice(0, 10).map((data, index) =>
+                                            (
+                                                <div key={index} className="grid grid-cols-12 justify-between items-stretch gap-2 border-b-2 py-2 w-full">
+
+                                                    {index < 3 &&
+                                                        <div className="flex col-span-1 justify-center items-center rounded-full bg-yellow-500 px-2 text-white font-bold">{index + 1}
+                                                        </div>
+                                                    }
+                                                    {
+                                                        index >= 3 && <div className="flex justify-center items-center px-2 font-bold">
+                                                            {index + 1}
+                                                        </div>
+                                                    }
+                                                    <div className={`flex flex-col justify-between gap-2 w-full h-full ${index == 0 ? "col-span-8" : "col-span-9"}`}>
+                                                        <TooltipProvider>
+                                                            <Tooltip>
+                                                                <TooltipTrigger>
+                                                                    <div className="flex flex-col h-full text-start gap-2">
+                                                                        <p className="font-bold truncate hover:text-blue-500">
+                                                                            {data.title}
+                                                                        </p>
+                                                                        {index < 1 &&
+                                                                            <div className="flex flex-col justify-end items-baseline gap-2">
+                                                                                <div className="flex gap-2 items-center"><Eye />  <p className="text-sm text-gray-500 line-clamp-2">{data.views}</p></div>
+
+                                                                                <p className="text-sm text-gray-500 line-clamp-2">{data.author}</p>
+                                                                            </div>
+                                                                        }
+                                                                    </div>
+                                                                </TooltipTrigger>
+                                                                <TooltipContent>
+                                                                    <p className="text-base font-bold">{data.title}</p>
+                                                                </TooltipContent>
+                                                            </Tooltip>
+                                                        </TooltipProvider>
+                                                    </div>
+
+                                                    {index < 1
+                                                        &&
+                                                        <div className="col-span-3">
+                                                            {
+                                                                data.img ?
+                                                                    <AspectRatio ratio={2 / 3}>
+                                                                        <img className="rounded-lg h-full w-full object-cover object-center" src={data.img} />
+                                                                    </AspectRatio>
+                                                                    :
+                                                                    <AspectRatio ratio={2 / 3}>
+
+                                                                        <img className="rounded-lg h-full w-full object-cover object-center" src={book} alt="background" />
+                                                                    </AspectRatio>
+
+                                                            }
+                                                        </div>
+                                                    }
+
+                                                    {index >= 1 &&
+                                                        <div className="col-span-2 "><p className="text-sm text-gray-500 line-clamp-2">{data.views}</p>
+                                                        </div>}
+
+                                                </div>
+
+                                            ))
+                                        }
                                     </div>
                                 </CardContent>
-                                <CardFooter>
-                                    <Button>Save password</Button>
-                                </CardFooter>
                             </Card>
                         </TabsContent>
                     </Tabs>
                 </div>
             </div>
-            <div id="section-3" className=" flex flex-col gap-4 w-full">
+            <div id="section-3" className="flex flex-col gap-4 w-full">
                 <div className="flex justify-between w-full">
                     <p className="font-bold text-xl">Chương mới cập nhật</p>
                     <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                 </div>
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {
                         DemoData.filter(p => p.newChapter != null).map((data, index) =>
                         (
-                            <div key={index} className="flex flex-row justify-between items-stretch gap-4 h-20">
-                                <img className="rounded-lg w-16 h-20 object-cover object-center" src={book} alt="background" />
-                                <div className="flex flex-col justify-between gap-2 max-w-prose w-full">
+                            <div key={index} className="grid grid-cols-3 justify-between items-stretch gap-2">
+                                {
+                                    data.img ?
+                                        <AspectRatio ratio={2 / 3}>
+                                            <img className="rounded-lg h-full w-full object-cover object-center" src={data.img} />
+                                        </AspectRatio>
+                                        :
+                                        <AspectRatio ratio={2 / 3}>
+
+                                            <img className="rounded-lg h-full w-full object-cover object-center" src={book} alt="background" />
+                                        </AspectRatio>
+
+                                }
+                                <div className="flex flex-col justify-between gap-2 max-w-prose col-span-2 ">
                                     <TooltipProvider>
                                         <Tooltip>
                                             <TooltipTrigger>
@@ -309,15 +439,20 @@ const HomePage = () => {
                                             </TooltipContent>
                                         </Tooltip>
                                     </TooltipProvider>
-                                    <Link to={"/"} className="text-base line-clamp-2 hover:text-blue-500">{data.author}</Link>
-                                    <div>
+                                    <Link to={"/"} className="text-base line-clamp-2 hover:text-blue-500">Tác giả: {data.author}</Link>
+                                    <Link to={"/"}>
                                         {data.newChapter && <Link to={`detail:${data.newChapter}`} className="text-sm text-gray-500 hover:text-blue-500 line-clamp-2">{data.newChapter}</Link>}
-                                    </div>
+                                    </Link>
+                                    <p className="text-gray-500 hover:text-blue-500 line-clamp-2 text-sm">{data.lastUpdate}</p>
+                                    <p className="text-gray-500 hover:text-blue-500 line-clamp-2 text-sm">Bởi {data.updateBy}</p>
                                 </div>
                             </div>
                         ))
                     }
                 </div>
+            </div>
+            <div id="section-4" className="flex flex-col gap-4 w-full">
+
             </div>
         </div>
     )
