@@ -71,12 +71,32 @@ interface BookData {
     demoLink: string;
 }
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 
 const Header = () => {
 
+    const [hide, setHide] = useState(true); // state variable to store the navbar visibility
+    const [lastScrollY, setLastScrollY] = useState(0); // state variable to store the previous scroll position
+
+    const controlNavbar = () => {
+        if (window.scrollY > lastScrollY) { // if scroll down, hide the navbar
+            setHide(false);
+        } else { // if scroll up, show the navbar
+            setHide(true);
+        }
+        // remember the current scroll position for the next move
+        setLastScrollY(window.scrollY);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', controlNavbar); // add the scroll event listener
+        // cleanup function
+        return () => {
+            window.removeEventListener('scroll', controlNavbar); // remove the scroll event listener
+        };
+    }, [lastScrollY]); // only re-run the effect if the lastScrollY changes
 
     const formSchema = z.object({
         email: z.string().email({
@@ -153,7 +173,7 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-background w-full backdrop-blur-md sticky top-0 z-50">
+        <header className={`bg-background w-full backdrop-blur-md fixed top-0 z-50 shadow-md navbar-active ${!hide && 'navbar-hidden'}`}>
             <div className='lg:container flex justify-between items-center gap-4 h-16 px-2'>
                 <div className="justify-between flex items-center gap-4">
                     <div className='md:hidden'>
@@ -173,7 +193,7 @@ const Header = () => {
                                                 Bảng xếp hạng
                                             </Link>
                                             <Link to="/news" >
-                                              <p className='font-bold'>Truyện mới</p>
+                                                <p className='font-bold'>Truyện mới</p>
                                             </Link>
                                         </div>
                                     </SheetDescription>

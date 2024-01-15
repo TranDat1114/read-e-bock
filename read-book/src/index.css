@@ -59,3 +59,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+.navbar-active {
+  transition: top 0.3s linear;
+}
+
+.navbar-hidden {
+  position: fixed;
+  top: -80px;
+  transition: top 0.3s linear;
+}
