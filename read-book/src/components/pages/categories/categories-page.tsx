@@ -95,7 +95,8 @@ const DemoData: Data[] = [
         currentChapter: 1,
         finished: "Hoàn thành",
         newUpdate: "Đang ra",
-        chapterCount: 100
+        chapterCount: 100,
+        img: "https://th.bing.com/th/id/R.92044013da12968d0b8bdcc6ae3d18c9?rik=wG6rgHrxhL1voA&riu=http%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2fytxnHu3wlTcbmCuLLM2Z8Zs1Dtz.jpg&ehk=38SObxUi0o%2fbhpIyexmaXiDb02h7dtLviQS6NpSYiLM%3d&risl=&pid=ImgRaw&r=0",
     },
     {
         title: "Harry Potter",
@@ -112,6 +113,7 @@ const DemoData: Data[] = [
         currentChapter: 1,
         reaction: 100,
 
+
     },
     {
         title: "The Little Prince",
@@ -126,6 +128,7 @@ const DemoData: Data[] = [
         reaction: 100,
         currentChapter: 1,
         textCounter: 100,
+        img: "https://th.bing.com/th/id/R.92044013da12968d0b8bdcc6ae3d18c9?rik=wG6rgHrxhL1voA&riu=http%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2fytxnHu3wlTcbmCuLLM2Z8Zs1Dtz.jpg&ehk=38SObxUi0o%2fbhpIyexmaXiDb02h7dtLviQS6NpSYiLM%3d&risl=&pid=ImgRaw&r=0",
 
     },
     {
@@ -141,7 +144,7 @@ const DemoData: Data[] = [
         reaction: 100,
         currentChapter: 1,
         textCounter: 100,
-
+        img: "https://th.bing.com/th/id/R.92044013da12968d0b8bdcc6ae3d18c9?rik=wG6rgHrxhL1voA&riu=http%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2fytxnHu3wlTcbmCuLLM2Z8Zs1Dtz.jpg&ehk=38SObxUi0o%2fbhpIyexmaXiDb02h7dtLviQS6NpSYiLM%3d&risl=&pid=ImgRaw&r=0",
     },
     {
         title: "Alice's Adventures in Wonderland",
@@ -156,6 +159,7 @@ const DemoData: Data[] = [
         reaction: 100,
         currentChapter: 1,
         textCounter: 100,
+        img: "https://th.bing.com/th/id/R.92044013da12968d0b8bdcc6ae3d18c9?rik=wG6rgHrxhL1voA&riu=http%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2fytxnHu3wlTcbmCuLLM2Z8Zs1Dtz.jpg&ehk=38SObxUi0o%2fbhpIyexmaXiDb02h7dtLviQS6NpSYiLM%3d&risl=&pid=ImgRaw&r=0",
 
     },
     {
@@ -171,6 +175,7 @@ const DemoData: Data[] = [
         reaction: 100,
         currentChapter: 1,
         textCounter: 100,
+        img: "https://th.bing.com/th/id/R.92044013da12968d0b8bdcc6ae3d18c9?rik=wG6rgHrxhL1voA&riu=http%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2fytxnHu3wlTcbmCuLLM2Z8Zs1Dtz.jpg&ehk=38SObxUi0o%2fbhpIyexmaXiDb02h7dtLviQS6NpSYiLM%3d&risl=&pid=ImgRaw&r=0",
     },
     {
         title: "And Then There Were None",
@@ -185,13 +190,14 @@ const DemoData: Data[] = [
         reaction: 100,
         currentChapter: 1,
         textCounter: 100,
+        img: "https://th.bing.com/th/id/R.92044013da12968d0b8bdcc6ae3d18c9?rik=wG6rgHrxhL1voA&riu=http%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2fytxnHu3wlTcbmCuLLM2Z8Zs1Dtz.jpg&ehk=38SObxUi0o%2fbhpIyexmaXiDb02h7dtLviQS6NpSYiLM%3d&risl=&pid=ImgRaw&r=0",
     }
 ]
 
 const categoriesPage = () => {
     return (
-        <div className="navbar space-y-10">
-            <div className="flex flex-wrap items-center gap-3 w-full">
+        <div className="navbar space-y-10 md:space-y-4">
+            <div className="flex flex-wrap items-center gap-3 w-full md:justify-center md:gap-12">
                 <div className="categories-list">
                     <Sheet>
                         <SheetTrigger >
@@ -199,17 +205,19 @@ const categoriesPage = () => {
                         </SheetTrigger>
                         <SheetContent side={'left'} >
                             <SheetHeader>
-                                <SheetTitle className="pb-4">Danh sách truyện</SheetTitle>
+                                <SheetTitle className="pb-4 md:text-2xl">Danh sách truyện</SheetTitle>
                                 <SheetDescription>
                                     <div className='flex flex-col w-full gap-4'>
                                         <div className="categories-content">
                                             <Accordion type="multiple" className="w-full">
                                                 <AccordionItem value="item-1">
-                                                    <AccordionTrigger>Thể loại</AccordionTrigger>
+                                                    <AccordionTrigger>
+                                                        <p className="md:text-xl">Thể loại</p>
+                                                    </AccordionTrigger>
                                                     <AccordionContent>
                                                         <div className="flex flex-wrap text-left h-full gap-1.5">
                                                             {DemoData[0].categories?.map((category, index) => (
-                                                                <p key={index}>
+                                                                <p key={index} className="md:text-lg">
                                                                     {category.name}
                                                                     <span className="text-foreground">
                                                                         {index !== DemoData[0].categories!.length - 1 && <> - </>}
@@ -220,11 +228,13 @@ const categoriesPage = () => {
                                                     </AccordionContent>
                                                 </AccordionItem>
                                                 <AccordionItem value="item-2">
-                                                    <AccordionTrigger>Tình trạng</AccordionTrigger>
+                                                    <AccordionTrigger>
+                                                        <p className="md:text-xl">Tình trạng</p>
+                                                    </AccordionTrigger>
                                                     <AccordionContent>
                                                         <div className="flex flex-wrap text-left h-full gap-1.5">
-                                                            <p>{DemoData[0].finished}</p>
-                                                            <p>{DemoData[0].newUpdate}</p>
+                                                            <p className="md:text-lg">{DemoData[0].finished}</p>
+                                                            <p className="md:text-lg">{DemoData[0].newUpdate}</p>
                                                         </div>
                                                     </AccordionContent>
                                                 </AccordionItem>
@@ -240,18 +250,18 @@ const categoriesPage = () => {
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <div className="flex items-center justify-center">
-                                <p className="font-semibold text-base">
+                                <p className="font-semibold text-base md:text-xl">
                                     Mới cập nhật
                                 </p>
-                                <ChevronDown className="ml-1 w-4 h-4 block align-middle" />
+                                <ChevronDown className="ml-1 w-4 h-4 block align-middle md:translate-y-0.5" />
                             </div>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent className="w-auto">
+                        <DropdownMenuContent className="w-full">
                             <DropdownMenuGroup className="space-y-0.5">
-                                <DropdownMenuItem className="text-foreground text-sm">
+                                <DropdownMenuItem className="text-foreground text-sm md:text-base">
                                     Mới cập nhật
                                 </DropdownMenuItem>
-                                <DropdownMenuItem className="text-foreground text-sm">
+                                <DropdownMenuItem className="text-foreground text-sm md:text-base">
                                     Mới đăng
                                 </DropdownMenuItem>
                             </DropdownMenuGroup>
@@ -262,18 +272,18 @@ const categoriesPage = () => {
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <div className="flex items-center justify-center">
-                                <p className="font-semibold text-base">
+                                <p className="font-semibold text-base md:text-xl">
                                     Điểm đánh giá
                                 </p>
-                                <ChevronDown className="ml-1 w-4 h-4 block align-middle" />
+                                <ChevronDown className="ml-1 w-4 h-4 block align-middle md:translate-y-0.5" />
                             </div>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent className="w-auto">
                             <DropdownMenuGroup className="space-y-0.5">
-                                <DropdownMenuItem className="text-foreground text-sm">
+                                <DropdownMenuItem className="text-foreground text-sm md:text-base">
                                     Lượt đánh giá
                                 </DropdownMenuItem>
-                                <DropdownMenuItem className="text-foreground text-sm">
+                                <DropdownMenuItem className="text-foreground text-sm md:text-base">
                                     Điểm đánh giá
                                 </DropdownMenuItem>
                             </DropdownMenuGroup>
@@ -281,12 +291,12 @@ const categoriesPage = () => {
                     </DropdownMenu>
                 </div>
                 <div className="archive">
-                    <p className="font-semibold text-base">
+                    <p className="font-semibold text-base md:text-xl">
                         Cất giữ
                     </p>
                 </div>
                 <div className="likes">
-                    <p className="font-semibold text-base">
+                    <p className="font-semibold text-base md:text-xl">
                         Yêu thích
                     </p>
                 </div>
@@ -294,24 +304,24 @@ const categoriesPage = () => {
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <div className="flex items-center justify-center">
-                                <p className="font-semibold text-base">
+                                <p className="font-semibold text-base md:text-xl">
                                     Đề cử
                                 </p>
-                                <ChevronDown className="ml-1 w-4 h-4 block align-middle" />
+                                <ChevronDown className="ml-1 w-4 h-4 block align-middle md:translate-y-0.5" />
                             </div>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent className="w-auto">
                             <DropdownMenuGroup className="space-y-0.5">
-                                <DropdownMenuItem className="text-foreground text-sm">
+                                <DropdownMenuItem className="text-foreground text-sm md:text-base">
                                     Đê cử [ngày]
                                 </DropdownMenuItem>
-                                <DropdownMenuItem className="text-foreground text-sm">
+                                <DropdownMenuItem className="text-foreground text-sm md:text-base">
                                     Đê cử [tuần]
                                 </DropdownMenuItem>
-                                <DropdownMenuItem className="text-foreground text-sm">
+                                <DropdownMenuItem className="text-foreground text-sm md:text-base">
                                     Đê cử [tháng]
                                 </DropdownMenuItem>
-                                <DropdownMenuItem className="text-foreground text-sm">
+                                <DropdownMenuItem className="text-foreground text-sm md:text-base">
                                     Đê cử [năm]
                                 </DropdownMenuItem>
                             </DropdownMenuGroup>
@@ -319,38 +329,39 @@ const categoriesPage = () => {
                     </DropdownMenu>
                 </div>
                 <div className="comments">
-                    <p className="font-semibold text-base">
+                    <p className="font-semibold text-base md:text-xl">
                         Bình luận
                     </p>
                 </div>
                 <div className="chapter-numbers">
-                    <p className="font-semibold text-base">
+                    <p className="font-semibold text-base md:text-xl">
                         Số chương
                     </p>
                 </div>
             </div>
             <div className="divider border-t border-solid border-black/50"></div>
-            <div className="books">
-                <div className="grid grid-cols-1 space-y-6">
+            <div className="books md:pb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2">
                     {DemoData.map((book, index) => (
-                        <div key={index} className="grid grid-cols-3 justify-between items-stretch gap-4">
+                        <div key={index} className="grid grid-cols-3 gap-4 mx-4 my-4">
                             <div className="col-span-1">
-                                <img src={book.img} alt="" className="w-auto h-auto object-cover bg-cover mr-4 rounded-lg" />
+                                <img src={book.img} alt="books cover" className="w-auto h-auto object-cover rounded-lg md:w-full md:h-auto" />
                             </div>
-                            <div className="col-span-2 ml-4">
-                                <div className="w-full">
-                                    <p className="font-semibold text-xl truncate max-w-prose">
+                            <div className="col-span-2">
+                                <div className="w-full flex items-start flex-wrap justify-start">
+                                    <p className="font-semibold text-xl truncate max-w-prose mb-2">
                                         {book.title}
                                     </p>
-                                    <p className="flex-wrap text-base truncate">
+                                    <p className="text-base truncate mb-2">
                                         {book.describe}
                                     </p>
-                                    <div className="flex items-center">
+                                    <div className="flex justify-between items-center w-full mb-4">
                                         <p className="flex-wrap truncate max-w-32 italic">{book.author}</p>
-                                        <p className="ml-auto">{book.status}</p>
+                                        <p>{book.status}</p>
                                     </div>
                                     <div>{book.chapterCount} chương</div>
                                 </div>
+
                             </div>
                         </div>
                     ))}
