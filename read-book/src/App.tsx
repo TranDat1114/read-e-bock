@@ -9,6 +9,7 @@ import DemoPage from './components/pages/demo/demo-page';
 import LoginPage from './components/pages/authen/login';
 import Details from './components/pages/details/details-page';
 import ReadBook from './components/pages/read/read-book';
+import ProfilePage from './components/pages/profile/profile-page';
 function App() {
 
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/demo" element={<DemoPage />} />
             <Route path="/details" element={<Details />} />
             <Route path='/read' element={<ReadBook />} />
+            <Route path='/profile' element={<ProfilePage />} />
             <Route
               path="*"
               element={
