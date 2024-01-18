@@ -406,7 +406,14 @@ const HomePage = () => {
                     </Tabs>
                 </div>
             </div>
+
             <div id="section-3" className="flex flex-col gap-4 w-full">
+                <div className="flex justify-between w-full">
+                    <p className="font-bold text-xl">Mới đăng</p>
+                    <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                </div>
+            </div>
+            <div id="section-4" className="flex flex-col gap-4 w-full">
                 <div className="flex justify-between w-full">
                     <p className="font-bold text-xl">Chương mới cập nhật</p>
                     <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
@@ -450,9 +457,6 @@ const HomePage = () => {
                         ))
                     }
                 </div>
-            </div>
-            <div id="section-4" className="flex flex-col gap-4 w-full">
-
             </div>
         </div>
     )
