@@ -142,13 +142,13 @@ const SaveBooks = () => {
         <div>
             <Tabs defaultValue="reading" className="w-full">
                 <TabsList className="grid w-full grid-cols-2 h-auto">
-                    <TabsTrigger value="reading" className="text-xl">Đang đọc</TabsTrigger>
-                    <TabsTrigger value="archive" className="text-xl">Đã lưu</TabsTrigger>
+                    <TabsTrigger value="reading" className="md:text-xl">Đang đọc</TabsTrigger>
+                    <TabsTrigger value="archive" className="md:text-xl">Đã lưu</TabsTrigger>
                 </TabsList>
                 <TabsContent value="reading">
                     <Table>
                         <TableHeader>
-                            <TableRow className="text-xl">
+                            <TableRow className="md:text-xl">
                                 <TableHead>Hình ảnh</TableHead>
                                 <TableHead>Tên truyện</TableHead>
                                 <TableHead>Tập</TableHead>
