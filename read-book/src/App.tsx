@@ -11,6 +11,7 @@ import Details from './components/pages/details/details-page';
 import ReadBook from './components/pages/read/read-book';
 import ProfilePage from './components/pages/profile/profile-page';
 import SaveBooks from './components/pages/book-saves/book-save';
+import SettingsPage from './components/pages/settings/settings-page';
 function App() {
 
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path='/read' element={<ReadBook />} />
             <Route path='/profile' element={<ProfilePage />} />
             <Route path='/archive' element={<SaveBooks />} />
+            <Route path='/settings' element={<SettingsPage />} />
             <Route
               path="*"
               element={
