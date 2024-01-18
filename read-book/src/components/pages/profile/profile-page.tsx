@@ -17,8 +17,8 @@ const ProfilePage = () => {
     }, [])
 
     return (
-        <div>
-            <div className="profile grid grid-cols-3 p-4 gap-4 mb-2">
+        <div className="md:grid md:grid-cols-2">
+            <div className="profile grid grid-cols-3 p-4 gap-4 mb-2 md:flex md:col-span-2">
                 <div className="col-span-1">
                     <Avatar className="w-24 h-auto block align-middle">
                         <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
@@ -38,11 +38,11 @@ const ProfilePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="progress space-y-2">
+            <div className="progress space-y-2 ml-4 md:col-span-3">
                 <Label htmlFor="reading">Kinh nghiệm</Label>
-                <Progress value={progress} className="w-full" />
+                <Progress value={progress} className="w-full md:max-w-[480px]" />
             </div>
-            <div className="books-profile flex flex-col p-4 gap-4">
+            <div className="books-profile flex flex-col p-4 mb-6 gap-4 md:col-span-2">
                 <div className="read grid grid-cols-3 items-center">
                     <div className="col-span-1">
                         <p className="uppercase text-sm">Đã đọc</p>
@@ -90,6 +90,13 @@ const ProfilePage = () => {
                     <div className="col-span-2">
                         <span className="font-semibold">0</span>
                     </div>
+                </div>
+            </div>
+            <div className="col-span-3">
+                <div className="flex items-center justify-center">
+                    <p className="text-xl font-semibold italic text-foreground">
+                        Chưa có nội dung
+                    </p>
                 </div>
             </div>
         </div>
