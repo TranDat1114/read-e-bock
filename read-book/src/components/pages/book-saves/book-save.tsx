@@ -176,9 +176,9 @@ const SaveBooks = () => {
                     </Table>
                 </TabsContent>
                 <TabsContent value="archive">
-                <Table>
+                    <Table>
                         <TableHeader>
-                            <TableRow className="text-xl">
+                            <TableRow className="md:text-xl">
                                 <TableHead>Hình ảnh</TableHead>
                                 <TableHead>Tên truyện</TableHead>
                                 <TableHead>Tập</TableHead>
