@@ -4,17 +4,9 @@ import {
     AvatarImage,
 } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
-import { Progress } from "@/components/ui/progress"
 import { User } from "lucide-react";
-import { Label } from "@/components/ui/label"
-import { useEffect, useState } from "react";
 
 const ProfilePage = () => {
-    const [progress, setProgress] = useState(13)
-    useEffect(() => {
-        const timer = setTimeout(() => setProgress(66), 500)
-        return () => clearTimeout(timer)
-    }, [])
 
     return (
         <div className="md:grid md:grid-cols-2">
@@ -37,10 +29,6 @@ const ProfilePage = () => {
                         <p className="font-normal">một phút trước</p>
                     </div>
                 </div>
-            </div>
-            <div className="progress space-y-2 ml-4 md:col-span-3">
-                <Label htmlFor="reading">Kinh nghiệm</Label>
-                <Progress value={progress} className="w-full md:max-w-[480px]" />
             </div>
             <div className="books-profile flex flex-col p-4 mb-6 gap-4 md:col-span-2">
                 <div className="read grid grid-cols-3 items-center">
