@@ -11,6 +11,11 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import {
+    Avatar,
+    AvatarFallback,
+    AvatarImage,
+} from "@/components/ui/avatar"
+import {
     Sheet,
     SheetContent,
     SheetDescription,
@@ -50,6 +55,14 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 
 // import {
@@ -442,9 +455,60 @@ const Header = () => {
                             </Tabs>
                         </DialogContent>
                     </Dialog>
-
+                    <div className='hidden'>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <div className='flex flex-wrap items-center justify-center space-x-4 cursor-pointer'>
+                                    <div className='avatar'>
+                                        <Avatar>
+                                            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                                            <AvatarFallback>CN</AvatarFallback>
+                                        </Avatar>
+                                    </div>
+                                    <div className='info flex flex-col items-center'>
+                                        <div className='name font-semibold'>user123</div>
+                                        <div className='desc italic'>Cá nhân</div>
+                                    </div>
+                                </div>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent className="w-56">
+                                <DropdownMenuGroup>
+                                    <DropdownMenuItem>
+                                        <Link to="/profile">
+                                            <p>
+                                                Hồ sơ
+                                            </p>
+                                        </Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem>
+                                        <Link to="/archive">
+                                            <p>
+                                                Tủ truyện
+                                            </p>
+                                        </Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem>
+                                        <Link to="/settings">
+                                            <p>
+                                                Cài đặt
+                                            </p>
+                                        </Link>
+                                    </DropdownMenuItem>
+                                </DropdownMenuGroup>
+                                <DropdownMenuSeparator />
+                                <DropdownMenuGroup>
+                                    <DropdownMenuItem>
+                                        <Link to="/">
+                                            <p>
+                                                Đăng xuất
+                                            </p>
+                                        </Link>
+                                    </DropdownMenuItem>
+                                </DropdownMenuGroup>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </div>
                 </div>
-
             </div>
         </header >
     )

@@ -224,8 +224,12 @@ const Details = () => {
                         <p className="font-normal"><span className="font-semibold">{DemoData[0].follower}</span> Người theo dõi</p>
                     </div>
                     <div className="chapter flex items-center gap-2">
-                        <Button>Đọc từ đầu</Button>
-                        <Button>Đọc mới nhất</Button>
+                        <Button>
+                            <Link to={"/read"}>Đọc từ đầu</Link>
+                        </Button>
+                        <Button>
+                            <Link to={"/read"}>Đọc mới nhất</Link>
+                        </Button>
                     </div>
                 </div>
                 <div className="pt-4">
@@ -377,7 +381,7 @@ const Details = () => {
                         </TabsContent>
                     </Tabs>
                 </div>
-                
+
             </div>
         </div >
     );

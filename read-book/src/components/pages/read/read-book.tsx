@@ -229,7 +229,6 @@ const ReadBook = () => {
     return (
         <div className="flex flex-col gap-2 md:px-14 relative ">
             <div className="fixed right-0 rounded-lg h-20  bg-background border">
-                <div className="mb-4">dcm may khanh</div>
                 {/* Thêm các thành phần navbar khác ở đây nếu cần */}
             </div>
             <div className="chapter flex justify-between items-center py-2">

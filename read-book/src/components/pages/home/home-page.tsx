@@ -121,16 +121,19 @@ const HomePage = () => {
                             DemoData.slice(0, 6).map((data, index) =>
                             (
                                 <div key={index} className="grid grid-cols-3 justify-between items-stretch gap-4">
-                                    {
-                                        data.img ?
-                                            <AspectRatio ratio={2 / 3}>
-                                                <img className="rounded-lg h-full w-full  object-cover object-center" src={data.img} />
-                                            </AspectRatio>
-                                            :
-                                            <AspectRatio ratio={2 / 3}>
-                                                <img className="rounded-lg h-full w-full object-cover object-center" src={book} alt="background" />
-                                            </AspectRatio>
-                                    }
+                                    <Link to="/details">
+
+                                        {
+                                            data.img ?
+                                                <AspectRatio ratio={2 / 3}>
+                                                    <img className="rounded-lg h-full w-full  object-cover object-center" src={data.img} />
+                                                </AspectRatio>
+                                                :
+                                                <AspectRatio ratio={2 / 3}>
+                                                    <img className="rounded-lg h-full w-full object-cover object-center" src={book} alt="background" />
+                                                </AspectRatio>
+                                        }
+                                    </Link>
                                     <div className="flex flex-col justify-between gap-2 max-w-prose col-span-2">
                                         <TooltipProvider>
                                             <Tooltip>
