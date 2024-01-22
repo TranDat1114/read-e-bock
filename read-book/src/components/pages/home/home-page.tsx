@@ -1,5 +1,7 @@
 
 
+import "./carousel.css"
+
 import book from "../../../../public/book.jpg"
 import { Eye, Heart, GanttChartSquare } from "lucide-react"
 
@@ -24,6 +26,9 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
+import EmblaCarousel from "@/components/ui/carousel"
+
+import { EmblaOptionsType } from 'embla-carousel'
 
 interface Data {
     title: string,
@@ -108,6 +113,12 @@ const DemoData: Data[] = [
 ]
 
 const HomePage = () => {
+    const OPTIONS: EmblaOptionsType = { align: 'start', dragFree: true, loop: true }
+    const SLIDE_COUNT = 5
+    const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+    
+
+
     return (
         <div className="flex flex-col gap-y-16">
             <div className="grid grid-cols-12 justify-between gap-y-16 md:gap-x-8">
@@ -414,6 +425,11 @@ const HomePage = () => {
                 <div className="flex justify-between w-full">
                     <p className="font-bold text-xl">Mới đăng</p>
                     <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                </div>
+                <div className="flex w-full">
+                    <section className="sandbox__carousel">
+                        <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+                    </section>
                 </div>
             </div>
             <div id="section-4" className="flex flex-col gap-4 w-full">
