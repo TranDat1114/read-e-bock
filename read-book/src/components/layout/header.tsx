@@ -11,6 +11,11 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import {
+    Avatar,
+    AvatarFallback,
+    AvatarImage,
+} from "@/components/ui/avatar"
+import {
     Sheet,
     SheetContent,
     SheetDescription,
@@ -50,6 +55,14 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 
 // import {
@@ -71,12 +84,81 @@ interface BookData {
     demoLink: string;
 }
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 
-const Header = () => {
+interface navbaritems {
+    name: string;
+    link: string;
+}
 
+interface categories {
+    name: string;
+    link: string;
+}
+
+const navbarRanksItem: navbaritems[] = [
+    {
+        name: 'Thịnh hành',
+        link: '/thinh-hanh'
+    },
+    {
+        name: "Đọc nhiều",
+        link: '/doc-nhieu'
+    },
+    {
+        name: "Đề cử",
+        link: '/de-cu'
+    }
+]
+
+const categoriesItem: categories[] = [
+    {
+        name: 'Truyện kiếm hiệp',
+        link: '/truyen-kiem-hiep'
+    },
+    {
+        name: 'Truyện ngôn tình',
+        link: '/truyen-ngon-tinh'
+    },
+    {
+        name: 'Truyện tiên hiệp',
+        link: '/truyen-tien-hiep'
+    },
+    {
+        name: "Truyện đô thị",
+        link: '/truyen-do-thi'
+    },
+    {
+        name: "Truyện huyền huyễn",
+        link: '/truyen-huyen-huyen'
+    }
+]
+
+const Header = () => {
+    const [isLogin, setIsLogin] = useState(false);
+
+    const [hide, setHide] = useState(true); // state variable to store the navbar visibility
+    const [lastScrollY, setLastScrollY] = useState(0); // state variable to store the previous scroll position
+
+    const controlNavbar = () => {
+        if (window.scrollY > lastScrollY) { // if scroll down, hide the navbar
+            setHide(false);
+        } else { // if scroll up, show the navbar
+            setHide(true);
+        }
+        // remember the current scroll position for the next move
+        setLastScrollY(window.scrollY);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', controlNavbar); // add the scroll event listener
+        // cleanup function
+        return () => {
+            window.removeEventListener('scroll', controlNavbar); // remove the scroll event listener
+        };
+    }, [lastScrollY]); // only re-run the effect if the lastScrollY changes
 
     const formSchema = z.object({
         email: z.string().email({
@@ -97,7 +179,10 @@ const Header = () => {
         }
     })
 
+
+
     const [openSearchBox, setOpenSearchBox] = React.useState(false)
+    const [openLoginBox, setOpenLoginBox] = React.useState(false)
 
     const [searchTerm, setSearchTerm] = useState('');
     const [showBookInfo, setShowBookInfo] = useState(false);
@@ -116,6 +201,11 @@ const Header = () => {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
         console.log(values)
+
+        if (values.email === "dangnhap@gmail.com" && values.password === "123456") {
+            setIsLogin(true)
+            setOpenLoginBox(false)
+        }
     }
 
     const handleSearch = (bookName: string) => {
@@ -153,7 +243,7 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-background w-full backdrop-blur-md sticky top-0 z-50">
+        <header className={`bg-background w-full backdrop-blur-md fixed top-0 z-50 shadow-md navbar-active ${!hide && 'navbar-hidden'}`}>
             <div className='lg:container flex justify-between items-center gap-4 h-16 px-2'>
                 <div className="justify-between flex items-center gap-4">
                     <div className='md:hidden'>
@@ -173,7 +263,7 @@ const Header = () => {
                                                 Bảng xếp hạng
                                             </Link>
                                             <Link to="/news" >
-                                              <p className='font-bold'>Truyện mới</p>
+                                                <p className='font-bold'>Truyện mới</p>
                                             </Link>
                                         </div>
                                     </SheetDescription>
@@ -195,37 +285,18 @@ const Header = () => {
                                         </Link>
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
-                                        <div className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] grid-cols-1 ">
-                                            <Link to="/" title="Tất cả">
-                                                <div className='flex flex-col justify-center items-start'>
-                                                    <p className=' '>
-                                                        Tất cả thể loại
-                                                    </p>
-                                                    <p>
-                                                        Tất cả thể loại
-                                                    </p>
-                                                </div>
-                                            </Link>
-                                            <Link to="/docs/installation" title="Installation">
-                                                <div className='flex flex-col justify-center items-start'>
-                                                    <p className=' '>
-                                                        Truyện kiếm hiệp
-                                                    </p>
-                                                    <p >
-                                                        Truyện kể về cuộc phiêu lưu của những cao thủ, kiếm khách hay còn gọi là hiệp khách sống trên giang hồ
-                                                    </p>
-                                                </div>
-                                            </Link>
-                                            <Link to="/docs/primitives/typography" title="Typography" className='whitespace-nowrap'>
-                                                <div className='flex flex-col justify-center items-start'>
-                                                    <p className=' '>
-                                                        Truyện ngôn tình
-                                                    </p>
-                                                    <p>
-                                                        Tất cả thể loại
-                                                    </p>
-                                                </div>
-                                            </Link>
+                                        <div className="grid gap-3 p-4  md:w-[400px] grid-cols-1 md:grid-cols-2">
+                                            {
+                                                categoriesItem.map((item, index) => (
+                                                    <Link to={item.link} title={item.name} key={index}>
+                                                        <div className='flex flex-col justify-center items-start'>
+                                                            <p className=' '>
+                                                                {item.name}
+                                                            </p>
+                                                        </div>
+                                                    </Link>
+                                                ))
+                                            }
                                         </div>
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
@@ -236,11 +307,24 @@ const Header = () => {
                                         </Link>
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
+                                        <div className="grid gap-3 p-4 md:w-[300px] grid-cols-1 md:grid-cols-2">
 
+                                            {
+                                                navbarRanksItem.map((item, index) => (
+                                                    <Link to={item.link} title={item.name} key={index}>
+                                                        <div className='flex flex-col justify-center items-start'>
+                                                            <p className=' '>
+                                                                {item.name}
+                                                            </p>
+                                                        </div>
+                                                    </Link>
+                                                ))
+                                            }
+                                        </div>
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <Link to="/news" className='whitespace-nowrap' >
+                                    <Link to="/news" className='whitespace-nowrap font-medium text-sm' >
                                         Truyện mới
                                     </Link>
                                 </NavigationMenuItem>
@@ -250,11 +334,11 @@ const Header = () => {
                     </div>
                 </div>
 
-                <div className='w-full lg:max-w-64 inline-flex justify-end lg:justify-center bg-background border px-4 py-2 rounded-full items-center cursor-pointer'>
+                <div className='w-full lg:max-w-64 inline-flex justify-end lg:justify-center bg-background border p-2 md:px-4 rounded-full items-center cursor-pointer'>
                     <Dialog open={openSearchBox} onOpenChange={setOpenSearchBox}>
                         <DialogTrigger asChild>
                             <div className='w-full flex justify-between items-center'>
-                                <div className="font-medium border-none outline-none focus-visible:ring-0">Tìm kiếm truyện...</div>
+                                <div className="font-medium border-none outline-none focus-visible:ring-0 text-sm">Tìm kiếm truyện...</div>
                                 <Search />
                             </div>
                         </DialogTrigger>
@@ -293,11 +377,11 @@ const Header = () => {
                     </Dialog>
                 </div>
                 <div className="hidden md:flex justify-end items-center gap-4">
-                    <Dialog>
+                    <Dialog open={openLoginBox} onOpenChange={setOpenLoginBox}>
                         <DialogTrigger asChild>
-                            <Button variant={'ghost'}>Đăng nhập / Đăng ký</Button>
+                            <Button variant={'ghost'} className={`text-sm ${isLogin ? "hidden" : "block"}`}>Đăng nhập / Đăng ký</Button>
                         </DialogTrigger>
-                        <DialogContent className="sm:max-w-[425px]">
+                        <DialogContent className="sm:max-w-[425px] h-dvh md:h-[500px]">
                             <Tabs defaultValue="login" className='pt-4'>
                                 <TabsList className="grid w-full grid-cols-2">
                                     <TabsTrigger value="login">Đăng nhập</TabsTrigger>
@@ -422,9 +506,59 @@ const Header = () => {
                             </Tabs>
                         </DialogContent>
                     </Dialog>
-
+                    <div className={`${isLogin ? "flex" : "hidden"}`}>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <div className='flex flex-wrap items-center justify-center space-x-4 cursor-pointer'>
+                                    <div className='avatar'>
+                                        <Avatar>
+                                            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                                            <AvatarFallback>CN</AvatarFallback>
+                                        </Avatar>
+                                    </div>
+                                    <div className='info flex flex-col items-center'>
+                                        <div className='name font-semibold'>user123</div>
+                                    </div>
+                                </div>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent className="w-56">
+                                <DropdownMenuGroup>
+                                    <DropdownMenuItem>
+                                        <Link to="/profile">
+                                            <p>
+                                                Hồ sơ
+                                            </p>
+                                        </Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem>
+                                        <Link to="/archive">
+                                            <p>
+                                                Tủ truyện
+                                            </p>
+                                        </Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem>
+                                        <Link to="/settings">
+                                            <p>
+                                                Cài đặt
+                                            </p>
+                                        </Link>
+                                    </DropdownMenuItem>
+                                </DropdownMenuGroup>
+                                <DropdownMenuSeparator />
+                                <DropdownMenuGroup>
+                                    <DropdownMenuItem>
+                                        <Link to="/">
+                                            <p>
+                                                Đăng xuất
+                                            </p>
+                                        </Link>
+                                    </DropdownMenuItem>
+                                </DropdownMenuGroup>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </div>
                 </div>
-
             </div>
         </header >
     )

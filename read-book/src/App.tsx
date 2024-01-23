@@ -9,6 +9,9 @@ import DemoPage from './components/pages/demo/demo-page';
 import LoginPage from './components/pages/authen/login';
 import Details from './components/pages/details/details-page';
 import ReadBook from './components/pages/read/read-book';
+import ProfilePage from './components/pages/profile/profile-page';
+import SaveBooks from './components/pages/book-saves/book-save';
+import SettingsPage from './components/pages/settings/settings-page';
 function App() {
 
   return (
@@ -17,12 +20,16 @@ function App() {
         <Layout >
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/home" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path='news' element={<div>news</div>} />
             <Route path="/demo" element={<DemoPage />} />
             <Route path="/details" element={<Details />} />
             <Route path='/read' element={<ReadBook />} />
+            <Route path='/profile' element={<ProfilePage />} />
+            <Route path='/archive' element={<SaveBooks />} />
+            <Route path='/settings' element={<SettingsPage />} />
             <Route
               path="*"
               element={
