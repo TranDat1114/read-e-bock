@@ -27,10 +27,11 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
-import EmblaCarousel from "@/components/ui/carousel"
+import EmblaCarousel from "@/components/ui/EmblaCarousel"
 
 import { EmblaOptionsType } from 'embla-carousel'
 
+import imageByIndex from "./imageByIndex"
 interface Data {
     title: string,
     describe: string,
@@ -114,11 +115,9 @@ const DemoData: Data[] = [
 ]
 
 const HomePage = () => {
-    const OPTIONS: EmblaOptionsType = { align: 'start', dragFree: true, loop: true }
+    const OPTIONS: EmblaOptionsType = { align: 'center', dragFree: false, loop: true }
     const SLIDE_COUNT = 5
     const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
-
-
 
     return (
         <div className="flex flex-col gap-y-16">
@@ -434,15 +433,23 @@ const HomePage = () => {
                 </div>
             </div>
 
-            <div id="section-3" className="flex flex-col gap-4 w-full">
-                <div className="flex flex-col md:flex-row justify-between w-full">
-                    <p className="font-bold text-xl">Mới đăng</p>
-                    <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
-                </div>
-                <div className="flex w-full">
-                    <section className="sandbox__carousel">
-                        <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+            <div id="section-3" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 w-full">
+                <div className="flex flex-col gap-4 w-full">
+                    <div className="flex flex-col md:flex-row justify-between w-full">
+                        <p className="font-bold text-xl">Mới đăng</p>
+                        <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                    </div>
+                    <section className="relative">
+                        <EmblaCarousel slides={SLIDES} options={OPTIONS} imageByIndex={imageByIndex} />
                     </section>
+
+                </div>
+                <div className="flex flex-col gap-4 w-full col-span-1 lg:col-span-2">
+                    <div className="flex flex-col md:flex-row justify-between w-full">
+                        <p className="font-bold text-xl">Mới hoàn thành</p>
+                        <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                    </div>
+
                 </div>
             </div>
             <div id="section-4" className="flex flex-col gap-4 w-full">

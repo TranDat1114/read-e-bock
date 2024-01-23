@@ -20,6 +20,7 @@ function App() {
         <Layout >
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/home" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path='news' element={<div>news</div>} />
