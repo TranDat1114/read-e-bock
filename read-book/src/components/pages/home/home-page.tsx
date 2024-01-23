@@ -127,7 +127,7 @@ const HomePage = () => {
 
                     <div className="flex flex-col md:flex-row justify-between w-full">
                         <p className="font-bold text-xl">Biên tập viên đề cử</p>
-                        <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                        <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {
@@ -437,7 +437,7 @@ const HomePage = () => {
             <div id="section-3" className="flex flex-col gap-4 w-full">
                 <div className="flex flex-col md:flex-row justify-between w-full">
                     <p className="font-bold text-xl">Mới đăng</p>
-                    <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                    <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                 </div>
                 <div className="flex w-full">
                     <section className="sandbox__carousel">
@@ -448,7 +448,7 @@ const HomePage = () => {
             <div id="section-4" className="flex flex-col gap-4 w-full">
                 <div className="flex  flex-col md:flex-row justify-between w-full">
                     <p className="font-bold text-xl">Chương mới cập nhật</p>
-                    <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                    <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {
