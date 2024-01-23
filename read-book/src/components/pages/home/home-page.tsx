@@ -188,9 +188,9 @@ const HomePage = () => {
                 <div id="section-3" className="flex gap-4 w-full col-span-12 lg:col-span-4">
                     <Tabs defaultValue="mostInWeek" className="w-full">
                         <TabsList className="grid w-full grid-cols-3">
-                            <TabsTrigger value="mostInWeek">Đọc nhiều tuần</TabsTrigger>
-                            <TabsTrigger value="mostAllWeek">Thịnh hành tuần</TabsTrigger>
-                            <TabsTrigger value="recommendOfWeek">Đề cử tuần</TabsTrigger>
+                            <TabsTrigger value="mostInWeek">Đọc nhiều</TabsTrigger>
+                            <TabsTrigger value="mostAllWeek">Thịnh hành</TabsTrigger>
+                            <TabsTrigger value="recommendOfWeek">Đề cử</TabsTrigger>
                         </TabsList>
                         <TabsContent value="mostInWeek">
                             <Card>

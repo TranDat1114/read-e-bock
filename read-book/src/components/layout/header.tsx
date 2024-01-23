@@ -234,9 +234,7 @@ const Header = () => {
                                                     <p className=' '>
                                                         Tất cả thể loại
                                                     </p>
-                                                    <p>
-                                                        Tất cả thể loại
-                                                    </p>
+                                                  
                                                 </div>
                                             </Link>
                                             <Link to="/docs/installation" title="Installation">
@@ -244,9 +242,7 @@ const Header = () => {
                                                     <p className=' '>
                                                         Truyện kiếm hiệp
                                                     </p>
-                                                    <p >
-                                                        Truyện kể về cuộc phiêu lưu của những cao thủ, kiếm khách hay còn gọi là hiệp khách sống trên giang hồ
-                                                    </p>
+                                                   
                                                 </div>
                                             </Link>
                                             <Link to="/docs/primitives/typography" title="Typography" className='whitespace-nowrap'>
@@ -254,9 +250,7 @@ const Header = () => {
                                                     <p className=' '>
                                                         Truyện ngôn tình
                                                     </p>
-                                                    <p>
-                                                        Tất cả thể loại
-                                                    </p>
+                                                   
                                                 </div>
                                             </Link>
                                         </div>
@@ -269,7 +263,32 @@ const Header = () => {
                                         </Link>
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
-
+                                    <div className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] grid-cols-1 ">
+                                            <Link to="/" title="Tất cả">
+                                                <div className='flex flex-col justify-center items-start'>
+                                                    <p className=' '>
+                                                        Tất cả thể loại
+                                                    </p>
+                                                  
+                                                </div>
+                                            </Link>
+                                            <Link to="/docs/installation" title="Installation">
+                                                <div className='flex flex-col justify-center items-start'>
+                                                    <p className=' '>
+                                                        Truyện kiếm hiệp
+                                                    </p>
+                                                   
+                                                </div>
+                                            </Link>
+                                            <Link to="/docs/primitives/typography" title="Typography" className='whitespace-nowrap'>
+                                                <div className='flex flex-col justify-center items-start'>
+                                                    <p className=' '>
+                                                        Truyện ngôn tình
+                                                    </p>
+                                                   
+                                                </div>
+                                            </Link>
+                                        </div>
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
@@ -330,7 +349,7 @@ const Header = () => {
                         <DialogTrigger asChild>
                             <Button variant={'ghost'}>Đăng nhập / Đăng ký</Button>
                         </DialogTrigger>
-                        <DialogContent className="sm:max-w-[425px] h-[55%]">
+                        <DialogContent className="sm:max-w-[425px] h-dvh md:h-[500px]">
                             <Tabs defaultValue="login" className='pt-4'>
                                 <TabsList className="grid w-full grid-cols-2">
                                     <TabsTrigger value="login">Đăng nhập</TabsTrigger>
