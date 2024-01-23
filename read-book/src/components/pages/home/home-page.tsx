@@ -17,6 +17,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 import {
     Card,
     CardContent,
+    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
@@ -116,16 +117,17 @@ const HomePage = () => {
     const OPTIONS: EmblaOptionsType = { align: 'start', dragFree: true, loop: true }
     const SLIDE_COUNT = 5
     const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
-    
+
 
 
     return (
         <div className="flex flex-col gap-y-16">
             <div className="grid grid-cols-12 justify-between gap-y-16 md:gap-x-8">
                 <div id="section-1" className="flex flex-col gap-4 col-span-12 lg:col-span-8 w-full">
-                    <div className="flex justify-start gap-4 items-center w-full">
+
+                    <div className="flex flex-col md:flex-row justify-between w-full">
                         <p className="font-bold text-xl">Biên tập viên đề cử</p>
-                        <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                        <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {
@@ -172,7 +174,7 @@ const HomePage = () => {
                                             </Tooltip>
                                         </TooltipProvider>
                                         <div className="text-sm text-gray-500 line-clamp-2">{data.describe}</div>
-                                        <Link className="text-base line-clamp-2 hover:text-blue-500" to={""}>{data.author}</Link>
+                                        <Link className="text-base line-clamp-2 hover:text-blue-500" to={"/"}>{data.author}</Link>
                                         <div className="flex justify-between items-center">
                                             <div className="text-sm text-gray-500"><Eye /> {data.views}</div>
                                             <div className="text-sm text-gray-500"><Heart /> {data.likes}</div>
@@ -250,21 +252,22 @@ const HomePage = () => {
 
                                                                         <img className="rounded-lg h-full w-full object-cover object-center" src={book} alt="background" />
                                                                     </AspectRatio>
-
                                                             }
                                                         </div>
                                                     }
-
                                                     {index >= 1 &&
                                                         <div className="col-span-2 "><p className="text-sm text-gray-500 line-clamp-2">{data.views}</p>
                                                         </div>}
-
                                                 </div>
-
                                             ))
                                         }
                                     </div>
                                 </CardContent>
+                                <CardFooter>
+                                    <div className="flex justify-end w-full">
+                                        <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                                    </div>
+                                </CardFooter>
                             </Card>
                         </TabsContent>
                         <TabsContent value="mostAllWeek">
@@ -340,6 +343,11 @@ const HomePage = () => {
                                         }
                                     </div>
                                 </CardContent>
+                                <CardFooter>
+                                    <div className="flex justify-end w-full">
+                                        <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                                    </div>
+                                </CardFooter>
                             </Card>
                         </TabsContent>
                         <TabsContent value="recommendOfWeek">
@@ -415,6 +423,11 @@ const HomePage = () => {
                                         }
                                     </div>
                                 </CardContent>
+                                <CardFooter>
+                                    <div className="flex justify-end w-full">
+                                        <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
+                                    </div>
+                                </CardFooter>
                             </Card>
                         </TabsContent>
                     </Tabs>
@@ -422,7 +435,7 @@ const HomePage = () => {
             </div>
 
             <div id="section-3" className="flex flex-col gap-4 w-full">
-                <div className="flex justify-between w-full">
+                <div className="flex flex-col md:flex-row justify-between w-full">
                     <p className="font-bold text-xl">Mới đăng</p>
                     <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                 </div>
@@ -433,7 +446,7 @@ const HomePage = () => {
                 </div>
             </div>
             <div id="section-4" className="flex flex-col gap-4 w-full">
-                <div className="flex justify-between w-full">
+                <div className="flex  flex-col md:flex-row justify-between w-full">
                     <p className="font-bold text-xl">Chương mới cập nhật</p>
                     <Link className="underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                 </div>
@@ -466,9 +479,9 @@ const HomePage = () => {
                                         </Tooltip>
                                     </TooltipProvider>
                                     <Link to={"/"} className="text-base line-clamp-2 hover:text-blue-500">Tác giả: {data.author}</Link>
-                                    <Link to={"/"}>
-                                        {data.newChapter && <Link to={`detail:${data.newChapter}`} className="text-sm text-gray-500 hover:text-blue-500 line-clamp-2">{data.newChapter}</Link>}
-                                    </Link>
+
+                                    {data.newChapter && <Link to={`detail:${data.newChapter}`} className="text-sm text-gray-500 hover:text-blue-500 line-clamp-2">{data.newChapter}</Link>}
+
                                     <p className="text-gray-500 hover:text-blue-500 line-clamp-2 text-sm">{data.lastUpdate}</p>
                                     <p className="text-gray-500 hover:text-blue-500 line-clamp-2 text-sm">Bởi {data.updateBy}</p>
                                 </div>

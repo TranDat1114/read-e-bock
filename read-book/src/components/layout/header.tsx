@@ -88,7 +88,56 @@ import React, { useEffect, useState } from 'react';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 
+interface navbaritems {
+    name: string;
+    link: string;
+}
+
+interface categories {
+    name: string;
+    link: string;
+}
+
+const navbarRanksItem: navbaritems[] = [
+    {
+        name: 'Thịnh hành',
+        link: '/thinh-hanh'
+    },
+    {
+        name: "Đọc nhiều",
+        link: '/doc-nhieu'
+    },
+    {
+        name: "Đề cử",
+        link: '/de-cu'
+    }
+]
+
+const categoriesItem: categories[] = [
+    {
+        name: 'Truyện kiếm hiệp',
+        link: '/truyen-kiem-hiep'
+    },
+    {
+        name: 'Truyện ngôn tình',
+        link: '/truyen-ngon-tinh'
+    },
+    {
+        name: 'Truyện tiên hiệp',
+        link: '/truyen-tien-hiep'
+    },
+    {
+        name: "Truyện đô thị",
+        link: '/truyen-do-thi'
+    },
+    {
+        name: "Truyện huyền huyễn",
+        link: '/truyen-huyen-huyen'
+    }
+]
+
 const Header = () => {
+    const [isLogin, setIsLogin] = useState(false);
 
     const [hide, setHide] = useState(true); // state variable to store the navbar visibility
     const [lastScrollY, setLastScrollY] = useState(0); // state variable to store the previous scroll position
@@ -130,7 +179,10 @@ const Header = () => {
         }
     })
 
+
+
     const [openSearchBox, setOpenSearchBox] = React.useState(false)
+    const [openLoginBox, setOpenLoginBox] = React.useState(false)
 
     const [searchTerm, setSearchTerm] = useState('');
     const [showBookInfo, setShowBookInfo] = useState(false);
@@ -149,6 +201,11 @@ const Header = () => {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
         console.log(values)
+
+        if (values.email === "dangnhap@gmail.com" && values.password === "123456") {
+            setIsLogin(true)
+            setOpenLoginBox(false)
+        }
     }
 
     const handleSearch = (bookName: string) => {
@@ -228,31 +285,18 @@ const Header = () => {
                                         </Link>
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
-                                        <div className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] grid-cols-1 ">
-                                            <Link to="/" title="Tất cả">
-                                                <div className='flex flex-col justify-center items-start'>
-                                                    <p className=' '>
-                                                        Tất cả thể loại
-                                                    </p>
-                                                  
-                                                </div>
-                                            </Link>
-                                            <Link to="/docs/installation" title="Installation">
-                                                <div className='flex flex-col justify-center items-start'>
-                                                    <p className=' '>
-                                                        Truyện kiếm hiệp
-                                                    </p>
-                                                   
-                                                </div>
-                                            </Link>
-                                            <Link to="/docs/primitives/typography" title="Typography" className='whitespace-nowrap'>
-                                                <div className='flex flex-col justify-center items-start'>
-                                                    <p className=' '>
-                                                        Truyện ngôn tình
-                                                    </p>
-                                                   
-                                                </div>
-                                            </Link>
+                                        <div className="grid gap-3 p-4  md:w-[400px] grid-cols-1 md:grid-cols-2">
+                                            {
+                                                categoriesItem.map((item, index) => (
+                                                    <Link to={item.link} title={item.name} key={index}>
+                                                        <div className='flex flex-col justify-center items-start'>
+                                                            <p className=' '>
+                                                                {item.name}
+                                                            </p>
+                                                        </div>
+                                                    </Link>
+                                                ))
+                                            }
                                         </div>
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
@@ -263,36 +307,24 @@ const Header = () => {
                                         </Link>
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
-                                    <div className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] grid-cols-1 ">
-                                            <Link to="/" title="Tất cả">
-                                                <div className='flex flex-col justify-center items-start'>
-                                                    <p className=' '>
-                                                        Tất cả thể loại
-                                                    </p>
-                                                  
-                                                </div>
-                                            </Link>
-                                            <Link to="/docs/installation" title="Installation">
-                                                <div className='flex flex-col justify-center items-start'>
-                                                    <p className=' '>
-                                                        Truyện kiếm hiệp
-                                                    </p>
-                                                   
-                                                </div>
-                                            </Link>
-                                            <Link to="/docs/primitives/typography" title="Typography" className='whitespace-nowrap'>
-                                                <div className='flex flex-col justify-center items-start'>
-                                                    <p className=' '>
-                                                        Truyện ngôn tình
-                                                    </p>
-                                                   
-                                                </div>
-                                            </Link>
+                                        <div className="grid gap-3 p-4 md:w-[300px] grid-cols-1 md:grid-cols-2">
+
+                                            {
+                                                navbarRanksItem.map((item, index) => (
+                                                    <Link to={item.link} title={item.name} key={index}>
+                                                        <div className='flex flex-col justify-center items-start'>
+                                                            <p className=' '>
+                                                                {item.name}
+                                                            </p>
+                                                        </div>
+                                                    </Link>
+                                                ))
+                                            }
                                         </div>
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <Link to="/news" className='whitespace-nowrap' >
+                                    <Link to="/news" className='whitespace-nowrap font-medium text-sm' >
                                         Truyện mới
                                     </Link>
                                 </NavigationMenuItem>
@@ -302,11 +334,11 @@ const Header = () => {
                     </div>
                 </div>
 
-                <div className='w-full lg:max-w-64 inline-flex justify-end lg:justify-center bg-background border px-4 py-2 rounded-full items-center cursor-pointer'>
+                <div className='w-full lg:max-w-64 inline-flex justify-end lg:justify-center bg-background border p-2 md:px-4 rounded-full items-center cursor-pointer'>
                     <Dialog open={openSearchBox} onOpenChange={setOpenSearchBox}>
                         <DialogTrigger asChild>
                             <div className='w-full flex justify-between items-center'>
-                                <div className="font-medium border-none outline-none focus-visible:ring-0">Tìm kiếm truyện...</div>
+                                <div className="font-medium border-none outline-none focus-visible:ring-0 text-sm">Tìm kiếm truyện...</div>
                                 <Search />
                             </div>
                         </DialogTrigger>
@@ -345,9 +377,9 @@ const Header = () => {
                     </Dialog>
                 </div>
                 <div className="hidden md:flex justify-end items-center gap-4">
-                    <Dialog>
+                    <Dialog open={openLoginBox} onOpenChange={setOpenLoginBox}>
                         <DialogTrigger asChild>
-                            <Button variant={'ghost'}>Đăng nhập / Đăng ký</Button>
+                            <Button variant={'ghost'} className={`text-sm ${isLogin ? "hidden" : "block"}`}>Đăng nhập / Đăng ký</Button>
                         </DialogTrigger>
                         <DialogContent className="sm:max-w-[425px] h-dvh md:h-[500px]">
                             <Tabs defaultValue="login" className='pt-4'>
@@ -474,7 +506,7 @@ const Header = () => {
                             </Tabs>
                         </DialogContent>
                     </Dialog>
-                    <div className='hidden'>
+                    <div className={`${isLogin ? "flex" : "hidden"}`}>
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <div className='flex flex-wrap items-center justify-center space-x-4 cursor-pointer'>
@@ -486,7 +518,6 @@ const Header = () => {
                                     </div>
                                     <div className='info flex flex-col items-center'>
                                         <div className='name font-semibold'>user123</div>
-                                        <div className='desc italic'>Cá nhân</div>
                                     </div>
                                 </div>
                             </DropdownMenuTrigger>

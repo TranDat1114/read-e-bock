@@ -15,7 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
         <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
             <div className='flex flex-col w-full relative'>
                 <Header />
-                <img src={bg} alt="cover" className="w-full h-96 object-cover object-center" />
+                <img src={bg} alt="cover" className="w-full mt-20 h-96 object-cover object-center" />
                 <main className="md:container my-8 min-h-dvh ">
                     <Card className="p-4">
                         {children}
