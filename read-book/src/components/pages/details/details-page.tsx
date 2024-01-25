@@ -147,28 +147,32 @@ const DemoData: Data[] = [
 
 const Details = () => {
     return (
-        <div>
-            <div className="flex flex-col gap-y-2">
-                <div className="breadcrums pb-2">
-                    <div className="flex gap-2 align-middle">
-                        <Link to={"/"} className="text-blue-500 hover:underline">Trang chủ</Link>
-                        <><ChevronRight className="w-4 h-4 translate-y-1.5" /></>
-                        <Link to={"/"} className="text-blue-500 hover:underline">Thể loại</Link>
-                        <><ChevronRight className="w-4 h-4 translate-y-1.5" /></>
-                        {/* TODO: FETCH API  */}
-                        <Link to={"/"} className="text-blue-500 hover:underline">{DemoData[0].title}</Link>
+        <div className="space-y-4">
+            <div className="breadcrums pb-2">
+                <div className="flex gap-2 align-middle">
+                    <Link to={"/"} className="text-blue-500 hover:underline">Trang chủ</Link>
+                    <><ChevronRight className="w-4 h-4 translate-y-1.5" /></>
+                    <Link to={"/"} className="text-blue-500 hover:underline">Thể loại</Link>
+                    <><ChevronRight className="w-4 h-4 translate-y-1.5" /></>
+                    {/* TODO: FETCH API  */}
+                    <Link to={"/"} className="text-blue-500 hover:underline">{DemoData[0].title}</Link>
+                </div>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+                <div className="title uppercase text-2xl font-normal font-sans">{DemoData[0].title}</div>
+                <div className="update text-sm italic font-normal font-sans">Cập nhật lúc: 2024-01-08 01:05:15</div>
+            </div>
+            <div className="flex flex-col space-y-4 md:grid md:grid-cols-12">
+                <div className="info gap-3 md:col-span-3">
+                    <div className="space-y-2">
+                        <div className="w-full grid grid-cols-1 justify-between items-center ">
+                            <AspectRatio ratio={2 / 3}>
+                                <img src={DemoData[1].img} alt="Books cover" className="w-full h-full object-cover rounded-md" />
+                            </AspectRatio>
+                        </div>
                     </div>
                 </div>
-                <div className="info flex flex-col items-center gap-3 ">
-                    <div className="title uppercase text-2xl font-normal font-sans">{DemoData[0].title}</div>
-                    <div className="update text-sm italic font-normal font-sans">Cập nhật lúc: 2024-01-08 01:05:15</div>
-                    <div className="w-full grid grid-cols-1 justify-between items-center ">
-                        <AspectRatio ratio={2 / 3}>
-                            <img src={DemoData[1].img} alt="Books cover" className="w-full h-full object-cover rounded-md" />
-                        </AspectRatio>
-                    </div>
-                </div>
-                <div className="detail flex flex-col space-y-2">
+                <div className="detail flex flex-col space-y-2 md:col-span-4 md:ml-16">
                     <div className="grid grid-cols-3 justify-start">
                         <div className="flex items-center">
                             <User className="w-4 h-4 block align-middle mr-1" />
@@ -232,7 +236,7 @@ const Details = () => {
                         </Button>
                     </div>
                 </div>
-                <div className="pt-4">
+                <div className="content pt-4 md:col-span-12">
                     <div className="flex items-baseline justify-start">
                         <div className="title flex items-center text-blue-400">
                             <File className="w-6 h-6 block align-middle mr-1.5" />
@@ -246,7 +250,7 @@ const Details = () => {
                         </p>
                     </div>
                 </div>
-                <div className="pt-4">
+                <div className="chapter-list pt-4 md:col-span-12">
                     <div className="flex items-baseline justify-start">
                         <div className="title flex items-center text-blue-400">
                             <AlignJustify className="w-6 h-6 block align-middle mr-1.5" />
@@ -258,7 +262,7 @@ const Details = () => {
                         <Table>
                             <TableHeader>
                                 <TableRow>
-                                    <TableHead className="w-[100px]">Số chương</TableHead>
+                                    <TableHead className="w-[100px] md:w-96">Số chương</TableHead>
                                     <TableHead className="text-right">Cập nhật</TableHead>
                                 </TableRow>
                             </TableHeader>
@@ -273,7 +277,7 @@ const Details = () => {
                         </Table>
                     </div>
                 </div>
-                <div className="pt-4">
+                <div className="ranking pt-4 md:w-full md:col-span-full">
                     <Tabs defaultValue="month" className="w-full">
                         <TabsList className="grid w-full grid-cols-3">
                             <TabsTrigger value="month">Top Tháng</TabsTrigger>
@@ -284,7 +288,7 @@ const Details = () => {
                             <Table>
                                 <TableHeader>
                                     <TableRow>
-                                        <TableHead className="w-10">Vị trí</TableHead>
+                                        <TableHead className="w-10 md:w-20">Vị trí</TableHead>
                                         <TableHead>Hình ảnh</TableHead>
                                         <TableHead>Tên truyện</TableHead>
                                         <TableHead>Tập</TableHead>
@@ -300,7 +304,7 @@ const Details = () => {
                                             </TableCell>
                                             <TableCell className="font-normal">
                                                 <img
-                                                    className="object-cover cursor-pointer"
+                                                    className="object-cover cursor-pointer md:w-36 md:h-auto rounded-lg"
                                                     src={data.img}
                                                     alt="Books cover"
                                                 />
@@ -381,9 +385,8 @@ const Details = () => {
                         </TabsContent>
                     </Tabs>
                 </div>
-
             </div>
-        </div >
+        </div>
     );
 }
 
