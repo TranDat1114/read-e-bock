@@ -1,4 +1,3 @@
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Eye, Star, Tags, TrendingUp, User, File, AlignJustify, ThumbsUp, Reply, Flag } from "lucide-react";
 import { Link } from "react-router-dom";
