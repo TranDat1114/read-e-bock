@@ -22,14 +22,14 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/categories" element={<CategoriesPage />} />
+            <Route path="/the-loai" element={<CategoriesPage />} />
             <Route path='news' element={<div>news</div>} />
             <Route path="/demo" element={<DemoPage />} />
-            <Route path="/details" element={<Details />} />
-            <Route path='/read' element={<ReadBook />} />
-            <Route path='/profile' element={<ProfilePage />} />
+            <Route path="/truyen-tranh" element={<Details />} />
+            <Route path='/truyen' element={<ReadBook />} />
+            <Route path='/trang-ca-nhan' element={<ProfilePage />} />
             <Route path='/archive' element={<SaveBooks />} />
-            <Route path='/settings' element={<SettingsPage />} />
+            <Route path='/cai-dat' element={<SettingsPage />} />
             <Route
               path="*"
               element={

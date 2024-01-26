@@ -16,6 +16,14 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { Input } from "@/components/ui/input"
+import {
+    Avatar,
+    AvatarFallback,
+    AvatarImage,
+} from "@/components/ui/avatar"
 
 interface Categories {
     name: string,
@@ -152,7 +160,7 @@ const Details = () => {
                 <div className="flex gap-2 align-middle">
                     <Link to={"/"} className="text-blue-500 hover:underline">Trang chủ</Link>
                     <><ChevronRight className="w-4 h-4 translate-y-1.5" /></>
-                    <Link to={"/"} className="text-blue-500 hover:underline">Thể loại</Link>
+                    <Link to={"/the-loai"} className="text-blue-500 hover:underline">Thể loại</Link>
                     <><ChevronRight className="w-4 h-4 translate-y-1.5" /></>
                     {/* TODO: FETCH API  */}
                     <Link to={"/"} className="text-blue-500 hover:underline">{DemoData[0].title}</Link>
@@ -178,14 +186,14 @@ const Details = () => {
                             <User className="w-4 h-4 block align-middle mr-1" />
                             <p className="author">Tác giả: </p>
                         </div>
-                        <Link to={"/"} className="author font-semibold">{DemoData[0].author}</Link>
+                        <Link to={"/"} className="author font-semibold hover:underline">{DemoData[0].author}</Link>
                     </div>
                     <div className="grid grid-cols-3 justify-start">
                         <div className="flex items-center">
                             <TrendingUp className="w-4 h-4 block align-middle mr-1" />
                             <p className="status">Tình trạng:</p>
                         </div>
-                        <Link to={"/"} className="status font-semibold">{DemoData[0].status}</Link>
+                        <Link to={"/"} className="status font-semibold hover:underline">{DemoData[0].status}</Link>
                     </div>
                     <div className="grid grid-cols-3 justify-start">
                         <div className="flex items-start">
@@ -229,10 +237,10 @@ const Details = () => {
                     </div>
                     <div className="chapter flex items-center gap-2">
                         <Button>
-                            <Link to={"/read"}>Đọc từ đầu</Link>
+                            <Link to={"/truyen"}>Đọc từ đầu</Link>
                         </Button>
                         <Button>
-                            <Link to={"/read"}>Đọc mới nhất</Link>
+                            <Link to={"/truyen"}>Đọc mới nhất</Link>
                         </Button>
                     </div>
                 </div>
@@ -269,7 +277,7 @@ const Details = () => {
                             <TableBody>
                                 {DemoData.map((data, index) => (
                                     <TableRow key={index}>
-                                        <TableCell className="font-normal hover:text-blue-500">{data.newChapter}</TableCell>
+                                        <TableCell className="font-normal cursor-pointer hover:text-blue-500">{data.newChapter}</TableCell>
                                         <TableCell className="text-right italic">{data.updateDate}</TableCell>
                                     </TableRow>
                                 ))}
@@ -309,8 +317,8 @@ const Details = () => {
                                                     alt="Books cover"
                                                 />
                                             </TableCell>
-                                            <TableCell className="font-normal hover:text-blue-500">{data.title}</TableCell>
-                                            <TableCell className="font-normal hover:text-blue-500">{data.newChapter}</TableCell>
+                                            <TableCell className="font-normal cursor-pointer hover:text-blue-500">{data.title}</TableCell>
+                                            <TableCell className="font-normal cursor-pointer hover:text-blue-500">{data.newChapter}</TableCell>
                                             <TableCell className="text-right italic">{data.views}</TableCell>
                                         </TableRow>
                                     ))}
@@ -321,7 +329,7 @@ const Details = () => {
                             <Table>
                                 <TableHeader>
                                     <TableRow>
-                                        <TableHead className="w-10">Vị trí</TableHead>
+                                        <TableHead className="w-10 md:w-20">Vị trí</TableHead>
                                         <TableHead>Hình ảnh</TableHead>
                                         <TableHead>Tên truyện</TableHead>
                                         <TableHead>Tập</TableHead>
@@ -337,13 +345,13 @@ const Details = () => {
                                             </TableCell>
                                             <TableCell className="font-normal">
                                                 <img
-                                                    className="object-cover cursor-pointer"
+                                                    className="object-cover cursor-pointer md:w-36 md:h-auto rounded-lg"
                                                     src={data.img}
                                                     alt="Books cover"
                                                 />
                                             </TableCell>
-                                            <TableCell className="font-normal hover:text-blue-500">{data.title}</TableCell>
-                                            <TableCell className="font-normal hover:text-blue-500">{data.newChapter}</TableCell>
+                                            <TableCell className="font-normal cursor-pointer hover:text-blue-500">{data.title}</TableCell>
+                                            <TableCell className="font-normal cursor-pointer hover:text-blue-500">{data.newChapter}</TableCell>
                                             <TableCell className="text-right italic">{data.views}</TableCell>
                                         </TableRow>
                                     ))}
@@ -354,7 +362,7 @@ const Details = () => {
                             <Table>
                                 <TableHeader>
                                     <TableRow>
-                                        <TableHead className="w-10">Vị trí</TableHead>
+                                        <TableHead className="w-10 md:w-20">Vị trí</TableHead>
                                         <TableHead>Hình ảnh</TableHead>
                                         <TableHead>Tên truyện</TableHead>
                                         <TableHead>Tập</TableHead>
@@ -370,13 +378,13 @@ const Details = () => {
                                             </TableCell>
                                             <TableCell className="font-normal">
                                                 <img
-                                                    className="object-cover cursor-pointer"
+                                                    className="object-cover cursor-pointer md:w-36 md:h-auto rounded-lg"
                                                     src={data.img}
                                                     alt="Books cover"
                                                 />
                                             </TableCell>
-                                            <TableCell className="font-normal hover:text-blue-500">{data.title}</TableCell>
-                                            <TableCell className="font-normal hover:text-blue-500">{data.newChapter}</TableCell>
+                                            <TableCell className="font-normal cursor-pointer hover:text-blue-500">{data.title}</TableCell>
+                                            <TableCell className="font-normal cursor-pointer hover:text-blue-500">{data.newChapter}</TableCell>
                                             <TableCell className="text-right italic">{data.views}</TableCell>
                                         </TableRow>
                                     ))}
@@ -384,6 +392,63 @@ const Details = () => {
                             </Table>
                         </TabsContent>
                     </Tabs>
+                </div>
+                <div className="comment pt-4 md:w-full md:col-span-full">
+                    <div className="grid w-full gap-1.5">
+                        <div className="col-span-2">
+                            <Label htmlFor="message" className="italic">Nhập bình luận của bạn ở đây:</Label>
+                            <Textarea
+                                placeholder="Mời bạn thảo luận, vui lòng không spam, share link kiếm tiền, thiếu lành mạnh,... để tránh bị khóa tài khoản."
+                                id="message" />
+                        </div>
+                        <div className="col-span-1 space-y-2">
+                            <Input type="email" placeholder="Email" />
+                            <Input type="text" placeholder="Tên của bạn" />
+                        </div>
+                        <Button className="">Gửi tin nhắn</Button>
+                    </div>
+                    <div className="user-comment pt-4 md:max-w-2xl">
+                        <div className="grid grid-cols-5 pb-4">
+                            <div className="grid-cols-1">
+                                <Avatar>
+                                    <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                                    <AvatarFallback>CN</AvatarFallback>
+                                </Avatar>
+                            </div>
+                            <div className="col-span-4 border border-solid border-black/50 rounded-md p-4">
+                                <div className="info items-center">
+                                    <div className="flex items-center justify-between text-sm">
+                                        <p className="cursor-pointer text-blue-500 font-semibold text-base">tên người dùng 1</p>
+                                        <p className="cursor-pointer text-blue-400 italic">Chapter 55</p>
+                                    </div>
+                                </div>
+                                <div className="divider border-t border-solid border-black/50 my-4"></div>
+                                <div className="content items-center">
+                                    <p>truyện hay, đỉnh cao, đúng là một trong những truyện đỉnh cmnr.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="grid grid-cols-5 pb-4">
+                            <div className="grid-cols-1">
+                                <Avatar>
+                                    <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                                    <AvatarFallback>CN</AvatarFallback>
+                                </Avatar>
+                            </div>
+                            <div className="col-span-4 border border-solid border-black/50 rounded-md p-4">
+                                <div className="info items-center">
+                                    <div className="flex items-center justify-between text-sm">
+                                        <p className="cursor-pointer text-blue-500 font-semibold text-base">tên người dùng 1</p>
+                                        <p className="cursor-pointer text-blue-400 italic">Chapter 55</p>
+                                    </div>
+                                </div>
+                                <div className="divider border-t border-solid border-black/50 my-4"></div>
+                                <div className="content items-center">
+                                    <p>truyện hay, đỉnh cao, đúng là một trong những truyện đỉnh cmnr.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

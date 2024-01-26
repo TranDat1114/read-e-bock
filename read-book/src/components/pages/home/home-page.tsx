@@ -133,7 +133,7 @@ const HomePage = () => {
                             DemoData.slice(0, 6).map((data, index) =>
                             (
                                 <div key={index} className="grid grid-cols-3 justify-between items-stretch gap-4">
-                                    <Link to="/details">
+                                    <Link to="/truyen-tranh">
 
                                         {
                                             data.img ?

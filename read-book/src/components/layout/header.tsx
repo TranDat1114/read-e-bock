@@ -256,7 +256,7 @@ const Header = () => {
                                     <SheetTitle>Thanh điều hướng</SheetTitle>
                                     <SheetDescription>
                                         <div className='flex flex-col w-full gap-4'>
-                                            <Link to={"categories"} className='whitespace-nowrap'>
+                                            <Link to="/the-loai" className='whitespace-nowrap'>
                                                 Thể loại
                                             </Link>
                                             <Link to={"ranking"}>
@@ -280,7 +280,7 @@ const Header = () => {
                             <NavigationMenuList>
                                 <NavigationMenuItem>
                                     <NavigationMenuTrigger>
-                                        <Link to={"categories"}>
+                                        <Link to="/the-loai">
                                             Thể loại
                                         </Link>
                                     </NavigationMenuTrigger>
@@ -524,21 +524,21 @@ const Header = () => {
                             <DropdownMenuContent className="w-56">
                                 <DropdownMenuGroup>
                                     <DropdownMenuItem>
-                                        <Link to="/profile">
+                                        <Link to="/trang-ca-nhan">
                                             <p>
                                                 Hồ sơ
                                             </p>
                                         </Link>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem>
-                                        <Link to="/archive">
+                                        <Link to="/luu-tru">
                                             <p>
                                                 Tủ truyện
                                             </p>
                                         </Link>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem>
-                                        <Link to="/settings">
+                                        <Link to="/cai-dat">
                                             <p>
                                                 Cài đặt
                                             </p>

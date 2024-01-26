@@ -275,10 +275,10 @@ const ReadBook = () => {
                 </p>
             </div>
             <div className="divider border-t-2 border-solid border-black/30"></div>
-            <div className="suggest-books pt-6 md:text-2xl">
+            <div className="suggest-books pt-6">
                 <p>
-                    Đọc thêm những câu chuyện hấp dãn khác&nbsp;
-                    <Link to={"/"} className="text-blue-500 hover:underline">tại đây</Link>
+                    Đọc thêm những câu chuyện hấp dẫn khác&nbsp;
+                    <Link to={"/"} className="text-blue-500 hover:underline">tại đây.</Link>
                 </p>
             </div>
             <div>
