@@ -179,75 +179,75 @@ const Details = () => {
             <div className="flex flex-col space-y-4 md:grid md:grid-cols-12">
                 <div className="info gap-3 md:col-span-3">
                     <div className="space-y-2">
-                        <div className="w-full grid grid-cols-1 justify-between items-center ">
-                            <AspectRatio ratio={2 / 3}>
-                                <img src={DemoData[1].img} alt="Books cover" className="w-full h-full object-cover rounded-md" />
-                            </AspectRatio>
+                        <div className="w-full flex justify-center items-center">
+                            <img src={DemoData[1].img} alt="Books cover" className="w-1/2 h-full object-cover rounded-md md:w-full" />
                         </div>
                     </div>
                 </div>
-                <div className="detail flex flex-col space-y-2 md:col-span-4 md:ml-16">
-                    <div className="grid grid-cols-3 justify-start">
-                        <div className="flex items-center">
-                            <User className="w-4 h-4 block align-middle mr-1" />
-                            <p className="author">Tác giả: </p>
+                <div className="detail flex flex-col space-y-2 md:col-span-9 md:ml-16">
+                    <div className="space-y-4">
+                        <div className="grid grid-cols-3 justify-start">
+                            <div className="flex items-center">
+                                <User className="w-4 h-4 block align-middle mr-1" />
+                                <p className="author">Tác giả: </p>
+                            </div>
+                            <Link to={"/"} className="author font-semibold hover:underline">{DemoData[0].author}</Link>
                         </div>
-                        <Link to={"/"} className="author font-semibold hover:underline">{DemoData[0].author}</Link>
-                    </div>
-                    <div className="grid grid-cols-3 justify-start">
-                        <div className="flex items-center">
-                            <TrendingUp className="w-4 h-4 block align-middle mr-1" />
-                            <p className="status">Tình trạng:</p>
+                        <div className="grid grid-cols-3 justify-start">
+                            <div className="flex items-center">
+                                <TrendingUp className="w-4 h-4 block align-middle mr-1" />
+                                <p className="status">Tình trạng:</p>
+                            </div>
+                            <Link to={"/"} className="status font-semibold hover:underline">{DemoData[0].status}</Link>
                         </div>
-                        <Link to={"/"} className="status font-semibold hover:underline">{DemoData[0].status}</Link>
-                    </div>
-                    <div className="grid grid-cols-3 justify-start">
-                        <div className="flex items-start">
-                            <Tags className="w-4 h-4 block align-middle mr-1 translate-y-1" />
-                            <p className="categories">Thể loại:</p>
+                        <div className="grid grid-cols-3 justify-start">
+                            <div className="flex items-start">
+                                <Tags className="w-4 h-4 block align-middle mr-1 translate-y-1" />
+                                <p className="categories">Thể loại:</p>
+                            </div>
+                            <div className="categories col-span-2 flex gap-2 w-full flex-wrap">
+                                {DemoData[0].categories?.map((category, index) => (
+                                    <Link to={"/"} key={index} className="category text-blue-500 hover:underline font-semibold font-sans">
+                                        {category.name}
+                                        <span className="text-foreground">
+                                            {index !== DemoData[0].categories!.length - 1 && <> -</>}
+                                        </span>
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
-                        <div className="categories col-span-2 flex gap-2 w-full flex-wrap">
-                            {DemoData[0].categories?.map((category, index) => (
-                                <Link to={"/"} key={index} className="category text-blue-500 hover:underline font-semibold font-sans">
-                                    {category.name}
-                                    <span className="text-foreground">
-                                        {index !== DemoData[0].categories!.length - 1 && <> -</>}
-                                    </span>
-                                </Link>
-                            ))}
+                        <div className="grid grid-cols-3 justify-start">
+                            <div className="flex items-center">
+                                <Eye className="w-4 h-4 block align-middle mr-1" />
+                                <p className="views">Lượt xem:</p>
+                            </div>
+                            <div className="views font-semibold col-span-2">{DemoData[0].views}</div>
                         </div>
-                    </div>
-                    <div className="grid grid-cols-3 justify-start">
-                        <div className="flex items-center">
-                            <Eye className="w-4 h-4 block align-middle mr-1" />
-                            <p className="views">Lượt xem:</p>
+                        <div className="grid grid-cols-3 justify-start">
+                            <Link to={"/"} className="title text-blue-500 hover:underline">{DemoData[0].title}</Link>
+                            <div className="ranking col-span-2">Xếp hạng: 4/5 - 782 Lượt đánh giá.</div>
                         </div>
-                        <div className="views font-semibold col-span-2">{DemoData[0].views}</div>
-                    </div>
-                    <div className="grid grid-cols-3 justify-start">
-                        <Link to={"/"} className="title text-blue-500 hover:underline">{DemoData[0].title}</Link>
-                        <div className="ranking col-span-2">Xếp hạng: 4/5 - 782 Lượt đánh giá.</div>
-                    </div>
-                    <div className="grid grid-cols-3 justify-start py-2">
-                        <p className="rating">Đánh giá:</p>
-                        <div className="col-span-2 items-center flex">
-                            <Star className="w-4 h-4 block align-middle mr-2" />
-                            <Star className="w-4 h-4 block align-middle mr-2" />
-                            <Star className="w-4 h-4 block align-middle mr-2" />
-                            <Star className="w-4 h-4 block align-middle mr-2" />
-                            <Star className="w-4 h-4 block align-middle mr-2" />
+                        <div className="grid grid-cols-3 justify-start py-2">
+                            <p className="rating">Đánh giá:</p>
+                            <div className="col-span-2 items-center flex">
+                                <Star className="w-4 h-4 block align-middle mr-2" />
+                                <Star className="w-4 h-4 block align-middle mr-2" />
+                                <Star className="w-4 h-4 block align-middle mr-2" />
+                                <Star className="w-4 h-4 block align-middle mr-2" />
+                                <Star className="w-4 h-4 block align-middle mr-2" />
+                            </div>
                         </div>
-                    </div>
-                    <div className="follower flex items-center">
-                        <p className="font-normal"><span className="font-semibold">{DemoData[0].follower}</span> Người theo dõi</p>
-                    </div>
-                    <div className="chapter flex items-center gap-2">
-                        <Button>
-                            <Link to={"/truyen"}>Đọc từ đầu</Link>
-                        </Button>
-                        <Button>
-                            <Link to={"/truyen"}>Đọc mới nhất</Link>
-                        </Button>
+                        <div className="follower flex items-center">
+                            <p className="font-normal"><span className="font-semibold">{DemoData[0].follower}</span> Người theo dõi</p>
+                        </div>
+                        <div className="chapter flex items-center gap-2">
+                            <Button>
+                                <Link to={"/truyen"}>Đọc từ đầu</Link>
+                            </Button>
+                            <Button>
+                                <Link to={"/truyen"}>Đọc mới nhất</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
                 <div className="content pt-4 md:col-span-12">
