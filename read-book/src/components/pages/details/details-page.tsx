@@ -1,6 +1,6 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Eye, Star, Tags, TrendingUp, User, File, AlignJustify } from "lucide-react";
+import { ChevronRight, Eye, Star, Tags, TrendingUp, User, File, AlignJustify, ThumbsUp, Reply, Flag } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
     Table,
@@ -16,14 +16,20 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
-import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Input } from "@/components/ui/input"
 import {
     Avatar,
     AvatarFallback,
     AvatarImage,
 } from "@/components/ui/avatar"
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 
 interface Categories {
     name: string,
@@ -393,62 +399,79 @@ const Details = () => {
                         </TabsContent>
                     </Tabs>
                 </div>
-                <div className="comment pt-4 md:w-full md:col-span-full">
-                    <div className="grid w-full gap-1.5">
-                        <div className="col-span-2">
-                            <Label htmlFor="message" className="italic">Nhập bình luận của bạn ở đây:</Label>
-                            <Textarea
-                                placeholder="Mời bạn thảo luận, vui lòng không spam, share link kiếm tiền, thiếu lành mạnh,... để tránh bị khóa tài khoản."
-                                id="message" />
+                <div className="comment pt-4 md:w-full md:col-span-full space-y-4">
+                    <div className="selector flex items-center justify-between">
+                        <div className="total-comment">
+                            <p className="text-base font-semibold">61 bình luận</p>
                         </div>
-                        <div className="col-span-1 space-y-2">
-                            <Input type="email" placeholder="Email" />
-                            <Input type="text" placeholder="Tên của bạn" />
+                        <div className="options-newest">
+                            <Select>
+                                <SelectTrigger className="w-[180px]">
+                                    <SelectValue placeholder="Chọn hiển thị" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectGroup>
+                                        <SelectItem value="newest">Mới nhất</SelectItem>
+                                        <SelectItem value="likes">Lượt thích</SelectItem>
+                                        <SelectItem value="olders">Cũ nhất</SelectItem>
+                                    </SelectGroup>
+                                </SelectContent>
+                            </Select>
                         </div>
-                        <Button className="">Gửi tin nhắn</Button>
                     </div>
-                    <div className="user-comment pt-4 md:max-w-2xl">
-                        <div className="grid grid-cols-5 pb-4">
-                            <div className="grid-cols-1">
+                    <div className="space-y-4 md:max-w-2xl">
+                        <div className="flex items-center gap-4 w-full">
+                            <div className="avatar">
                                 <Avatar>
                                     <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
                                     <AvatarFallback>CN</AvatarFallback>
                                 </Avatar>
                             </div>
-                            <div className="col-span-4 border border-solid border-black/50 rounded-md p-4">
-                                <div className="info items-center">
-                                    <div className="flex items-center justify-between text-sm">
-                                        <p className="cursor-pointer text-blue-500 font-semibold text-base">tên người dùng 1</p>
-                                        <p className="cursor-pointer text-blue-400 italic">Chapter 55</p>
-                                    </div>
-                                </div>
-                                <div className="divider border-t border-solid border-black/50 my-4"></div>
-                                <div className="content items-center">
-                                    <p>truyện hay, đỉnh cao, đúng là một trong những truyện đỉnh cmnr.</p>
-                                </div>
+                            <div className="comment-input w-full">
+                                <Textarea placeholder="Bình luận của bạn." className="p-4" />
                             </div>
                         </div>
-                        <div className="grid grid-cols-5 pb-4">
-                            <div className="grid-cols-1">
-                                <Avatar>
-                                    <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                                    <AvatarFallback>CN</AvatarFallback>
-                                </Avatar>
-                            </div>
-                            <div className="col-span-4 border border-solid border-black/50 rounded-md p-4">
-                                <div className="info items-center">
-                                    <div className="flex items-center justify-between text-sm">
-                                        <p className="cursor-pointer text-blue-500 font-semibold text-base">tên người dùng 1</p>
-                                        <p className="cursor-pointer text-blue-400 italic">Chapter 55</p>
+                        <div className="space-y-3">
+                            <div className="w-full flex items-center">
+                                <div className="avatar mr-4">
+                                    <Avatar>
+                                        <AvatarImage src="https://static.cdnno.com/user/aba6a10dd0cb18f6a20416a188702d6c/100.jpg?1699124991" alt="Avatar cover" />
+                                        <AvatarFallback>CN</AvatarFallback>
+                                    </Avatar>
+                                </div>
+                                <div className="info">
+                                    <div className="name">
+                                        <p className="font-semibold text-base cursor-pointer">Nguyễn Văn A</p>
+                                    </div>
+                                    <div className="last-comment flex items-center gap-4">
+                                        <p className="text-xs text-black/55 cursor-pointer">14 ngày trước</p>
+                                        <p className="text-xs text-black/55 cursor-pointer">Chương 73</p>
                                     </div>
                                 </div>
-                                <div className="divider border-t border-solid border-black/50 my-4"></div>
-                                <div className="content items-center">
-                                    <p>truyện hay, đỉnh cao, đúng là một trong những truyện đỉnh cmnr.</p>
+                            </div>
+                            <div className="comment-content w-full">
+                                <p className="font-normal text-base">truyện như 2 hòn dái tao</p>
+                            </div>
+                            <div className="feature-button">
+                                <div className="w-full flex items-center justify-between">
+                                    <div className="likes-reply flex items-center gap-8">
+                                        <div className="likes flex items-center gap-2">
+                                            <ThumbsUp className="w-4 h-4 block align-middle" />
+                                            <p>0</p>
+                                        </div>
+                                        <div className="reply flex items-center gap-2">
+                                            <Reply className="w-4 h-4 block align-middle" />
+                                            <p>0</p>
+                                        </div>
+                                    </div>
+                                    <div className="report flex items-center gap-2">
+                                        <Flag className="w-4 h-4 block align-middle" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div className="divider border-t border-solid border-black/25"></div>
                 </div>
             </div>
         </div>
