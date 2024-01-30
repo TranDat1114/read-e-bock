@@ -18,8 +18,8 @@ const Footer = () => {
                 <ul className="sm:flex list-none">
                     <li className="mb-1"><Link className="sm:w-3/12 px-3  hover:text-yellow-600" to={"/dieu-khoan"}>Điều khoản dịch vụ</Link></li>
                     <li className="mb-1"><Link className="sm:w-3/12 px-3  hover:text-yellow-600" to={"/bao-mat"}>Chính sách bảo mật</Link></li>
-                    <li className="mb-1"><a className="sm:w-3/12 px-3  hover:text-yellow-600" href="#">Về bản quyền</a></li>
-                    <li className="mb-1"><a className="sm:w-3/12 px-3  hover:text-yellow-600" href="#">Hướng dẫn sử dụng</a></li>
+                    <li className="mb-1"><Link className="sm:w-3/12 px-3  hover:text-yellow-600" to={"/ban-quyen"}>Về bản quyền</Link></li>
+                    <li className="mb-1"><Link className="sm:w-3/12 px-3  hover:text-yellow-600" to={"/hoi-dap"}>Hướng dẫn sử dụng</Link></li>
                 </ul>
                 </div>
                 
