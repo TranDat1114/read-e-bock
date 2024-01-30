@@ -12,6 +12,7 @@ import ReadBook from './components/pages/read/read-book';
 import ProfilePage from './components/pages/profile/profile-page';
 import SaveBooks from './components/pages/book-saves/book-save';
 import SettingsPage from './components/pages/settings/settings-page';
+import DieuKhoan from './components/pages/dieukhoan/dieukhoan-page';
 function App() {
 
   return (
@@ -28,8 +29,9 @@ function App() {
             <Route path="/truyen-tranh" element={<Details />} />
             <Route path='/truyen' element={<ReadBook />} />
             <Route path='/trang-ca-nhan' element={<ProfilePage />} />
-            <Route path='/archive' element={<SaveBooks />} />
+            <Route path='/luu-tru' element={<SaveBooks />} />
             <Route path='/cai-dat' element={<SettingsPage />} />
+            <Route path='/dieu-khoan' element={<DieuKhoan />} />
             <Route
               path="*"
               element={
