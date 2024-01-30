@@ -27,7 +27,6 @@ import {
     NavigationMenu,
     NavigationMenuContent,
     NavigationMenuItem,
-    NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
@@ -145,17 +144,18 @@ const Header = () => {
     const [hide, setHide] = useState(true); // state variable to store the navbar visibility
     const [lastScrollY, setLastScrollY] = useState(0); // state variable to store the previous scroll position
 
-    const controlNavbar = () => {
-        if (window.scrollY > lastScrollY) { // if scroll down, hide the navbar
-            setHide(false);
-        } else { // if scroll up, show the navbar
-            setHide(true);
-        }
-        // remember the current scroll position for the next move
-        setLastScrollY(window.scrollY);
-    };
+
 
     useEffect(() => {
+        const controlNavbar = () => {
+            if (window.scrollY > lastScrollY) { // if scroll down, hide the navbar
+                setHide(false);
+            } else { // if scroll up, show the navbar
+                setHide(true);
+            }
+            // remember the current scroll position for the next move
+            setLastScrollY(window.scrollY);
+        };
         window.addEventListener('scroll', controlNavbar); // add the scroll event listener
         // cleanup function
         return () => {
@@ -292,11 +292,11 @@ const Header = () => {
                                             {
                                                 categoriesItem.map((item, index) => (
                                                     <Link to={item.link} title={item.name} key={index} className={`${navigationMenuTriggerStyle()}`}>
-                                                            <div className='flex flex-col justify-center items-start'>
-                                                                <p className='text-nowrap hover:text-blue-500'>
-                                                                    {item.name}
-                                                                </p>
-                                                            </div>
+                                                        <div className='flex flex-col justify-center items-start'>
+                                                            <p className='text-nowrap hover:text-blue-500'>
+                                                                {item.name}
+                                                            </p>
+                                                        </div>
                                                     </Link>
                                                 ))
                                             }
@@ -314,12 +314,12 @@ const Header = () => {
                                             {
                                                 navbarRanksItem.map((item, index) => (
                                                     <Link to={item.link} title={item.name} key={index} className={`${navigationMenuTriggerStyle()}`} >
-                                                            <div className='flex flex-col justify-center items-start'>
-                                                                <p className='text-nowrap hover:text-blue-500 '>
-                                                                    {item.name}
-                                                                </p>
-                                                            </div>
-                                                       
+                                                        <div className='flex flex-col justify-center items-start'>
+                                                            <p className='text-nowrap hover:text-blue-500 '>
+                                                                {item.name}
+                                                            </p>
+                                                        </div>
+
 
                                                     </Link>
                                                 ))
@@ -329,7 +329,7 @@ const Header = () => {
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <Link to="/news" className={`whitespace-nowrap font-medium text-sm ${navigationMenuTriggerStyle()}`} >
-                                            Truyện mới
+                                        Truyện mới
                                     </Link>
                                 </NavigationMenuItem>
                             </NavigationMenuList>
