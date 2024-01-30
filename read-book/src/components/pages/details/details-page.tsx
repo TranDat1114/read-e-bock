@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Eye, Star, Tags, TrendingUp, User, File, AlignJustify, ThumbsUp, Reply, Flag, Search, Newspaper } from "lucide-react";
+import { ChevronRight, Star, File, AlignJustify, ThumbsUp, Reply, Flag, Search, Newspaper } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
     Table,
