@@ -27,9 +27,12 @@ import {
     NavigationMenu,
     NavigationMenuContent,
     NavigationMenuItem,
+    NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
+import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
+
 import {
     Card,
     CardContent,
@@ -285,15 +288,15 @@ const Header = () => {
                                         </Link>
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
-                                        <div className="grid gap-3 p-4  md:w-[400px] grid-cols-1 md:grid-cols-2">
+                                        <div className="flex gap-3 p-4 md:w-[350px] flex-wrap">
                                             {
                                                 categoriesItem.map((item, index) => (
-                                                    <Link to={item.link} title={item.name} key={index}>
-                                                        <div className='flex flex-col justify-center items-start'>
-                                                            <p className=' '>
-                                                                {item.name}
-                                                            </p>
-                                                        </div>
+                                                    <Link to={item.link} title={item.name} key={index} className={`${navigationMenuTriggerStyle()}`}>
+                                                            <div className='flex flex-col justify-center items-start'>
+                                                                <p className='text-nowrap hover:text-blue-500'>
+                                                                    {item.name}
+                                                                </p>
+                                                            </div>
                                                     </Link>
                                                 ))
                                             }
@@ -307,16 +310,17 @@ const Header = () => {
                                         </Link>
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
-                                        <div className="grid gap-3 p-4 md:w-[300px] grid-cols-1 md:grid-cols-2">
-
+                                        <div className="flex gap-3 p-4 md:w-[350px] flex-wrap">
                                             {
                                                 navbarRanksItem.map((item, index) => (
-                                                    <Link to={item.link} title={item.name} key={index}>
-                                                        <div className='flex flex-col justify-center items-start'>
-                                                            <p className=' '>
-                                                                {item.name}
-                                                            </p>
-                                                        </div>
+                                                    <Link to={item.link} title={item.name} key={index} className={`${navigationMenuTriggerStyle()}`} >
+                                                            <div className='flex flex-col justify-center items-start'>
+                                                                <p className='text-nowrap hover:text-blue-500 '>
+                                                                    {item.name}
+                                                                </p>
+                                                            </div>
+                                                       
+
                                                     </Link>
                                                 ))
                                             }
@@ -324,8 +328,8 @@ const Header = () => {
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <Link to="/news" className='whitespace-nowrap font-medium text-sm' >
-                                        Truyện mới
+                                    <Link to="/news" className={`whitespace-nowrap font-medium text-sm ${navigationMenuTriggerStyle()}`} >
+                                            Truyện mới
                                     </Link>
                                 </NavigationMenuItem>
                             </NavigationMenuList>

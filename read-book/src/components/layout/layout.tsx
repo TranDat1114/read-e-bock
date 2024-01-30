@@ -38,8 +38,8 @@ const Layout = ({ children }: LayoutProps) => {
                         : <></>
 
                 }
-                <main className="md:container my-12 min-h-dvh ">
-                    <Card className="p-4">
+                <main className="md:container my-8 min-h-dvh ">
+                    <Card className="p-6 shadow-lg">
                         {children}
                     </Card>
                 </main>
