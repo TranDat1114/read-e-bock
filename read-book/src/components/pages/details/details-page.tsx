@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Eye, Star, Tags, TrendingUp, User, File, AlignJustify, ThumbsUp, Reply, Flag } from "lucide-react";
+import { ChevronRight, Star, File, AlignJustify, ThumbsUp, Reply, Flag, Search, Newspaper } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
     Table,
@@ -172,7 +172,7 @@ const Details = () => {
                 </div>
             </div>
             <div className="flex flex-col items-center justify-center">
-                <div className="title uppercase text-2xl font-normal font-sans">{DemoData[0].title}</div>
+                <div className="title uppercase text-2xl font-semibold font-sans">{DemoData[0].title}</div>
                 <div className="update text-sm italic font-normal font-sans">Cập nhật lúc: 2024-01-08 01:05:15</div>
             </div>
             <div className="flex flex-col space-y-4 md:grid md:grid-cols-12">
@@ -185,26 +185,17 @@ const Details = () => {
                 </div>
                 <div className="detail flex flex-col space-y-2 md:col-span-9 md:ml-16">
                     <div className="space-y-4">
-                        <div className="grid grid-cols-3 justify-start">
+                        <div className="grid grid-cols-3 justify-start md:grid-cols-5">
                             <div className="flex items-center">
-                                <User className="w-4 h-4 block align-middle mr-1" />
                                 <p className="author">Tác giả: </p>
                             </div>
-                            <Link to={"/"} className="author font-semibold hover:underline">{DemoData[0].author}</Link>
+                            <Link to={"/"} className="author font-semibold hover:underline italic md:col-span-4">{DemoData[0].author}</Link>
                         </div>
-                        <div className="grid grid-cols-3 justify-start">
-                            <div className="flex items-center">
-                                <TrendingUp className="w-4 h-4 block align-middle mr-1" />
-                                <p className="status">Tình trạng:</p>
-                            </div>
-                            <Link to={"/"} className="status font-semibold hover:underline">{DemoData[0].status}</Link>
-                        </div>
-                        <div className="grid grid-cols-3 justify-start">
+                        <div className="grid grid-cols-3 justify-start md:grid-cols-5">
                             <div className="flex items-start">
-                                <Tags className="w-4 h-4 block align-middle mr-1 translate-y-1" />
                                 <p className="categories">Thể loại:</p>
                             </div>
-                            <div className="categories col-span-2 flex gap-2 w-full flex-wrap">
+                            <div className="categories col-span-2 flex gap-2 w-full flex-wrap md:col-span-4 italic">
                                 {DemoData[0].categories?.map((category, index) => (
                                     <Link to={"/"} key={index} className="category text-blue-500 hover:underline font-semibold font-sans">
                                         {category.name}
@@ -215,35 +206,43 @@ const Details = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className="grid grid-cols-3 justify-start">
+                        <div className="grid grid-cols-3 justify-start md:grid-cols-5">
                             <div className="flex items-center">
-                                <Eye className="w-4 h-4 block align-middle mr-1" />
+                                <p className="status">Trạng thái:</p>
+                            </div>
+                            <Link to={"/"} className="status font-semibold text-red-500/75 hover:underline italic md:col-span-4">{DemoData[0].status}</Link>
+                        </div>
+
+                        <div className="grid grid-cols-3 justify-start md:grid-cols-5">
+                            <div className="flex items-center">
                                 <p className="views">Lượt xem:</p>
                             </div>
-                            <div className="views font-semibold col-span-2">{DemoData[0].views}</div>
+                            <div className="views font-semibold col-span-2 italic md:col-span-4">{DemoData[0].views} lượt xem</div>
                         </div>
-                        <div className="grid grid-cols-3 justify-start">
-                            <Link to={"/"} className="title text-blue-500 hover:underline">{DemoData[0].title}</Link>
-                            <div className="ranking col-span-2">Xếp hạng: 4/5 - 782 Lượt đánh giá.</div>
+                        <div className="grid grid-cols-3 justify-start md:grid-cols-5">
+                            <div className="flex items-start">
+                                <p className="status">Lưu trữ:</p>
+                            </div>
+                            <p className="status font-semibold col-span-2 italic md:col-span-4">{DemoData[0].follower} người lưu trữ</p>
                         </div>
-                        <div className="grid grid-cols-3 justify-start py-2">
+                        <div className="grid grid-cols-3 justify-start md:grid-cols-5">
                             <p className="rating">Đánh giá:</p>
-                            <div className="col-span-2 items-center flex">
+                            <div className="col-span-2 items-center flex flex-wrap md:col-span-4">
                                 <Star className="w-4 h-4 block align-middle mr-2" />
                                 <Star className="w-4 h-4 block align-middle mr-2" />
                                 <Star className="w-4 h-4 block align-middle mr-2" />
                                 <Star className="w-4 h-4 block align-middle mr-2" />
                                 <Star className="w-4 h-4 block align-middle mr-2" />
+                                <p className="ranking font-semibold">4.96/5<span className="text-black/55 font-normal italic"> (782 đánh giá)</span></p>
                             </div>
                         </div>
-                        <div className="follower flex items-center">
-                            <p className="font-normal"><span className="font-semibold">{DemoData[0].follower}</span> Người theo dõi</p>
-                        </div>
                         <div className="chapter flex items-center gap-2">
-                            <Button>
-                                <Link to={"/truyen"}>Đọc từ đầu</Link>
+                            <Button variant="secondary" className="gap-2">
+                                <Search className="w-4 h-4 block align-middle" />
+                                <Link to={"/truyen"}>Đọc truyện</Link>
                             </Button>
-                            <Button>
+                            <Button className="gap-2">
+                                <Newspaper className="w-4 h-4 block align-middle"/>
                                 <Link to={"/truyen"}>Đọc mới nhất</Link>
                             </Button>
                         </div>

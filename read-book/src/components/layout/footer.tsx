@@ -34,8 +34,8 @@ const Footer = () => {
                     LOGO là nền tảng mở trực tuyến, miễn phí đọc truyện chữ được convert hoặc dịch kỹ lưỡng, do các converter và dịch giả đóng góp, rất nhiều truyện hay và nổi bật được cập nhật nhanh nhất với đủ các thể loại tiên hiệp, kiếm hiệp, huyền ảo ...
                 </div>
                 <div className="flex justify-center gap-4 my-8">
-                    <a href="#"><img src="https://metruyencv.info/assets/images/app-store.png?40124" className="w-24" /></a>
-                    <a href="#"><img src="https://metruyencv.info/assets/images/google-play.png?40124" className="w-24" /></a>
+                    <a href="#"><img src="https://metruyencv.info/assets/images/app-store.png?40124" alt="App Store" className="w-24" /></a>
+                    <a href="#"><img src="https://metruyencv.info/assets/images/google-play.png?40124" alt="Google Play" className="w-24" /></a>
                 </div>
                 <div className="flex justify-center">
                     <ul className="sm:flex list-none">
