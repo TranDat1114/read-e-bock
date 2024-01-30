@@ -17,7 +17,7 @@ const DieuKhoan = () => {
                     <p className="font-bold">
                         Quy định này gồm 2 bên:
                     </p>
-                    <ul className="list-disc ml-20">
+                    <ul className="list-disc ml-12 md:ml-20">
                         <li>
                             <p><span className="font-bold">[Tên website]</span> cung cấp dịch vụ trên internet.</p>
                         </li>
@@ -28,7 +28,7 @@ const DieuKhoan = () => {
                 </div>
                 <div className="content space-y-4">
                     <p className="font-bold">Nội dung:</p>
-                    <ul className="list-decimal ml-20">
+                    <ul className="list-decimal ml-12 md:ml-20">
                         <li>
                             <p>
                                 Không được có những từ ngữ gay gắt, đả kích, xúc phạm, bêu xấu cá nhân và tổ chức trên <span className="font-bold">[Tên website]</span>.
