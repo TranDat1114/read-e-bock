@@ -1,4 +1,3 @@
-"use client";
 
 import { AlignJustify, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';

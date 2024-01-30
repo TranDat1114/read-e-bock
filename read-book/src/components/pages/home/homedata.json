@@ -1,5 +1,248 @@
 {
-    "categories": [
+    "newChapter": [
+        {
+            "name": "Tối Cường Phản Sáo Lộ Hệ Thống",
+            "link": "http://truyenyy.com/truyen/toi-cuong-phan-sao-lo-he-thong/",
+            "lastest": 12,
+            "categories": [
+                {
+                    "name": "Đô Thị"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "time": "2 phút trước"
+        },
+        {
+            "name": "Đô Thị Tối Cường Phản Sáo Lộ Hệ Thống",
+            "link": "http://truyenyy.com/truyen/do-thi-toi-cuong-phan-sao-lo-he-thong/",
+            "lastest": 146,
+            "categories": [
+                {
+                    "name": "Đô Thị"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "time": "2 phút trước"
+        },
+        {
+            "name": "Bách Hợp",
+            "link": "http://truyenyy.com/truyen/bach-hop/",
+            "lastest": 122,
+            "categories": [
+                {
+                    "name": "Bách Hợp"
+                },
+                {
+                    "name": "Đam Mỹ"
+                }
+            ],
+            "time": "5 phút trước"
+        },
+        {
+            "name": "Đam Mỹ",
+            "link": "http://truyenyy.com/truyen/dam-my/",
+            "lastest": 126,
+            "categories": [
+                {
+                    "name": "Đam Mỹ"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "time": "5 phút trước"
+        },
+        {
+            "name": "Đô Thị",
+            "link": "http://truyenyy.com/truyen/do-thi/",
+            "lastest": 11,
+            "categories": [
+                {
+                    "name": "Đô Thị"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "time": "5 phút trước"
+        },
+        {
+            "name": "Dị Giới",
+            "link": "http://truyenyy.com/truyen/di-gioi/",
+            "lastest": 111,
+            "categories": [
+                {
+                    "name": "Dị Giới"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "time": "8 phút trước"
+        },
+        {
+            "name": "Đồng Nhân",
+            "link": "http://truyenyy.com/truyen/dong-nhan/",
+            "lastest": 1117,
+            "categories": [
+                {
+                    "name": "Đồng Nhân"
+                },
+                {
+                    "name": "Đam Mỹ"
+                }
+            ],
+            "time": "8 phút trước"
+        },
+        {
+            "name": "Hài Hước",
+            "link": "http://truyenyy.com/truyen/hai-huoc/",
+            "lastest": 109,
+            "categories": [
+                {
+                    "name": "Hài Hước"
+                },
+                {
+                    "name": "Đam Mỹ"
+                }
+            ],
+            "time": "8 phút trước"
+        },
+        {
+            "name": "Huyền Huyễn",
+            "link": "http://truyenyy.com/truyen/huyen-huyen/",
+            "lastest": 90,
+            "categories": [
+                {
+                    "name": "Huyền Huyễn"
+                },
+                {
+                    "name": "Dị Giới"
+                }
+            ],
+            "time": "8 phút trước"
+        },
+        {
+            "name": "Kiếm Hiệp",
+            "link": "http://truyenyy.com/truyen/kiem-hiep/",
+            "lastest": 66,
+            "categories": [
+                {
+                    "name": "Kiếm Hiệp"
+                },
+                {
+                    "name": "Tiên Hiệp"
+                }
+            ],
+            "time": "12 phút trước"
+        },
+        {
+            "name": "Linh Dị",
+            "link": "http://truyenyy.com/truyen/linh-di/",
+            "lastest": 23,
+            "categories": [
+                {
+                    "name": "Linh Dị"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "time": "12 phút trước"
+        },
+        {
+            "name": "Ngôn Tình",
+            "link": "http://truyenyy.com/truyen/ngon-tinh/",
+            "lastest": 101,
+            "categories": [
+                {
+                    "name": "Ngôn Tình"
+                },
+                {
+                    "name": "Đô Thị"
+                }
+            ],
+            "time": "16 phút trước"
+        },
+        {
+            "name": "Quan Trường",
+            "link": "http://truyenyy.com/truyen/quan-truong/",
+            "lastest": 10,
+            "categories": [
+                {
+                    "name": "Quan Trường"
+                },
+                {
+                    "name": "Đam Mỹ"
+                }
+            ],
+            "time": "16 phút trước"
+        },
+        {
+            "name": "Độc cô cầu bại",
+            "link": "http://truyenyy.com/truyen/doc-co-cau-bai/",
+            "lastest": 1011,
+            "categories": [
+                {
+                    "name": "Đam Mỹ"
+                },
+                {
+                    "name": "Đô Thị"
+                }
+            ],
+            "time": "20 phút trước"
+        },
+        {
+            "name": "Thế giới cổ đại",
+            "link": "http://truyenyy.com/truyen/the-gioi-co-dai/",
+            "lastest": 1011,
+            "categories": [
+                {
+                    "name": "Đam Mỹ"
+                },
+                {
+                    "name": "Đô Thị"
+                }
+            ],
+            "time": "20 phút trước"
+        },
+        {
+            "name": "Thế giới hiện đại",
+            "link": "http://truyenyy.com/truyen/the-gioi-hien-dai/",
+            "lastest": 1011,
+            "categories": [
+                {
+                    "name": "Đam Mỹ"
+                },
+                {
+                    "name": "Đô Thị"
+                }
+            ],
+            "time": "20 phút trước"
+        },
+        {
+            "name": "Thế giới tương lai",
+            "link": "http://truyenyy.com/truyen/the-gioi-tuong-lai/",
+            "lastest": 1011,
+            "categories": [
+                {
+                    "name": "Đam Mỹ"
+                },
+                {
+                    "name": "Đô Thị"
+                }
+            ],
+            "time": "20 phút trước"
+        }
+    ],
+    "category": [
+        {
+            "name": "Tất cả"
+        },
         {
             "name": "Tiên Hiệp"
         },

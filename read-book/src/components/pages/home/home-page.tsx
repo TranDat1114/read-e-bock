@@ -35,6 +35,8 @@ import { EmblaOptionsType } from 'embla-carousel'
 import imageByIndex from "./imageByIndex"
 import { Button } from "@/components/ui/button"
 import React from "react"
+
+import homeData from "./homeData.json"
 interface Data {
     title: string,
     describe: string,
@@ -51,122 +53,15 @@ interface Data {
 interface categories {
     name: string
 }
+interface newChapter {
+    name: string,
+    link: string,
+    lastest: number,
+    categories: categories[],
+    time: string,
+}
 
-const categories: categories[] = [
-    {
-        name: "Tiên Hiệp"
-    }, {
-        name: "Kiếm Hiệp"
-    },
-    {
-        name: "Ngôn Tình"
-    }
-    , {
-        name: "Đô Thị"
-    }
-    , {
-        name: "Quan Trường"
-    }
-    , {
-        name: "Võng Du"
-    }
-    , {
-        name: "Khoa Huyễn"
-    }
-    , {
-        name: "Huyền huyễn"
-    }
-    , {
-        name: "Dị Giới"
-    }
-    , {
-        name: "Dị Năng"
-    }
-    , {
-        name: "Quân Sự"
-    }
-    , {
-        name: "Lịch Sử"
-    }
-    , {
-        name: "Xuyên Không"
-    }
-    , {
-        name: "Trọng Sinh"
-    }
-    , {
-        name: "Trinh Thám"
-    }
-    , {
-        name: "Thám Hiểm"
-    }
-    , {
-        name: "Linh Dị"
-    }
-    , {
-        name: "Truyện Sắc"
-    }
-    , {
-        name: "Truyện Ngược"
-    }
-    , {
-        name: "Truyện Sủng"
-    }
-    , {
-        name: "Truyện Cung Đấu"
-    }
-    , {
-        name: "Truyện Nữ Cường"
-    }
-    , {
-        name: "Truyện Gia Đấu"
-    }
-    , {
-        name: "Đông Phương"
-    }
-    , {
-        name: "Đam Mỹ"
-    }
-    , {
-        name: "Bách Hợp"
-    }
-    , {
-        name: "Hài Hước"
-    }
-    , {
-        name: "Điền Văn"
-    }
-    , {
-        name: "Cổ Đại"
-    }
-    , {
-        name: "Mạt Thế"
-    }
-    , {
-        name: "Truyện Teen"
-    }
-    , {
-        name: "Phương Tây"
-    }
-    , {
-        name: "Nữ Phụ"
-    }
-    , {
-        name: "Light Novel"
-    }
-    , {
-        name: "Việt Nam"
-    }
-    , {
-        name: "Đoản Văn"
-    }
-    , {
-        name: "Truyện Khác"
-    }
-    , {
-        name: "Truyện Convert"
-    }
-]
+
 const DemoData: Data[] = [
     {
         title: "The Lord of the Rings",
@@ -239,16 +134,26 @@ const HomePage = () => {
     const SLIDE_COUNT = 5
     const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
-    // const [newChapterByCategory, setNewChapterByCategory] = React.useState<string[]>([])
+    const newChapter: newChapter[] = homeData.newChapter;
+    const [newChapterData, setNewChapterData] = React.useState<newChapter[]>(newChapter);
 
+    const filterNewChapter = (category: string) => {
+        if (category === "Tất cả") {
+            setNewChapterData(newChapter);
+        } else {
+            setNewChapterData(newChapter.filter(p => p.categories.find(c => c.name === category) != null));
+        }
+    }
+
+
+    const categories: categories[] = homeData.category;
     return (
         <div className="flex flex-col gap-y-16">
-            <Card className="py-4 px-2 lg:px-6  m-2">
+            <Card className="p-2 lg:px-6 ">
                 <div id="section-1" className="flex flex-col gap-4  w-full">
                     <div className="flex flex-col md:flex-row justify-between w-full my-4">
                         <p className="font-bold text-base">Biên tập viên đề cử</p>
                     </div>
-
                     <div className="grid grid-cols-2 lg:grid-cols-6 gap-4 w-full items-start justify-between">
                         {
                             DemoData.slice(0, 6).map((data, index) =>
@@ -299,7 +204,6 @@ const HomePage = () => {
                                 </TooltipProvider>
                             ))
                         }
-
                     </div>
                     <div className="w-full flex justify-end">
                         <Button variant={"link"}>
@@ -307,52 +211,75 @@ const HomePage = () => {
                         </Button>
                     </div>
                 </div>
-
             </Card>
-            <Card className="py-4 px-2 lg:px-6 m-2">
-                <div id="section-new-chapter" className="grid grid-cols-1 md:grid-cols-12 gap-4">
-                    <div className="md:col-span-9">
-                        <div className="flex flex-col md:flex-row justify-between w-full my-4">
-                            <p className="font-bold text-base">Chương mới cập nhật</p>
-                        </div>
-                        <div>
-                            <table className="table-auto w-full">
-                                {/* <thead >
-                                    <tr>
-                                        <th className="text-xs md:text-sm ">Tên truyện</th>
-                                        <th className="text-xs md:text-sm  hidden md:block">Thể loại</th>
-                                        <th className="text-xs md:text-sm ">Chương</th>
-                                        <th className="text-xs md:text-sm ">Thời gian</th>
-                                    </tr>
-                                </thead> */}
-                                <tbody>
-                                    {Array.from({ length: 20 }).map((_, index) => (
-                                        <tr key={index} >
-                                            <td className="text-xs md:text-sm  font-bold">Tôn Đế Chí Cao Vô Thượng</td>
-                                            <td className="text-xs md:text-sm  hidden md:block">Trọng Sinh, Tiên Hiệp</td>
-                                            <td className="text-xs md:text-sm "><Link to={"/tatca"}><Button variant={"link"}>1408</Button></Link></td>
-                                            <td className="text-xs md:text-sm ">2 phút trước</td>
+            <div id="section-new-chapter" className="grid grid-cols-1 md:grid-cols-12 gap-4">
+                <div className="md:col-span-9">
+                    <Card>
+                        <CardContent>
+                            <div className="flex flex-col md:flex-row justify-between w-full mt-4">
+                                <p className="font-bold text-base">Chương mới cập nhật</p>
+                            </div>
+                            <div>
+                                <table className="table-fixed w-full border-spacing-x-2">
+                                    <thead>
+                                        <tr className="w-full grid grid-cols-3 md:grid-cols-5 my-4 border-collapse border border-slate-200 p-2 py-4 rounded-md items-center">
+                                            <th className="text-sm col-span-2 text-start font-bold">Tên truyện</th>
+                                            <th className="text-sm md:text-sm  hidden md:block text-start font-bold">Thể loại</th>
+                                            <th className="text-sm text-start font-bold">Chương</th>
+                                            <th className="text-sm md:text-sm hidden md:block text-start font-bold">Thời gian</th>
                                         </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div id="section-categories" className="md:col-span-3">
-                        <div className="flex flex-col md:flex-row justify-between w-full my-4">
-                            <p className="font-bold text-base">Thể loại truyện</p>
-                        </div>
-                        <div className="flex flex-wrap gap-4 w-full">
-                            {categories.map((data, index) =>
-                            (
-                                <Button key={index} variant={"outline"}>
-                                    <Link to={"/"} className="text-xs">{data.name}</Link>
+                                    </thead>
+                                    <tbody>
+                                        {newChapterData.slice(0, 15).map((data, index) => (
+                                            <tr key={index} className="w-full grid grid-cols-3 md:grid-cols-5  border-collapse border border-slate-200 px-2 py-1 items-center rounded-md my-1" >
+                                                <td className="text-sm md:text-sm  font-bold col-span-2">{data.name}</td>
+                                                <td className="text-sm md:text-sm  hidden md:block">{data.categories.slice(0, 2).map((cate, index) => (<span className="hover:text-blue-500" key={index}>{cate.name}{
+                                                    index < data.categories.length - 1 && ", "
+                                                } </span>))}</td>
+                                                <td className="text-sm md:text-sm "><Link to={"/tatca"}><Button variant={"link"} className="text-green-700">Chương {data.lastest}</Button></Link></td>
+                                                <td className="text-sm md:text-sm hidden md:block">{data.time}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </CardContent>
+                        <CardFooter>
+                            <div className="w-full flex justify-end">
+                                <Button variant={"link"}>
+                                    <Link to={"/tatca"}>Xem tất cả</Link>
                                 </Button>
-                            ))}
-                        </div>
-                    </div>
+                            </div>
+                        </CardFooter>
+                    </Card>
                 </div>
-            </Card>
+                <div id="section-categories" className="md:col-span-3">
+                    <Card>
+                        <CardContent>
+                            <div className="flex flex-col md:flex-row justify-between w-full my-4">
+                                <p className="font-bold text-base">Thể loại truyện</p>
+                            </div>
+                            <div className="flex flex-wrap gap-2 w-full items-stretch justify-stretch">
+                                {categories.map((data, index) =>
+                                (
+                                    <Button key={index} variant={"outline"} className="text-green-700" onClick={() => {
+                                        filterNewChapter(data.name);
+                                    }}>
+                                        <p className="text-sm">{data.name}</p>
+                                    </Button>
+                                ))}
+                            </div>
+                        </CardContent>
+                        <CardFooter>
+                            <div className="w-full flex justify-end">
+                                <Button variant={"link"}>
+                                    <Link to={"/tatca"}>Xem tất cả</Link>
+                                </Button>
+                            </div>
+                        </CardFooter>
+                    </Card>
+                </div>
+            </div>
             <div id="section-2" className="flex gap-4 w-full col-span-12 lg:col-span-4">
                 <Tabs defaultValue="mostInWeek" className="w-full">
                     <TabsList className="grid w-full grid-cols-3">
