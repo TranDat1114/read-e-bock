@@ -2,7 +2,7 @@ import Footer from "./footer";
 import Header from "./header";
 
 import { ThemeProvider } from "@/components/theme/theme-provider"
-import { Card } from "@/components/ui/card";
+// import { Card } from "@/components/ui/card";
 import { useLocation } from "react-router-dom";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
 import imageByIndex from "../pages/home/imageByIndex";
@@ -26,7 +26,7 @@ const Layout = ({ children }: LayoutProps) => {
 
     return (
         <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-            <div className='flex flex-col w-full relative'>
+            <div className='flex flex-col w-full relative bg-slate-100'>
                 <Header />
                 {
 
@@ -39,9 +39,7 @@ const Layout = ({ children }: LayoutProps) => {
 
                 }
                 <main className="md:container my-8 min-h-dvh ">
-                    <Card className="p-6 shadow-lg">
                         {children}
-                    </Card>
                 </main>
                 <Footer />
             </div>

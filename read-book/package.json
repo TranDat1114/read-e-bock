@@ -26,6 +26,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@tanstack/react-table": "^8.11.7",
     "@types/node": "^20.10.6",
     "@vitejs/plugin-react": "^4.2.1",
     "class-variance-authority": "^0.7.0",
