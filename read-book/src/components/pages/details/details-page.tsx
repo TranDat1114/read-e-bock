@@ -236,7 +236,7 @@ const Details = ({ className, ...props }: SliderProps) => {
     const fans: Fans = homeData.fans;
     return (
         <div>
-            <div className="mobile space-y-4">
+            <div className="mobile space-y-4 md:hidden">
                 <div className="space-y-4 bg-white pb-8">
                     <div className="books-info mx-4">
                         <div className="pt-10 flex flex-col justify-center items-center gap-4">
@@ -983,7 +983,7 @@ const Details = ({ className, ...props }: SliderProps) => {
                     </Tabs>
                 </div>
             </div>
-            <div className="desktop space-y-4 bg-white p-4 hidden">
+            <div className="desktop space-y-4 bg-white p-4 hidden md:block">
                 <div className="breadcrums pb-2">
                     <div className="flex gap-2 align-middle">
                         <Link to={"/"} className="text-blue-500 hover:underline">Trang chủ</Link>
