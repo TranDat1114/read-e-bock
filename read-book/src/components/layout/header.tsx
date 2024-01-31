@@ -1,5 +1,5 @@
 
-import { AlignJustify, Search } from 'lucide-react';
+import { AlignJustify, ChevronsUpDown, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import {
@@ -76,6 +76,13 @@ import {
 //     DrawerTitle,
 //     DrawerTrigger,
 // } from "@/components/ui/drawer"
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+
+import headerData from './headerData.json';
 
 interface BookData {
     name: string;
@@ -96,7 +103,7 @@ interface navbaritems {
 
 interface categories {
     name: string;
-    link: string;
+    link?: string;
 }
 
 const navbarRanksItem: navbaritems[] = [
@@ -114,28 +121,7 @@ const navbarRanksItem: navbaritems[] = [
     }
 ]
 
-const categoriesItem: categories[] = [
-    {
-        name: 'Truyện kiếm hiệp',
-        link: '/truyen-kiem-hiep'
-    },
-    {
-        name: 'Truyện ngôn tình',
-        link: '/truyen-ngon-tinh'
-    },
-    {
-        name: 'Truyện tiên hiệp',
-        link: '/truyen-tien-hiep'
-    },
-    {
-        name: "Truyện đô thị",
-        link: '/truyen-do-thi'
-    },
-    {
-        name: "Truyện huyền huyễn",
-        link: '/truyen-huyen-huyen'
-    }
-]
+const categoriesItem: categories[] = headerData.category;
 
 const Header = () => {
     const [isLogin, setIsLogin] = useState(false);
@@ -180,8 +166,6 @@ const Header = () => {
             })
         }
     })
-
-
 
     const [openSearchBox, setOpenSearchBox] = React.useState(false)
     const [openLoginBox, setOpenLoginBox] = React.useState(false)
@@ -249,28 +233,78 @@ const Header = () => {
             <div className='lg:container flex justify-between items-center gap-4 h-16 px-2'>
                 <div className="justify-between flex items-center gap-4">
                     <div className='md:hidden'>
-                        <Sheet>
+                        <Sheet >
                             <SheetTrigger >
                                 <AlignJustify className='text-foreground mt-2' />
                             </SheetTrigger>
-                            <SheetContent side={'left'} >
+                            <SheetContent side={'left'} className='h-dvh overflow-y-scroll' >
                                 <SheetHeader>
-                                    <SheetTitle>Thanh điều hướng</SheetTitle>
+                                    <SheetTitle> <h1 className="  text-foreground">LOGO</h1></SheetTitle>
                                     <SheetDescription>
-                                        <div className='flex flex-col w-full gap-4'>
-                                            <Link to="/the-loai" className='whitespace-nowrap'>
-                                                Thể loại
-                                            </Link>
-                                            <Link to={"ranking"}>
-                                                Bảng xếp hạng
-                                            </Link>
-                                            <Link to="/news" >
-                                                <p className='font-bold'>Truyện mới</p>
-                                            </Link>
-                                        </div>
+
                                     </SheetDescription>
                                 </SheetHeader>
+                                <div className='flex flex-col w-full gap-2'>
+                                    <Button variant={'ghost'} className={`text-sm font-semibold ${isLogin ? "hidden" : "block"}`}>Đăng nhập / Đăng ký</Button>
+                                    <hr />
+                                    <div className='min-w-full flex flex-col space-y-3'>
+                                        <Collapsible className='min-w-full'>
+                                            <CollapsibleTrigger asChild>
+                                                <div className='justify-between inline-flex gap-x-4  w-full'>
+                                                    <p className={`whitespace-nowrap font-semibold text-sm ${navigationMenuTriggerStyle()}`}>Thể loại</p>
+                                                    <Button variant="ghost" size="sm" className="">
+                                                        <ChevronsUpDown size={16} />
+                                                        <span className="sr-only">Toggle</span>
+                                                    </Button>
+                                                </div>
+                                            </CollapsibleTrigger>
+                                            <CollapsibleContent className='flex flex-col gap-1 justify-start ml-4'>
+                                                {
+                                                    categoriesItem.map((item, index) => (
+                                                        <Link to={item.link ?? "/"} title={item.name} key={index} className={`${navigationMenuTriggerStyle()}`}>
+                                                            <div className='flex flex-col justify-center items-start'>
+                                                                <p className='text-nowrap hover:text-blue-500 text-start'>
+                                                                    {item.name}
+                                                                </p>
+                                                            </div>
+                                                        </Link>
+                                                    ))
+                                                }
+                                            </CollapsibleContent>
+                                        </Collapsible>
+
+                                        <Collapsible className='min-w-full'>
+                                            <CollapsibleTrigger asChild>
+                                                <div className='justify-between inline-flex gap-x-4 w-full'>
+                                                    <p className={`whitespace-nowrap font-semibold text-sm ${navigationMenuTriggerStyle()}`}>Xếp hạng</p>
+                                                    <Button variant="ghost" size="sm" className="">
+                                                        <ChevronsUpDown size={16} />
+                                                        <span className="sr-only">Toggle</span>
+                                                    </Button>
+                                                </div>
+                                            </CollapsibleTrigger>
+                                            <CollapsibleContent className='flex flex-col gap-1 justify-start ml-4'>
+                                                {
+                                                    navbarRanksItem.map((item, index) => (
+                                                        <Link to={item.link} title={item.name} key={index} className={`${navigationMenuTriggerStyle()}`}>
+                                                            <div className='flex flex-col justify-center items-start'>
+                                                                <p className='text-nowrap hover:text-blue-500 text-start'>
+                                                                    {item.name}
+                                                                </p>
+                                                            </div>
+                                                        </Link>
+                                                    ))
+                                                }
+                                            </CollapsibleContent>
+                                        </Collapsible>
+                                        <Link to="/news" className={`whitespace-nowrap font-semibold text-sm ${navigationMenuTriggerStyle()}`} >
+                                            Truyện mới
+                                        </Link>
+                                    </div>
+
+                                </div>
                             </SheetContent>
+
                         </Sheet>
                     </div>
                     <Link to={"/"}>
@@ -282,15 +316,15 @@ const Header = () => {
                             <NavigationMenuList>
                                 <NavigationMenuItem>
                                     <NavigationMenuTrigger>
-                                        <Link to="/the-loai">
+                                        <p>
                                             Thể loại
-                                        </Link>
+                                        </p>
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
-                                        <div className="flex gap-3 p-4 md:w-[350px] flex-wrap">
+                                        <div className="grid grid-cols-2 gap-3 p-4 w-[400px]">
                                             {
                                                 categoriesItem.map((item, index) => (
-                                                    <Link to={item.link} title={item.name} key={index} className={`${navigationMenuTriggerStyle()}`}>
+                                                    <Link to={item.link ?? "/"} title={item.name} key={index} className={`${navigationMenuTriggerStyle()} w-full`}>
                                                         <div className='flex flex-col justify-center items-start'>
                                                             <p className='text-nowrap hover:text-blue-500'>
                                                                 {item.name}
@@ -304,9 +338,9 @@ const Header = () => {
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <NavigationMenuTrigger>
-                                        <Link to={"ranking"} className='whitespace-nowrap'>
+                                        <p className='whitespace-nowrap'>
                                             Xếp hạng
-                                        </Link>
+                                        </p>
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
                                         <div className="flex gap-3 p-4 md:w-[350px] flex-wrap">
@@ -318,8 +352,6 @@ const Header = () => {
                                                                 {item.name}
                                                             </p>
                                                         </div>
-
-
                                                     </Link>
                                                 ))
                                             }
@@ -337,11 +369,11 @@ const Header = () => {
                     </div>
                 </div>
 
-                <div className='w-full lg:max-w-64 inline-flex justify-end lg:justify-center bg-background border p-2 md:px-4 rounded-full items-center cursor-pointer'>
+                <div className='w-full max-w-10 md:max-w-64 inline-flex justify-end lg:justify-center bg-background border p-2 md:px-4 rounded-full items-center cursor-pointer'>
                     <Dialog open={openSearchBox} onOpenChange={setOpenSearchBox}>
                         <DialogTrigger asChild>
-                            <div className='w-full flex justify-between items-center'>
-                                <div className="font-medium border-none outline-none focus-visible:ring-0 text-sm">Tìm kiếm truyện...</div>
+                            <div className='w-full inline-flex justify-end lg:justify-between items-center'>
+                                <div className="font-medium border-none outline-none focus-visible:ring-0 text-sm hidden md:block">Tìm kiếm truyện...</div>
                                 <Search />
                             </div>
                         </DialogTrigger>

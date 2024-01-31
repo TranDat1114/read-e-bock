@@ -26,20 +26,17 @@ const Layout = ({ children }: LayoutProps) => {
 
     return (
         <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-            <div className='flex flex-col w-full relative bg-slate-100'>
+            <div className='flex flex-col relative bg-slate-100'>
                 <Header />
                 {
-
                     isHomePage() ?
-
                         <section className="w-full mt-20 relative h-96">
                             <EmblaCarousel slides={SLIDES} options={OPTIONS} imageByIndex={imageByIndex} />
                         </section>
                         : <></>
-
                 }
-                <main className="md:container my-8 min-h-dvh ">
-                        {children}
+                <main className="md:container my-8 min-h-dvh">
+                    {children}
                 </main>
                 <Footer />
             </div>

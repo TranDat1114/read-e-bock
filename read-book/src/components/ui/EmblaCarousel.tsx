@@ -9,10 +9,25 @@ import {
 } from '@/components/ui/EmblaCarouselArrowButtons'
 import Autoplay from 'embla-carousel-autoplay'
 import { flushSync } from 'react-dom'
+import bookCover from "../../../public/book.jpg"
+interface Book {
+  name: string;
+  author: string;
+  description: string;
+  image?: string;
+  link: string;
+  categories: Category[];
+  status: string;
+  view: number;
+  lastest?: number;
+}
 
-
+interface Category {
+  name: string;
+}
 type PropType = {
   slides: number[]
+  details?: Book[]
   options?: EmblaOptionsType
   imageByIndex: (index: number) => string
 }
@@ -23,6 +38,7 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max)
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
+  const [details, setDetails] = useState<Book[]>([])
   const { slides, options, imageByIndex } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
   const [tweenValues, setTweenValues] = useState<number[]>([])
@@ -80,45 +96,92 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     onNextButtonClick
   } = usePrevNextButtons(emblaApi, onButtonClick)
 
-  return (
-    <div className="embla">
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="embla__container ">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index} style={{
-              ...(tweenValues.length && { opacity: tweenValues[index] })
-            }}>
-              {/* <div className="embla__slide__number">
+  if (details.length === 0) {
+    return (
+      <div className="embla">
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="embla__container ">
+            {slides.map((index) => (
+              <div className="embla__slide" key={index} style={{
+                ...(tweenValues.length && { opacity: tweenValues[index] })
+              }}>
+                {/* <div className="embla__slide__number">
                 <span>{index + 1}</span>
               </div> */}
-              <img
-                className="block h-96 w-full object-cover object-center"
-                src={imageByIndex(index)}
-                alt="Your alt text"
-              />
-            </div>
-          ))}
+                <img
+                  className="block h-96 w-full object-cover object-center"
+                  src={imageByIndex(index)}
+                  alt="Your alt text"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className="absolute w-full items-center top-1/2 -translate-y-1/2 flex justify-between ">
-        <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-        <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-      </div>
+        <div className="absolute w-full items-center top-1/2 -translate-y-1/2 flex justify-between ">
+          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+        </div>
 
-      {/* <div className="embla__dots">
+        {/* <div className="embla__dots">
         {scrollSnaps.map((_, index) => (
           <DotButton
-            key={index}
+          key={index}
             onClick={() => onDotButtonClick(index)}
             className={'embla__dot'.concat(
               index === selectedIndex ? ' embla__dot--selected' : ''
             )}
           />
-        ))}
-      </div> */}
-    </div>
-  )
+          ))}
+        </div> */}
+      </div>
+    )
+  } else {
+    return (
+      <div className="embla">
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="embla__container ">
+            {details.map((book, index) => (
+              <div className="embla__slide" key={index} style={{
+                ...(tweenValues.length && { opacity: tweenValues[index] })
+              }}>
+                {/* <div className="embla__slide__number">
+                <span>{index + 1}</span>
+              </div> */}
+                <img
+                  className="block h-96 w-full object-cover object-center"
+                  src={book.image ?? bookCover}
+                  alt="Your alt text"
+                />
+
+                <div className="p-4">
+                  <h1 className="text-xl font-semibold text-white">{book.name}</h1>
+                  <p className="text-sm text-white">{book.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="absolute w-full items-center top-1/2 -translate-y-1/2 flex justify-between ">
+          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+        </div>
+
+        {/* <div className="embla__dots">
+        {scrollSnaps.map((_, index) => (
+          <DotButton
+          key={index}
+            onClick={() => onDotButtonClick(index)}
+            className={'embla__dot'.concat(
+              index === selectedIndex ? ' embla__dot--selected' : ''
+            )}
+          />
+          ))}
+        </div> */}
+      </div>
+    )
+  }
 }
 
 export default EmblaCarousel
