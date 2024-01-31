@@ -1,0 +1,239 @@
+{
+    "book": {
+        "title": "The Hitchhiker's Guide to the Galaxy",
+        "author": "Douglas Adams",
+        "published": 1979,
+        "pages": 224,
+        "suggest": "Top 42 Đề cử",
+        "arhived": 42,
+        "desc": "The Hitchhiker's Guide to the Galaxy is a comedy science fiction series created by Douglas Adams. Originally a radio comedy broadcast on BBC Radio 4 in 1978, it was later adapted to other formats, including stage shows, novels, comic books, a 1981 TV series, a 1984 video game, and 2005 feature film. A prominent series in British popular culture, The Hitchhiker's Guide to the Galaxy has become an international multi-media phenomenon; the novels are the most widely distributed, having been translated into more than 30 languages by 2005. In 2017, BBC Radio 4 announced a 40th-anniversary celebration with Dirk Maggs, one of the original producers, in charge. This sixth series of the sci-fi spoof has been based on Eoin Colfer's book And Another Thing, with additional unpublished material by Douglas Adams.",
+        "categories": [
+            {
+                "name": "Science fiction"
+            },
+            {
+                "name": "Comedy"
+            },
+            {
+                "name": "Satire"
+            },
+            {
+                "name": "Speculative fiction"
+            },
+            {
+                "name": "Absurdist fiction"
+            }
+        ],
+        "chapters": [
+            {
+                "number": 1,
+                "title": "The Hitchhiker's Guide to the Galaxy",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 2,
+                "title": "The Restaurant at the End of the Universe",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 3,
+                "title": "Life, the Universe and Everything",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 4,
+                "title": "So Long, and Thanks for All the Fish",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 5,
+                "title": "Mostly Harmless",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 6,
+                "title": "And Another Thing...",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 7,
+                "title": "Eoin Colfer",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 8,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 9,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 10,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 11,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 12,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 13,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 14,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 15,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 16,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 17,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 18,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 19,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 20,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 21,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 22,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 23,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 24,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 25,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 26,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 27,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 28,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 29,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 30,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 31,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 32,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            },
+            {
+                "number": 33,
+                "title": "Douglas Adams",
+                "updateTime": "2 năm trước"
+            }
+        ]
+    },
+    "fans": {
+        "reviewTotal": 100,
+        "avarageRating": 4.5,
+        "rating": [
+            {
+                "character": 2.3,
+                "story": 3.5,
+                "enviroment": 4.5,
+                "translated": 5.6
+            }
+        ],
+        "user": [
+            {
+                "userName": "Nguyễn Văn A",
+                "avatar": "https://static.cdnno.com/user/d5fa5665b77474dd2e7baba3cfcca968/100.jpg?1688264757",
+                "likePoints": 10000,
+                "role": "SVIP"
+            },
+            {
+                "userName": "Nguyễn Văn B",
+                "avatar": "https://static.cdnno.com/user/d5fa5665b77474dd2e7baba3cfcca968/100.jpg?1688264757",
+                "likePoints": 10000,
+                "role": "VVIP"
+            },
+            {
+                "userName": "Nguyễn Văn C",
+                "avatar": "https://static.cdnno.com/user/d5fa5665b77474dd2e7baba3cfcca968/100.jpg?1688264757",
+                "likePoints": 10000,
+                "role": "VIP"
+            },
+            {
+                "userName": "Nguyễn Văn D",
+                "avatar": "https://static.cdnno.com/user/d5fa5665b77474dd2e7baba3cfcca968/100.jpg?1688264757",
+                "likePoints": 10000,
+                "role": "VIP2"
+            },
+            {
+                "userName": "Nguyễn Văn E",
+                "avatar": "https://static.cdnno.com/user/d5fa5665b77474dd2e7baba3cfcca968/100.jpg?1688264757",
+                "likePoints": 10000,
+                "role": "VIP3"
+            }
+        ]
+    }
+}
