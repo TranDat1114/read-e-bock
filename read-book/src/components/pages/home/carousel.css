@@ -5,6 +5,11 @@
   --slide-size: 100%;
   --slide-height: 24rem;
 }
+.embla_banners{
+  --slide-spacing: 1rem;
+  --slide-size: 100%;
+  --slide-height: 24rem;
+}
 
 
 @media (min-width: 750px) {
@@ -17,9 +22,14 @@
 
 @media (min-width: 750px) {
   .embla {
-    --slide-size: 65%;
+    --slide-size: 45%;
+  }
+  .embla_banners{
+    --slide-size: 70%;
   }
 }
+
+
 
 
 .embla__container {

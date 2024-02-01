@@ -10,6 +10,8 @@ import {
 import Autoplay from 'embla-carousel-autoplay'
 import { flushSync } from 'react-dom'
 import bookCover from "../../../public/book.jpg"
+import { AspectRatio } from './aspect-ratio'
+import { Button } from './button'
 interface Book {
   name: string;
   author: string;
@@ -26,10 +28,11 @@ interface Category {
   name: string;
 }
 type PropType = {
-  slides: number[]
-  details?: Book[]
+  // slides: number[]
+  details: Book[]
   options?: EmblaOptionsType
-  imageByIndex: (index: number) => string
+  variant?: 'default' | 'banner'
+  // imageByIndex: (index: number) => string
 }
 
 const TWEEN_FACTOR = 4.2
@@ -38,8 +41,7 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max)
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const [details, setDetails] = useState<Book[]>([])
-  const { slides, options, imageByIndex } = props
+  const { details, options, variant } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
   const [tweenValues, setTweenValues] = useState<number[]>([])
 
@@ -96,47 +98,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     onNextButtonClick
   } = usePrevNextButtons(emblaApi, onButtonClick)
 
-  if (details.length === 0) {
-    return (
-      <div className="embla">
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="embla__container ">
-            {slides.map((index) => (
-              <div className="embla__slide" key={index} style={{
-                ...(tweenValues.length && { opacity: tweenValues[index] })
-              }}>
-                {/* <div className="embla__slide__number">
-                <span>{index + 1}</span>
-              </div> */}
-                <img
-                  className="block h-96 w-full object-cover object-center"
-                  src={imageByIndex(index)}
-                  alt="Your alt text"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="absolute w-full items-center top-1/2 -translate-y-1/2 flex justify-between ">
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
-
-        {/* <div className="embla__dots">
-        {scrollSnaps.map((_, index) => (
-          <DotButton
-          key={index}
-            onClick={() => onDotButtonClick(index)}
-            className={'embla__dot'.concat(
-              index === selectedIndex ? ' embla__dot--selected' : ''
-            )}
-          />
-          ))}
-        </div> */}
-      </div>
-    )
-  } else {
+  if (variant != 'banner') {
     return (
       <div className="embla">
         <div className="overflow-hidden" ref={emblaRef}>
@@ -146,17 +108,31 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 ...(tweenValues.length && { opacity: tweenValues[index] })
               }}>
                 {/* <div className="embla__slide__number">
-                <span>{index + 1}</span>
-              </div> */}
-                <img
-                  className="block h-96 w-full object-cover object-center"
-                  src={book.image ?? bookCover}
-                  alt="Your alt text"
-                />
+                  <span>{index + 1}</span>
+                </div> */}
+                <AspectRatio ratio={2 / 3}>
+                  <img
+                    className="block w-full h-full object-cover object-center"
+                    src={book.image ?? bookCover}
+                    alt="Your alt text"
+                  />
+                </AspectRatio>
 
                 <div className="p-4">
-                  <h1 className="text-xl font-semibold text-white">{book.name}</h1>
-                  <p className="text-sm text-white">{book.description}</p>
+                  <h1 className="text-xl font-semibold text-center h-12">{book.name}</h1>
+                  <div className='flex flex-row justify-between gap-4'>
+                    {/* <Link to={book.link} target="_blank" rel="noreferrer" className="text-blue-500"><Button variant={'outline'}>Đọc ngay</Button></Link> */}
+                    <p className="text-xs line-clamp-2 rounded-lg p-2">{book.author}</p>
+                    <div className="text-xs text-gray-400 p-2 line-clamp-2">{book.categories.map((category, index) => (
+                      <span key={index}>{category.name}{index < book.categories.length - 1 ? ", " : ""}</span>
+                    ))}</div>
+                  </div>
+                  <div className='min-h-12'>
+                  <p className="text-sm line-clamp-2">{book.description}</p>
+                    </div>
+                </div>
+                <div className='flex justify-center'>
+                  <Button variant={'outline'}>Đọc ngay</Button>
                 </div>
               </div>
             ))}
@@ -169,19 +145,49 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         </div>
 
         {/* <div className="embla__dots">
-        {scrollSnaps.map((_, index) => (
-          <DotButton
-          key={index}
-            onClick={() => onDotButtonClick(index)}
-            className={'embla__dot'.concat(
-              index === selectedIndex ? ' embla__dot--selected' : ''
-            )}
-          />
-          ))}
-        </div> */}
+          {scrollSnaps.map((_, index) => (
+            <DotButton
+            key={index}
+              onClick={() => onDotButtonClick(index)}
+              className={'embla__dot'.concat(
+                index === selectedIndex ? ' embla__dot--selected' : ''
+              )}
+            />
+            ))}
+          </div> */}
       </div>
     )
   }
+  else {
+    return (
+      <div className="embla_banners">
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="embla__container ">
+            {details.map((book, index) => (
+              <div className="embla__slide" key={index} style={{
+                ...(tweenValues.length && { opacity: tweenValues[index] })
+              }}>
+                {/* <div className="embla__slide__number">
+                  <span>{index + 1}</span>
+                </div> */}
+                <img
+                  className="block w-full h-96 object-cover object-center"
+                  src={book.image ?? bookCover}
+                  alt="Your alt text"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="absolute w-full items-center top-1/2 -translate-y-1/2 flex justify-between ">
+            <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+          </div>
+        </div>
+      </div>
+    )
+  }
+
 }
+
 
 export default EmblaCarousel

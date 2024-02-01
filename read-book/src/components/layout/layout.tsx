@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider"
 // import { Card } from "@/components/ui/card";
 import { useLocation } from "react-router-dom";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
-import imageByIndex from "../pages/home/imageByIndex";
+import headerData from "./headerData.json"
 
 import { EmblaOptionsType } from 'embla-carousel'
 interface LayoutProps {
@@ -21,8 +21,8 @@ const Layout = ({ children }: LayoutProps) => {
     };
 
     const OPTIONS: EmblaOptionsType = { align: 'center', dragFree: false, loop: true }
-    const SLIDE_COUNT = 5
-    const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+    // const SLIDE_COUNT = 5
+    // const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
     return (
         <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
@@ -31,7 +31,7 @@ const Layout = ({ children }: LayoutProps) => {
                 {
                     isHomePage() ?
                         <section className="w-full mt-20 relative h-96">
-                            <EmblaCarousel slides={SLIDES} options={OPTIONS} imageByIndex={imageByIndex} />
+                            <EmblaCarousel options={OPTIONS} variant="banner" details={headerData.books} />
                         </section>
                         : <></>
                 }

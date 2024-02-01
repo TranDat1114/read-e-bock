@@ -31,8 +31,6 @@ import EmblaCarousel from "@/components/ui/EmblaCarousel"
 
 import { EmblaOptionsType } from 'embla-carousel'
 // import { Card } from "@/components/ui/card";
-
-import imageByIndex from "./imageByIndex"
 import { Button } from "@/components/ui/button"
 import React from "react"
 
@@ -69,8 +67,8 @@ interface Category {
 
 const HomePage = () => {
     const OPTIONS: EmblaOptionsType = { align: 'center', dragFree: false, loop: true }
-    const SLIDE_COUNT = 5
-    const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+    // const SLIDE_COUNT = 5
+    // const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
     const newChapter: newChapter[] = homeData.newChapter;
     const [newChapterData, setNewChapterData] = React.useState<newChapter[]>(newChapter);
@@ -148,7 +146,7 @@ const HomePage = () => {
                             <table className="table-auto w-full border-spacing-x-2">
                                 <thead>
                                     <tr className="w-full grid grid-cols-12 my-4 border-collapse border border-slate-200 p-2 py-4 rounded-md items-center">
-                                        <th className="text-xs text-start col-span-7 md:col-span-4 lg:col-span-5 font-bold">Tên truyện</th>
+                                        <th className="text-xs sm:text-sm text-start col-span-7 md:col-span-4 lg:col-span-5 font-bold">Tên truyện</th>
                                         <th className="text-xs sm:text-sm md:col-span-4 lg:col-span-3  hidden md:block text-start font-bold">Thể loại</th>
                                         <th className="text-xs text-start col-span-5 md:col-span-4 lg:col-span-2 font-bold mx-4">Chương</th>
                                         <th className="text-xs sm:text-sm hidden lg:col-span-2 lg:block text-start font-bold">Thời gian</th>
@@ -218,18 +216,18 @@ const HomePage = () => {
             </Card>
 
             <div id="section-3" className="grid grid-cols-12 gap-4 w-full">
-                <div className="flex flex-col w-full col-span-12 lg:col-span-9">
+                <div className="flex flex-col w-full col-span-12 lg:col-span-8">
                     <Card className="p-6">
                         <div className="flex flex-col md:flex-row justify-between w-full mb-4">
                             <p className="font-bold text-xl">Truyện mới</p>
                             <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                         </div>
                         <section className="relative">
-                            <EmblaCarousel slides={SLIDES} options={OPTIONS} imageByIndex={imageByIndex} details={DemoData} />
+                            <EmblaCarousel options={OPTIONS} details={DemoData} />
                         </section>
                     </Card>
                 </div>
-                <div className="flex flex-col gap-4 w-full col-span-12 lg:col-span-3">
+                <div className="flex flex-col gap-4 w-full col-span-12 lg:col-span-4">
                     <Card className="p-6">
                         <div className="flex flex-col md:flex-row justify-between w-full mb-4">
                             <p className="font-bold text-xl">Mới đăng</p>
@@ -458,7 +456,7 @@ const HomePage = () => {
                 </div>
             </div>
             <div id="section-4" className="flex flex-col gap-4 w-full">
-                <Card className="p-4">
+                <Card className="p-6">
 
                     <div className="flex  flex-col md:flex-row justify-between w-full mb-4">
                         <p className="font-bold text-xl">Truyện đã hoàn thành</p>
@@ -505,7 +503,7 @@ const HomePage = () => {
 
             </div>
             <div id="section-random" className="flex flex-col gap-4 w-full">
-                <Card className="p-4">
+                <Card className="p-6">
 
                     <div className="flex  flex-col md:flex-row justify-between w-full mb-4">
                         <p className="font-bold text-xl">Truyện hay</p>
