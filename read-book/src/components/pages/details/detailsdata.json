@@ -6,6 +6,11 @@
         "pages": 224,
         "suggest": "Top 42 Đề cử",
         "arhived": 42,
+        "totalChapters": 632,
+        "chapterWeek": 6,
+        "views": 100000,
+        "lastUpdate": "2 năm trước",
+        "img": "https://th.bing.com/th/id/R.92044013da12968d0b8bdcc6ae3d18c9?rik=wG6rgHrxhL1voA&riu=http%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2fytxnHu3wlTcbmCuLLM2Z8Zs1Dtz.jpg&ehk=38SObxUi0o%2fbhpIyexmaXiDb02h7dtLviQS6NpSYiLM%3d&risl=&pid=ImgRaw&r=0",
         "desc": "The Hitchhiker's Guide to the Galaxy is a comedy science fiction series created by Douglas Adams. Originally a radio comedy broadcast on BBC Radio 4 in 1978, it was later adapted to other formats, including stage shows, novels, comic books, a 1981 TV series, a 1984 video game, and 2005 feature film. A prominent series in British popular culture, The Hitchhiker's Guide to the Galaxy has become an international multi-media phenomenon; the novels are the most widely distributed, having been translated into more than 30 languages by 2005. In 2017, BBC Radio 4 announced a 40th-anniversary celebration with Dirk Maggs, one of the original producers, in charge. This sixth series of the sci-fi spoof has been based on Eoin Colfer's book And Another Thing, with additional unpublished material by Douglas Adams.",
         "categories": [
             {
@@ -193,6 +198,7 @@
         ]
     },
     "fans": {
+        "commentTotal": 100,
         "reviewTotal": 100,
         "avarageRating": 4.5,
         "rating": [
@@ -208,31 +214,56 @@
                 "userName": "Nguyễn Văn A",
                 "avatar": "https://static.cdnno.com/user/d5fa5665b77474dd2e7baba3cfcca968/100.jpg?1688264757",
                 "likePoints": 10000,
-                "role": "SVIP"
+                "role": "SVIP",
+                "lastComment": "14 ngày trước",
+                "lastRead": 5,
+                "level": 1,
+                "comment": "Tuyệt vời",
+                "rating": 5
             },
             {
                 "userName": "Nguyễn Văn B",
                 "avatar": "https://static.cdnno.com/user/d5fa5665b77474dd2e7baba3cfcca968/100.jpg?1688264757",
                 "likePoints": 10000,
-                "role": "VVIP"
+                "role": "VVIP",
+                "lastComment": "20 ngày trước",
+                "lastRead": 10,
+                "level": 2,
+                "comment": "Tuyệt vời",
+                "rating": 5
             },
             {
                 "userName": "Nguyễn Văn C",
                 "avatar": "https://static.cdnno.com/user/d5fa5665b77474dd2e7baba3cfcca968/100.jpg?1688264757",
                 "likePoints": 10000,
-                "role": "VIP"
+                "role": "VIP",
+                "lastComment": "24 ngày trước",
+                "lastRead": 15,
+                "level": 3,
+                "comment": "Tuyệt vời",
+                "rating": 4.35
             },
             {
                 "userName": "Nguyễn Văn D",
                 "avatar": "https://static.cdnno.com/user/d5fa5665b77474dd2e7baba3cfcca968/100.jpg?1688264757",
                 "likePoints": 10000,
-                "role": "VIP2"
+                "role": "VIP2",
+                "lastComment": "26 ngày trước",
+                "lastRead": 20,
+                "level": 4,
+                "comment": "Tuyệt vời",
+                "rating": 3.05
             },
             {
                 "userName": "Nguyễn Văn E",
                 "avatar": "https://static.cdnno.com/user/d5fa5665b77474dd2e7baba3cfcca968/100.jpg?1688264757",
                 "likePoints": 10000,
-                "role": "VIP3"
+                "role": "VIP3",
+                "lastComment": "28 ngày trước",
+                "lastRead": 20,
+                "level": 5,
+                "comment": "Tuyệt vời",
+                "rating": 2.95
             }
         ]
     }
