@@ -137,45 +137,43 @@ const HomePage = () => {
                 </div>
             </Card>
             <div id="section-new-chapter" className="grid grid-cols-12 gap-4">
-                <div className="col-span-12 md:col-span-8 lg:col-span-9">
-                    <Card >
-                        <CardContent className="p-0 sm:p-6">
-                            <div className="flex flex-col md:flex-row justify-between w-full mt-4">
-                                <p className="font-bold text-base">Chương mới cập nhật</p>
-                            </div>
-                            <table className="table-auto w-full border-spacing-x-2">
-                                <thead>
-                                    <tr className="w-full grid grid-cols-12 my-4 border-collapse border border-slate-200 p-2 py-4 rounded-md items-center">
-                                        <th className="text-xs sm:text-sm text-start col-span-7 md:col-span-4 lg:col-span-5 font-bold">Tên truyện</th>
-                                        <th className="text-xs sm:text-sm md:col-span-4 lg:col-span-3  hidden md:block text-start font-bold">Thể loại</th>
-                                        <th className="text-xs text-start col-span-5 md:col-span-4 lg:col-span-2 font-bold mx-4">Chương</th>
-                                        <th className="text-xs sm:text-sm hidden lg:col-span-2 lg:block text-start font-bold">Thời gian</th>
+                <Card className="col-span-12 md:col-span-8 lg:col-span-9">
+                    <CardContent className="p-0 sm:p-6">
+                        <div className="flex flex-col md:flex-row justify-between w-full mt-4">
+                            <p className="font-bold text-base">Chương mới cập nhật</p>
+                        </div>
+                        <table className="table-auto w-full border-spacing-x-2">
+                            <thead>
+                                <tr className="w-full grid grid-cols-12 my-4 border-collapse border border-slate-200 p-2 py-4 rounded-md items-center">
+                                    <th className="text-xs sm:text-sm text-start col-span-7 md:col-span-4 lg:col-span-5 font-bold">Tên truyện</th>
+                                    <th className="text-xs sm:text-sm md:col-span-4 lg:col-span-3  hidden md:block text-start font-bold">Thể loại</th>
+                                    <th className="text-xs text-start col-span-5 md:col-span-4 lg:col-span-2 font-bold mx-4">Chương</th>
+                                    <th className="text-xs sm:text-sm hidden lg:col-span-2 lg:block text-start font-bold">Thời gian</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {newChapterData.slice(0, 15).map((data, index) => (
+                                    <tr key={index} className="w-full grid grid-cols-12 border-collapse border px-2 border-slate-200 py-1 items-center rounded-md my-1" >
+                                        <td className="text-xs sm:text-sm col-span-7 md:col-span-4 lg:col-span-5 line-clamp-3">{data.name}</td>
+                                        <td className="text-xs sm:text-sm md:col-span-4 lg:col-span-3 hidden md:block line-clamp-3">{data.categories.slice(0, 2).map((cate, index) => (<span className="hover:text-blue-500" key={index}>{cate.name}{
+                                            index < data.categories.length - 1 && ", "
+                                        } </span>))}</td>
+                                        <td className="text-xs sm:text-sm col-span-5 md:col-span-4 lg:col-span-2"><Link to={"/tatca"}><Button variant={"link"} className="text-green-700 text-xs sm:text-sm">Chương {data.lastest}</Button></Link></td>
+                                        <td className="text-xs sm:text-sm hidden lg:col-span-2 lg:block">{data.time}</td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    {newChapterData.slice(0, 15).map((data, index) => (
-                                        <tr key={index} className="w-full grid grid-cols-12 border-collapse border px-2 border-slate-200 py-1 items-center rounded-md my-1" >
-                                            <td className="text-xs sm:text-sm col-span-7 md:col-span-4 lg:col-span-5 line-clamp-3">{data.name}</td>
-                                            <td className="text-xs sm:text-sm md:col-span-4 lg:col-span-3 hidden md:block line-clamp-3">{data.categories.slice(0, 2).map((cate, index) => (<span className="hover:text-blue-500" key={index}>{cate.name}{
-                                                index < data.categories.length - 1 && ", "
-                                            } </span>))}</td>
-                                            <td className="text-xs sm:text-sm col-span-5 md:col-span-4 lg:col-span-2"><Link to={"/tatca"}><Button variant={"link"} className="text-green-700 text-xs sm:text-sm">Chương {data.lastest}</Button></Link></td>
-                                            <td className="text-xs sm:text-sm hidden lg:col-span-2 lg:block">{data.time}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                                ))}
+                            </tbody>
+                        </table>
 
-                        </CardContent>
-                        <CardFooter>
-                            <div className="w-full flex justify-end">
-                                <Button variant={"link"}>
-                                    <Link to={"/tatca"}>Xem tất cả</Link>
-                                </Button>
-                            </div>
-                        </CardFooter>
-                    </Card>
-                </div>
+                    </CardContent>
+                    <CardFooter>
+                        <div className="w-full flex justify-end">
+                            <Button variant={"link"}>
+                                <Link to={"/tatca"}>Xem tất cả</Link>
+                            </Button>
+                        </div>
+                    </CardFooter>
+                </Card>
                 <div id="section-categories" className="col-span-12 md:col-span-4 lg:col-span-3">
                     <Card >
                         <CardContent>
@@ -219,7 +217,7 @@ const HomePage = () => {
                 <div className="flex flex-col w-full col-span-12 lg:col-span-8">
                     <Card className="p-6">
                         <div className="flex flex-col md:flex-row justify-between w-full mb-4">
-                            <p className="font-bold text-xl">Truyện mới</p>
+                            <p className="font-bold text-base">Truyện mới</p>
                             <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                         </div>
                         <section className="relative">
@@ -230,7 +228,7 @@ const HomePage = () => {
                 <div className="flex flex-col gap-4 w-full col-span-12 lg:col-span-4">
                     <Card className="p-6">
                         <div className="flex flex-col md:flex-row justify-between w-full mb-4">
-                            <p className="font-bold text-xl">Mới đăng</p>
+                            <p className="font-bold text-base">Mới đăng</p>
                         </div>
                         <div id="section-2" className="flex gap-4 w-full col-span-12 lg:col-span-4">
                             <Tabs defaultValue="mostInWeek" className="w-full">
@@ -459,7 +457,7 @@ const HomePage = () => {
                 <Card className="p-6">
 
                     <div className="flex  flex-col md:flex-row justify-between w-full mb-4">
-                        <p className="font-bold text-xl">Truyện đã hoàn thành</p>
+                        <p className="font-bold text-base">Truyện đã hoàn thành</p>
                         <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                     </div>
                     <div className="w-full flex flex-row gap-4 overflow-x-scroll items-start ">
@@ -506,7 +504,7 @@ const HomePage = () => {
                 <Card className="p-6">
 
                     <div className="flex  flex-col md:flex-row justify-between w-full mb-4">
-                        <p className="font-bold text-xl">Truyện hay</p>
+                        <p className="font-bold text-base">Truyện hay</p>
                         <Link className="hover:underline hover:to-blue-500" to={"/"}>Xem tất cả</Link>
                     </div>
                     <div className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 items-start gap-4 ">
