@@ -45,11 +45,10 @@ import {
 
 import { cn } from "@/lib/utils"
 import { Slider } from "@/components/ui/slider"
-import { AspectRatio } from "@/components/ui/aspect-ratio"
 
-import EmblaCarousel from "@/components/ui/EmblaCarousel"
-import { EmblaOptionsType } from 'embla-carousel'
-import imageByIndex from "./imageByIndex";
+// import EmblaCarousel from "@/components/ui/EmblaCarousel"
+// import { EmblaOptionsType } from 'embla-carousel'
+// import imageByIndex from "./imageByIndex";
 
 import React, { useState } from 'react';
 import homeData from "./detailsdata.json"
@@ -242,9 +241,9 @@ const DemoData: Data[] = [
 const Details = ({ className, ...props }: SliderProps) => {
     const book: BookDetail = homeData.book;
     const fans: Fans = homeData.fans;
-    const SLIDE_COUNT = 5
-    const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
-    const OPTIONS: EmblaOptionsType = { align: 'center', dragFree: false, loop: true }
+    // const SLIDE_COUNT = 5
+    // const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+    // const OPTIONS: EmblaOptionsType = { align: 'center', dragFree: false, loop: true }
 
     const [isArrowUp, setIsArrowUp] = useState(false);
     const toggleArrow = () => {
@@ -1319,11 +1318,11 @@ const Details = ({ className, ...props }: SliderProps) => {
                                                 </div>
                                             </div>
                                             <div className="divider border-t border-solid border-black/5 mt-4"></div>
-                                            <div className="w-full hidden">
+                                            {/* <div className="w-full hidden">
                                                 <section>
                                                     <EmblaCarousel slides={SLIDES} options={OPTIONS} imageByIndex={imageByIndex} />
                                                 </section>
-                                            </div>
+                                            </div> */}
                                             <div className="same-author">
                                                 <div className="w-full flex items-center justify-between">
                                                     <p className="text-base font-semibold">
