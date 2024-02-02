@@ -19,6 +19,11 @@ const Layout = ({ children }: LayoutProps) => {
     const isHomePage = () => {
         return location.pathname === '/' || location.pathname === '/home';
     };
+    const isReadPage = () => {
+        return location.pathname === '/truyen';
+    }
+
+
 
     const OPTIONS: EmblaOptionsType = { align: 'center', dragFree: false, loop: true }
     // const SLIDE_COUNT = 5
@@ -26,18 +31,22 @@ const Layout = ({ children }: LayoutProps) => {
 
     return (
         <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-            <div className='flex flex-col relative bg-slate-100'>
+            <div className='flex flex-col relative bg-background/70 backdrop-contrast-75'>
                 <Header />
                 {
                     isHomePage() ?
                         <section className="w-full mt-20 relative h-96">
                             <EmblaCarousel options={OPTIONS} variant="banner" details={headerData.books} />
                         </section>
-                        : <></>
+                        : <div className="mt-10"></div>
                 }
-                <main className="md:container my-8 min-h-dvh">
+                {isReadPage() ? <div className="w-full min-h-dvh">
                     {children}
-                </main>
+                </div> :
+                    <main className="md:container my-8 min-h-dvh">
+                        {children}
+                    </main>
+                }
                 <Footer />
             </div>
         </ThemeProvider>

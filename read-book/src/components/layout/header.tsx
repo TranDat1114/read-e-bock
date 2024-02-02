@@ -321,7 +321,7 @@ const Header = () => {
                                         </p>
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
-                                        <div className="grid grid-cols-2 gap-3 p-4 w-[400px]">
+                                        <div className="grid grid-cols-4 gap-3 p-4 w-[700px]">
                                             {
                                                 categoriesItem.map((item, index) => (
                                                     <Link to={item.link ?? "/"} title={item.name} key={index} className={`${navigationMenuTriggerStyle()} w-full`}>
