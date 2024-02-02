@@ -447,8 +447,8 @@ const ReadBook = () => {
                                         </p>
                                     </div>
                                     <div className="flex lg:flex-row flex-col gap-8 justify-start lg:items-center">
-                                        <div>
-                                            <p className="flex gap-2 items-center w-full lg:min-w-36">
+                                        <div className="w-full lg:min-w-36">
+                                            <p className="flex gap-2 items-center ">
                                                 Xem 7 câu trả lời <MoveDown size={12} />
                                             </p>
                                         </div>
