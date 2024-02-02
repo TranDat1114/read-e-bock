@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { AlignJustify, ArrowLeft, ArrowRight, Minus, Plus } from "lucide-react";
+import { SetStateAction, useState } from "react";
+import { AlignJustify, ArrowLeft, ArrowRight, BookMarked, Heart, Minus, Plus, SendHorizonal, ThumbsUp } from "lucide-react";
 
 import {
     Select,
@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/select"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 import bookData from "./readbookdata.json"
 
@@ -23,6 +23,8 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
+import { Separator } from "@/components/ui/separator";
 
 interface textFont {
     index: number,
@@ -51,16 +53,17 @@ interface color {
 
 interface width {
     index: number,
-    size: "576px" | "672px" | "768px" | "896px" | "1024px"
+    size: "65ch" | "576px" | "672px" | "768px" | "896px" | "1024px"
 
 }
 
 const widths: width[] = [
     { index: 0, size: "576px" },
-    { index: 1, size: "672px" },
-    { index: 2, size: "768px" },
-    { index: 3, size: "896px" },
-    { index: 4, size: "1024px" }
+    { index: 1, size: "65ch" },
+    { index: 2, size: "672px" },
+    { index: 3, size: "768px" },
+    { index: 4, size: "896px" },
+    { index: 5, size: "1024px" }
 ]
 
 const textFonts: textFont[] = [
@@ -103,6 +106,11 @@ const ReadBook = () => {
             fontSize: textFonts[2], font: fontFamilies[0], color: colors[3], lineSpacing: 1.5, width: widths[2]
         }
     )
+
+    const [comment, setComment] = useState<string>("");
+    function handleChangeComment(event: { target: { value: SetStateAction<string>; }; }) {
+        setComment(event.target.value);
+    }
 
     const book = bookData.ChapterInfor as ChapterInfor;
 
@@ -182,7 +190,7 @@ const ReadBook = () => {
 
 
     return (
-        <div className="w-full py-6 mt-8 " style={
+        <div className="w-full py-6 mt-8 flex flex-col gap-8 " style={
             {
                 background: options.color.primaryColor + "B3"
             }
@@ -192,9 +200,12 @@ const ReadBook = () => {
                     maxWidth: options.width.size + 200
                 }
             }>
-                <div className="hidden lg:block">
-                    <Button className="w-12 h-12">
-                        s
+                <div className="sticky top-28 h-full hidden lg:flex flex-col gap-4">
+                    <Button variant={"outline"} className="w-12 h-12 p-2">
+                        <Heart size={24} />
+                    </Button>
+                    <Button variant={"outline"} className="w-12 h-12 p-2">
+                        <BookMarked size={24} />
                     </Button>
                 </div>
 
@@ -221,29 +232,29 @@ const ReadBook = () => {
                         </div>
 
                         <div className="my-8">
-                            <p className={`text-3xl font-semibold`} style={
+                            <p className={`text-3xl font-semibold my-4`} style={
                                 {
                                     color: options.color.textColor
                                 }
                             }>
                                 {book.Title}
                             </p>
-                            <div className="flex flex-row justify-start gap-4 items-center " style={
+                            <div className="flex flex-col md:flex-row justify-start md:items-end gap-8 w-full" style={
                                 {
                                     color: options.color.textColor
                                 }}>
-                                <p>
+                                <div className="flex flex-row justify-start gap-2 items-center">
                                     <span className="text-sm">Tác giả: </span>
                                     <span className="text-sm">{book.Author}</span>
-                                </p>
-                                <p>
+                                </div>
+                                <div className="flex flex-row justify-start gap-2 items-center">
                                     <span className="text-sm">Ngày đăng: </span>
                                     <span className="text-sm">{book.Date}</span>
-                                </p>
-                                <p>
+                                </div>
+                                <div className="flex flex-row justify-start gap-2 items-center">
                                     <span className="text-sm">Trạng thái: </span>
                                     <span className="text-sm">{book.Status}</span>
-                                </p>
+                                </div>
                             </div>
 
                         </div>
@@ -388,7 +399,118 @@ const ReadBook = () => {
 
                 </div>
             </div>
+            <div className="container">
+                <Card className="w-full">
+                    <CardHeader>
+                        <CardTitle>Bình luận</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="flex flex-row w-full items-center justify-between gap-4">
+                            <div className="rounded-full h-24 w-24">
+                                <Avatar>
+                                    <AvatarImage className="rounded-full" src="https://github.com/shadcn.png" alt="@shadcn" />
+                                    <AvatarFallback>CN</AvatarFallback>
+                                </Avatar>
+                            </div>
+                            <div className="relative w-full h-full">
+                                <textarea onChange={(e) => handleChangeComment(e)} value={comment} className="w-full h-24 border-2 border-solid p-4 border-black/25 rounded-md" placeholder="Viết bình luận của bạn ở đây" />
+                                <button onClick={() => {
+                                    alert("Bạn đã gửi bình luận thành công\n" + comment)
+                                }} className="absolute top-1/2 -translate-y-1/2 right-5"><SendHorizonal /></button>
 
+                            </div>
+                        </div>
+
+                        <Separator className="my-4" />
+
+                        <div className="flex flex-col gap-6">
+                            <div className="flex flex-row gap-4">
+                                <div className="rounded-full h-24 w-24">
+                                    <Avatar>
+                                        <AvatarImage className="rounded-full" src="https://github.com/shadcn.png" alt="@shadcn" />
+                                        <AvatarFallback>CN</AvatarFallback>
+                                    </Avatar>
+                                </div>
+                                {/* comment */}
+                                <div className="flex flex-col gap-2 w-full">
+                                    <p className="text-lg font-semibold">Nguyễn Văn A</p>
+                                    <div className="flex flex-row gap-4 justify-start">
+                                        <p className="text-xs text-foreground/50">1 giờ trước</p>
+                                        <p className="text-xs text-foreground/50">Chương 2</p>
+                                    </div>
+                                    <div className="text-sm">
+                                        <p>
+                                            Cảm ơn bạn đã chia sẻ!
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nostrum debitis inventore voluptates impedit facilis voluptatibus perspiciatis! Omnis, voluptates! Inventore rem sit eius unde, tenetur odit nostrum fugiat quidem ipsa totam consectetur fugit dolor aperiam corporis beatae pariatur tempore! Esse quod similique assumenda doloribus in mollitia voluptatum, quo dolores at vel veniam impedit, maxime consequuntur rem corrupti sequi sunt natus reiciendis saepe amet sapiente doloremque, eveniet debitis! Enim illo, sed voluptates corrupti vero debitis possimus ipsum aut ducimus provident beatae quae laborum tenetur omnis earum architecto? Doloribus, doloremque non. Deleniti ex quae pariatur assumenda possimus inventore magnam reprehenderit eos voluptatibus?
+                                        </p>
+                                    </div>
+                                    <div className="flex flex-row gap-8 justify-start items-center">
+                                        <div>
+                                            <p className="min-w-36">
+                                                Xem 7 câu trả lời
+                                            </p>
+                                        </div>
+                                        <div className="flex flex-row gap-4 items-center">
+                                            <ThumbsUp size={16} /> 24
+                                        </div>
+                                        <div>
+                                            <Button variant={"outline"}>Trả lời</Button>
+                                        </div>
+                                        <div>
+                                            <Button variant={"outline"}>Báo xấu</Button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex flex-row gap-4">
+                                <div className="rounded-full h-24 w-24">
+                                    <Avatar>
+                                        <AvatarImage className="rounded-full" src="https://github.com/shadcn.png" alt="@shadcn" />
+                                        <AvatarFallback>CN</AvatarFallback>
+                                    </Avatar>
+                                </div>
+                                {/* comment */}
+                                <div className="flex flex-col gap-2 w-full">
+                                    <p className="text-lg font-semibold">Nguyễn Văn A</p>
+                                    <div className="flex flex-row gap-4 justify-start">
+                                        <p className="text-xs text-foreground/50">1 giờ trước</p>
+                                        <p className="text-xs text-foreground/50">Chương 2</p>
+                                    </div>
+                                    <div className="text-sm">
+                                        <p>
+                                            Cảm ơn bạn đã chia sẻ!
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        </p>
+                                    </div>
+                                    <div className="flex flex-row gap-8 justify-start items-center">
+                                        <div className="min-w-36">
+
+                                        </div>
+                                        <div className="flex flex-row gap-4 items-center">
+                                            <ThumbsUp size={16} /> 24
+                                        </div>
+                                        <div>
+                                            <Button variant={"outline"}>Trả lời</Button>
+                                        </div>
+                                        <div>
+                                            <Button variant={"outline"}>Báo xấu</Button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="w-full flex justify-center items-center">
+                                <Button variant={"outline"}>Xem thêm bình luận</Button>
+                            </div>
+                        </div>
+
+                    </CardContent>
+                </Card>
+            </div>
         </div >
 
         // <div className="flex flex-col gap-2 md:px-14 relative ">
