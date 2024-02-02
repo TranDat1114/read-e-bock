@@ -1,5 +1,5 @@
 import { SetStateAction, useState } from "react";
-import { AlignJustify, ArrowLeft, ArrowRight, BookMarked, Heart, Minus, Plus, SendHorizonal, ThumbsUp } from "lucide-react";
+import { AlignJustify, ArrowLeft, ArrowRight, BookMarked, Heart, Minus, MoveDown, MoveDownRight, Plus, SendHorizonal, ThumbsUp } from "lucide-react";
 
 import {
     Select,
@@ -448,8 +448,8 @@ const ReadBook = () => {
                                     </div>
                                     <div className="flex lg:flex-row flex-col gap-8 justify-start lg:items-center">
                                         <div>
-                                            <p className="w-full lg:min-w-36">
-                                                Xem 7 câu trả lời
+                                            <p className="flex gap-2 items-center w-full lg:min-w-36">
+                                                Xem 7 câu trả lời <MoveDown size={12} />
                                             </p>
                                         </div>
                                         <div className="flex flex-row justify-between w-full items-center">
