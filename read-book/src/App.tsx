@@ -16,6 +16,7 @@ import DieuKhoan from './components/pages/dieukhoan/dieukhoan-page';
 import BaoMat from './components/pages/baomat/baomat-page';
 import BanQuyen from './components/pages/banquyen/banquyen-page';
 import HoiDap from './components/pages/hoidap/hoidap-page';
+import TacGia from './components/pages/author/author-page';
 function App() {
 
   return (
@@ -38,6 +39,7 @@ function App() {
             <Route path='/bao-mat' element={<BaoMat />} />
             <Route path='/ban-quyen' element={<BanQuyen />} />
             <Route path='/hoi-dap' element={<HoiDap />} />
+            <Route path='/tac-gia' element={<TacGia />} />
             <Route
               path="*"
               element={
