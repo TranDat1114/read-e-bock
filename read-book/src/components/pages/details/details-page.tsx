@@ -50,7 +50,7 @@ import { Slider } from "@/components/ui/slider"
 // import { EmblaOptionsType } from 'embla-carousel'
 // import imageByIndex from "./imageByIndex";
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import homeData from "./detailsdata.json"
 
 type SliderProps = React.ComponentProps<typeof Slider>
@@ -1822,7 +1822,7 @@ const Details = ({ className, ...props }: SliderProps) => {
                                                 <div className="w-full" key={index}>
                                                     <img
                                                         className="w-full h-auto object-cover object-center"
-                                                        src="https://static.cdnno.com/storage/topbox/3247e2a49468941c8d63d69049f7443a.jpg"
+                                                        src={data.avatar}
                                                         alt="Book Cover"
                                                     />
                                                 </div>

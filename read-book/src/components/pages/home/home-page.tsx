@@ -32,9 +32,10 @@ import EmblaCarousel from "@/components/ui/EmblaCarousel"
 import { EmblaOptionsType } from 'embla-carousel'
 // import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button"
-import React from "react"
+// import React from "react"
 
 import homeData from "./homeData.json"
+import React from "react"
 
 interface categories {
     name: string

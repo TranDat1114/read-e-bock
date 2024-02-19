@@ -82,7 +82,7 @@ import {
     CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 
-import headerData from './headerData.json';
+import headerData from './headerdata.json';
 
 interface BookData {
     name: string;
