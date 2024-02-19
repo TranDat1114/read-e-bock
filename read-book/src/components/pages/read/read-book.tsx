@@ -1,5 +1,5 @@
 import { SetStateAction, useState } from "react";
-import { AlignJustify, ArrowLeft, ArrowRight, BookMarked, Heart, Minus, MoveDown, MoveDownRight, Plus, SendHorizonal, ThumbsUp } from "lucide-react";
+import { AlignJustify, ArrowLeft, ArrowRight, BookMarked, Heart, Minus, MoveDown, Plus, SendHorizonal, ThumbsUp } from "lucide-react";
 
 import {
     Select,
@@ -39,6 +39,17 @@ export interface ChapterInfor {
     Status: string;
     Description: string;
     ChapterContent: string[];
+}
+
+export interface Comment {
+    CommentID: string;
+    UserID: string;
+    UserName: string;
+    Date: string;
+    Chapter: string;
+    Image: string;
+    Content: string[];
+    Replies?: Comment[];
 }
 
 export interface Publisher {
@@ -113,6 +124,8 @@ const ReadBook = () => {
     }
 
     const book = bookData.ChapterInfor as ChapterInfor;
+
+    const bookComments = bookData.Comments as Comment[];
 
     //when onclick, the background color will be changed to the color of the book
     const changeColor = (primaryColor: string | "#cbe1cb" | "#ebcaca" | "#333333" | "#ffffff", textColor: string | "#ffffff" | "#000000") => {
@@ -400,7 +413,7 @@ const ReadBook = () => {
                 </div>
             </div>
             <div className="container">
-                <Card className="w-full">
+                <Card className="w-full shadow-lg">
                     <CardHeader>
                         <CardTitle>Bình luận</CardTitle>
                     </CardHeader>
@@ -424,50 +437,77 @@ const ReadBook = () => {
                         <Separator className="my-4" />
 
                         <div className="flex flex-col gap-6">
-                            <div className="flex lg:flex-row flex-col gap-4">
-                                <div className="rounded-full h-24 w-24">
-                                    <Avatar>
-                                        <AvatarImage className="rounded-full" src="https://github.com/shadcn.png" alt="@shadcn" />
-                                        <AvatarFallback>CN</AvatarFallback>
-                                    </Avatar>
-                                </div>
-                                {/* comment */}
-                                <div className="flex flex-col gap-2 w-full">
-                                    <p className="text-lg font-semibold">Nguyễn Văn A</p>
-                                    <div className="flex flex-row gap-4 justify-start">
-                                        <p className="text-xs text-foreground/50">1 giờ trước</p>
-                                        <p className="text-xs text-foreground/50">Chương 2</p>
-                                    </div>
-                                    <div className="text-sm">
-                                        <p>
-                                            Cảm ơn bạn đã chia sẻ!
-                                        </p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nostrum debitis inventore voluptates impedit facilis voluptatibus perspiciatis! Omnis, voluptates! Inventore rem sit eius unde, tenetur odit nostrum fugiat quidem ipsa totam consectetur fugit dolor aperiam corporis beatae pariatur tempore! Esse quod similique assumenda doloribus in mollitia voluptatum, quo dolores at vel veniam impedit, maxime consequuntur rem corrupti sequi sunt natus reiciendis saepe amet sapiente doloremque, eveniet debitis! Enim illo, sed voluptates corrupti vero debitis possimus ipsum aut ducimus provident beatae quae laborum tenetur omnis earum architecto? Doloribus, doloremque non. Deleniti ex quae pariatur assumenda possimus inventore magnam reprehenderit eos voluptatibus?
-                                        </p>
-                                    </div>
-                                    <div className="flex lg:flex-row flex-col gap-8 justify-start lg:items-center">
-                                        <div className="w-full lg:min-w-36">
-                                            <p className="flex gap-2 items-center ">
-                                                Xem 7 câu trả lời <MoveDown size={12} />
-                                            </p>
+                            {
+                                bookComments.map((comment, index) => (
+                                    <div key={index} className="flex lg:flex-row flex-col gap-4">
+                                        <div className="h-16 w-16 lg:h-24 lg:w-24">
+                                            <Avatar>
+                                                <AvatarImage className="rounded-full border p-2 " src={comment.Image} alt={`@${comment.UserName}`} />
+                                                <AvatarFallback className="rounded-full h-16 w-16 lg:h-24 lg:w-24 p-2">{`@${comment.UserName}`}</AvatarFallback>
+                                            </Avatar>
                                         </div>
-                                        <div className="flex flex-row justify-between w-full items-center">
-                                            <div className="flex flex-row gap-2 items-center">
-                                                <Button variant={"outline"} className="flex flex-row gap-2">
-                                                    <ThumbsUp size={16} /> 24
-                                                </Button>
+                                        {/* comment */}
+                                        <div className="flex flex-col gap-2 w-full">
+                                            <p className="text-lg font-semibold">{comment.UserName}</p>
+                                            <div className="flex flex-row gap-4 justify-start">
+                                                <p className="text-xs text-foreground/50">{comment.Date}</p>
+                                                <p className="text-xs text-foreground/50">Chương {comment.Chapter}</p>
                                             </div>
-                                            <div>
-                                                <Button variant={"outline"}>Trả lời</Button>
+                                            <div className="text-sm">
+                                                {
+                                                    comment.Content.map((content, index) => (
+                                                        <p key={index}>
+                                                            {content}
+                                                        </p>
+                                                    ))
+                                                }
+
                                             </div>
-                                            <div>
-                                                <Button variant={"outline"}>Báo xấu</Button>
+                                            <div className="flex lg:flex-row flex-col gap-8 justify-start lg:items-center">
+                                                <div className="w-full lg:min-w-36">
+                                                    {comment?.Replies ? (
+                                                        <div> <p className="flex gap-2 items-center ">
+                                                            Xem {comment.Replies?.length} câu trả lời <MoveDown size={12} />
+                                                        </p></div>
+                                                    ) : <></>
+                                                    }
+
+
+                                                </div>
+                                                <div className="flex flex-row justify-between w-full items-center">
+                                                    <div className="flex flex-row gap-2 items-center">
+                                                        <Button variant={"outline"} className="flex flex-row gap-2">
+                                                            <ThumbsUp size={16} /> 24
+                                                        </Button>
+                                                    </div>
+                                                    <div>
+                                                        <Button variant={"outline"}>Trả lời</Button>
+                                                    </div>
+                                                    <div>
+                                                        <Button variant={"outline"}>Báo xấu</Button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+                                        {/* <div>
+                                                        {
+                                                            comment.Replies?.map((reply, index) => (
+                                                                <div className="" key={index}>
+                                                                    {reply.Content.map((rep, index) => (
+                                                                        <p key={index}>
+                                                                            {rep}
+                                                                        </p>
+                                                                    ))
+
+                                                                    }
+                                                                </div>
+                                                            ))
+                                                        }
+                                                    </div> */}
                                     </div>
-                                </div>
-                            </div>
+                                ))
+                            }
+
                             <Separator className="my-4" />
 
                             <div className="w-full flex justify-center items-center">
