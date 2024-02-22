@@ -34,7 +34,7 @@ import { EmblaOptionsType } from 'embla-carousel'
 import { Button } from "@/components/ui/button"
 // import React from "react"
 
-import homeData from "./homeData.json"
+import homeData from "./homedata.json"
 import React from "react"
 
 interface categories {

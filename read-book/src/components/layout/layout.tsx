@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider"
 // import { Card } from "@/components/ui/card";
 import { useLocation } from "react-router-dom";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
-import headerData from "./headerData.json"
+import headerData from "./headerdata.json"
 
 import { EmblaOptionsType } from 'embla-carousel'
 interface LayoutProps {
