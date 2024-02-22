@@ -1,0 +1,576 @@
+{
+    "books": [
+        {
+            "name": "The Little Prince",
+            "author": "Antoine de Saint-Exupéry",
+            "description": "The Little Prince is a novella by French aristocrat, writer, and aviator Antoine de Saint-Exupéry. It was first published in English and French in the US by Reynal & Hitchcock in April 1943, and posthumously in France following the liberation of France as Saint-Exupéry's works had been banned by the Vichy Regime.",
+            "image": "https://th.bing.com/th/id/R.b0dd21991de5ba975ba921fa7715fa80?rik=F9cYvOPAHbWVrQ&riu=http%3a%2f%2f2.bp.blogspot.com%2f-RdaCWGOmFVI%2fULucmfzRunI%2fAAAAAAAAAdU%2fTTVrNaGQSjU%2fs1600%2fthe%2blittle%2bprince.jpg&ehk=NDiP%2bOvrMpFLh33adKzziYqidj7y%2fQuKnuWd2LXAOog%3d&risl=&pid=ImgRaw&r=0",
+            "link": "https://en.wikipedia.org/wiki/The_Little_Prince",
+            "categories": [
+                {
+                    "name": "Fantasy"
+                },
+                {
+                    "name": "Adventure"
+                },
+                {
+                    "name": "Action"
+                }
+            ],
+            "status": "Hoàn thành",
+            "view": 1000
+        },
+        {
+            "name": "Harry Potter",
+            "author": "J.K. Rowling",
+            "description": "Harry Potter is a series of fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.",
+            "image": "https://th.bing.com/th/id/R.92044013da12968d0b8bdcc6ae3d18c9?rik=wG6rgHrxhL1voA&riu=http%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2fytxnHu3wlTcbmCuLLM2Z8Zs1Dtz.jpg&ehk=38SObxUi0o%2fbhpIyexmaXiDb02h7dtLviQS6NpSYiLM%3d&risl=&pid=ImgRaw&r=0",
+            "link": "https://en.wikipedia.org/wiki/Harry_Potter",
+            "categories": [
+                {
+                    "name": "Fantasy"
+                },
+                {
+                    "name": "Adventure"
+                },
+                {
+                    "name": "Action"
+                }
+            ],
+            "status": "Hoàn thành",
+            "view": 1000
+        },
+        {
+            "name": "The Lord of the Rings",
+            "author": "J.R.R. Tolkien",
+            "description": "The Lord of the Rings is an epic high fantasy novel written by English author and scholar J. R. R. Tolkien. The story began as a sequel to Tolkien's 1937 fantasy novel The Hobbit, but eventually developed into a much larger work.",
+            "image": "https://th.bing.com/th/id/OIP.Yyl4uAa04NqSFOflZ_-1cgHaLH?rs=1&pid=ImgDetMain",
+            "link": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings",
+            "categories": [
+                {
+                    "name": "Fantasy"
+                },
+                {
+                    "name": "Adventure"
+                },
+                {
+                    "name": "Action"
+                }
+            ],
+            "status": "Hoàn thành",
+            "view": 1000
+        },
+        {
+            "name": "Tối Cường Phản Sáo Lộ Hệ Thống",
+            "link": "http://truyenyy.com/truyen/toi-cuong-phan-sao-lo-he-thong/",
+            "lastest": 12,
+            "categories": [
+                {
+                    "name": "Đô Thị"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "description": "Một cái bình thường nhân sinh, một cái bình thường sinh hoạt, một cái bình thường công việc, một cái bình thường gia đình, một cái bình thường thế giới, một cái bình thường thời đại, một cái bình",
+            "author": "Thiên Tằm Thổ Đậu",
+            "status": "Hoàn thành",
+            "view": 199
+        },
+        {
+            "name": "Đô Thị Tối Cường Phản Sáo Lộ Hệ Thống",
+            "link": "http://truyenyy.com/truyen/do-thi-toi-cuong-phan-sao-lo-he-thong/",
+            "lastest": 146,
+            "categories": [
+                {
+                    "name": "Đô Thị"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "description": "Một cái bình thường nhân sinh, một cái bình thường sinh hoạt, một cái bình thường công việc, một cái bình thường gia đình, một cái bình thường thế giới, một cái bình thường thời đại, một cái bình",
+            "author": "Thiên Tằm Thổ Đậu",
+            "status": "Hoàn thành",
+            "view": 200
+        },
+        {
+            "name": "Bách Hợp",
+            "link": "http://truyenyy.com/truyen/bach-hop/",
+            "lastest": 122,
+            "categories": [
+                {
+                    "name": "Bách Hợp"
+                },
+                {
+                    "name": "Đam Mỹ"
+                }
+            ],
+            "description": "Một cái bình thường nhân sinh, một cái bình thường sinh hoạt, một cái bình thường công việc, một cái bình thường gia đình, một cái bình thường thế giới, một cái bình thường thời đại, một cái bình",
+            "author": "Thiên Tằm Thổ Đậu",
+            "status": "Hoàn thành",
+            "view": 201
+        },
+        {
+            "name": "Đam Mỹ",
+            "link": "http://truyenyy.com/truyen/dam-my/",
+            "lastest": 126,
+            "categories": [
+                {
+                    "name": "Đam Mỹ"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "description": "Một cái bình thường nhân sinh, một cái bình thường sinh hoạt, một cái bình thường công việc, một cái bình thường gia đình, một cái bình thường thế giới, một cái bình thường thời đại, một cái bình",
+            "author": "Thiên Tằm Thổ Đậu",
+            "status": "Hoàn thành",
+            "view": 202
+        },
+        {
+            "name": "Đô Thị",
+            "link": "http://truyenyy.com/truyen/do-thi/",
+            "lastest": 11,
+            "categories": [
+                {
+                    "name": "Đô Thị"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "description": "Một cái bình thường nhân sinh, một cái bình thường sinh hoạt, một cái bình thường công việc, một cái bình thường gia đình, một cái bình thường thế giới, một cái bình thường thời đại, một cái bình",
+            "author": "Thánh thần thiên địa ơi",
+            "status": "Hoàn thành",
+            "view": 203
+        },
+        {
+            "name": "Dị Giới",
+            "link": "http://truyenyy.com/truyen/di-gioi/",
+            "lastest": 111,
+            "categories": [
+                {
+                    "name": "Dị Giới"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "description": "Một cái bình thường nhân sinh, một cái bình thường sinh hoạt, một cái bình thường công việc, một cái bình thường gia đình, một cái bình",
+            "author": "Thiên Tằm Thổ Đậu",
+            "status": "Hoàn thành",
+            "view": 203
+        },
+        {
+            "name": "Đồng Nhân",
+            "link": "http://truyenyy.com/truyen/dong-nhan/",
+            "lastest": 1117,
+            "categories": [
+                {
+                    "name": "Đồng Nhân"
+                },
+                {
+                    "name": "Đam Mỹ"
+                }
+            ],
+            "description": "Một cái bình thường nhân sinh, một cái bình",
+            "author": "Thiên Tằm Thổ Đậu",
+            "status": "Hoàn thành",
+            "view": 203
+        },
+        {
+            "name": "Trời đất ơi",
+            "link": "http://truyenyy.com/truyen/troi-dat-oi/",
+            "lastest": 1117,
+            "categories": [
+                {
+                    "name": "Đồng Nhân"
+                },
+                {
+                    "name": "Đam Mỹ"
+                }
+            ],
+            "description": "Thiên thời địa lợi nhân trung hòa",
+            "author": "Thiên Tằm Thổ Đậu",
+            "status": "Hoàn thành",
+            "view": 203
+        },
+        {
+            "name": "Hài Hước",
+            "link": "http://truyenyy.com/truyen/hai-huoc/",
+            "lastest": 109,
+            "categories": [
+                {
+                    "name": "Hài Hước"
+                },
+                {
+                    "name": "Đam Mỹ"
+                }
+            ],
+            "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero",
+            "author": "Thiên Tằm Thổ Đậu",
+            "status": "Hoàn thành",
+            "view": 203
+        }
+    ],
+    "newChapter": [
+        {
+            "name": "Tối Cường Phản Sáo Lộ Hệ Thống",
+            "link": "http://truyenyy.com/truyen/toi-cuong-phan-sao-lo-he-thong/",
+            "lastest": 12,
+            "categories": [
+                {
+                    "name": "Đô Thị"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "time": "2 phút trước"
+        },
+        {
+            "name": "Đô Thị Tối Cường Phản Sáo Lộ Hệ Thống",
+            "link": "http://truyenyy.com/truyen/do-thi-toi-cuong-phan-sao-lo-he-thong/",
+            "lastest": 146,
+            "categories": [
+                {
+                    "name": "Đô Thị"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "time": "2 phút trước"
+        },
+        {
+            "name": "Bách Hợp",
+            "link": "http://truyenyy.com/truyen/bach-hop/",
+            "lastest": 122,
+            "categories": [
+                {
+                    "name": "Bách Hợp"
+                },
+                {
+                    "name": "Đam Mỹ"
+                }
+            ],
+            "time": "5 phút trước"
+        },
+        {
+            "name": "Đam Mỹ",
+            "link": "http://truyenyy.com/truyen/dam-my/",
+            "lastest": 126,
+            "categories": [
+                {
+                    "name": "Đam Mỹ"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "time": "5 phút trước"
+        },
+        {
+            "name": "Đô Thị",
+            "link": "http://truyenyy.com/truyen/do-thi/",
+            "lastest": 11,
+            "categories": [
+                {
+                    "name": "Đô Thị"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "time": "5 phút trước"
+        },
+        {
+            "name": "Dị Giới",
+            "link": "http://truyenyy.com/truyen/di-gioi/",
+            "lastest": 111,
+            "categories": [
+                {
+                    "name": "Dị Giới"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "time": "8 phút trước"
+        },
+        {
+            "name": "Đồng Nhân",
+            "link": "http://truyenyy.com/truyen/dong-nhan/",
+            "lastest": 1117,
+            "categories": [
+                {
+                    "name": "Đồng Nhân"
+                },
+                {
+                    "name": "Đam Mỹ"
+                }
+            ],
+            "time": "8 phút trước"
+        },
+        {
+            "name": "Hài Hước",
+            "link": "http://truyenyy.com/truyen/hai-huoc/",
+            "lastest": 109,
+            "categories": [
+                {
+                    "name": "Hài Hước"
+                },
+                {
+                    "name": "Đam Mỹ"
+                }
+            ],
+            "time": "8 phút trước"
+        },
+        {
+            "name": "Huyền Huyễn",
+            "link": "http://truyenyy.com/truyen/huyen-huyen/",
+            "lastest": 90,
+            "categories": [
+                {
+                    "name": "Huyền Huyễn"
+                },
+                {
+                    "name": "Dị Giới"
+                }
+            ],
+            "time": "8 phút trước"
+        },
+        {
+            "name": "Kiếm Hiệp",
+            "link": "http://truyenyy.com/truyen/kiem-hiep/",
+            "lastest": 66,
+            "categories": [
+                {
+                    "name": "Kiếm Hiệp"
+                },
+                {
+                    "name": "Tiên Hiệp"
+                }
+            ],
+            "time": "12 phút trước"
+        },
+        {
+            "name": "Linh Dị",
+            "link": "http://truyenyy.com/truyen/linh-di/",
+            "lastest": 23,
+            "categories": [
+                {
+                    "name": "Linh Dị"
+                },
+                {
+                    "name": "Huyền Huyễn"
+                }
+            ],
+            "time": "12 phút trước"
+        },
+        {
+            "name": "Ngôn Tình",
+            "link": "http://truyenyy.com/truyen/ngon-tinh/",
+            "lastest": 101,
+            "categories": [
+                {
+                    "name": "Ngôn Tình"
+                },
+                {
+                    "name": "Đô Thị"
+                }
+            ],
+            "time": "16 phút trước"
+        },
+        {
+            "name": "Quan Trường",
+            "link": "http://truyenyy.com/truyen/quan-truong/",
+            "lastest": 10,
+            "categories": [
+                {
+                    "name": "Quan Trường"
+                },
+                {
+                    "name": "Đam Mỹ"
+                }
+            ],
+            "time": "16 phút trước"
+        },
+        {
+            "name": "Độc cô cầu bại",
+            "link": "http://truyenyy.com/truyen/doc-co-cau-bai/",
+            "lastest": 1011,
+            "categories": [
+                {
+                    "name": "Đam Mỹ"
+                },
+                {
+                    "name": "Đô Thị"
+                }
+            ],
+            "time": "20 phút trước"
+        },
+        {
+            "name": "Thế giới cổ đại",
+            "link": "http://truyenyy.com/truyen/the-gioi-co-dai/",
+            "lastest": 1011,
+            "categories": [
+                {
+                    "name": "Đam Mỹ"
+                },
+                {
+                    "name": "Đô Thị"
+                }
+            ],
+            "time": "20 phút trước"
+        },
+        {
+            "name": "Thế giới hiện đại",
+            "link": "http://truyenyy.com/truyen/the-gioi-hien-dai/",
+            "lastest": 1011,
+            "categories": [
+                {
+                    "name": "Đam Mỹ"
+                },
+                {
+                    "name": "Đô Thị"
+                }
+            ],
+            "time": "20 phút trước"
+        },
+        {
+            "name": "Thế giới tương lai",
+            "link": "http://truyenyy.com/truyen/the-gioi-tuong-lai/",
+            "lastest": 1011,
+            "categories": [
+                {
+                    "name": "Đam Mỹ"
+                },
+                {
+                    "name": "Đô Thị"
+                }
+            ],
+            "time": "20 phút trước"
+        }
+    ],
+    "category": [
+        {
+            "name": "Tất cả"
+        },
+        {
+            "name": "Tiên Hiệp"
+        },
+        {
+            "name": "Kiếm Hiệp"
+        },
+        {
+            "name": "Ngôn Tình"
+        },
+        {
+            "name": "Đô Thị"
+        },
+        {
+            "name": "Quan Trường"
+        },
+        {
+            "name": "Võng Du"
+        },
+        {
+            "name": "Khoa Huyễn"
+        },
+        {
+            "name": "Huyền huyễn"
+        },
+        {
+            "name": "Dị Giới"
+        },
+        {
+            "name": "Dị Năng"
+        },
+        {
+            "name": "Quân Sự"
+        },
+        {
+            "name": "Lịch Sử"
+        },
+        {
+            "name": "Xuyên Không"
+        },
+        {
+            "name": "Trọng Sinh"
+        },
+        {
+            "name": "Trinh Thám"
+        },
+        {
+            "name": "Thám Hiểm"
+        },
+        {
+            "name": "Linh Dị"
+        },
+        {
+            "name": "Truyện Sắc"
+        },
+        {
+            "name": "Truyện Ngược"
+        },
+        {
+            "name": "Truyện Sủng"
+        },
+        {
+            "name": "Truyện Cung Đấu"
+        },
+        {
+            "name": "Truyện Nữ Cường"
+        },
+        {
+            "name": "Truyện Gia Đấu"
+        },
+        {
+            "name": "Đông Phương"
+        },
+        {
+            "name": "Đam Mỹ"
+        },
+        {
+            "name": "Bách Hợp"
+        },
+        {
+            "name": "Hài Hước"
+        },
+        {
+            "name": "Điền Văn"
+        },
+        {
+            "name": "Cổ Đại"
+        },
+        {
+            "name": "Mạt Thế"
+        },
+        {
+            "name": "Truyện Teen"
+        },
+        {
+            "name": "Phương Tây"
+        },
+        {
+            "name": "Nữ Phụ"
+        },
+        {
+            "name": "Light Novel"
+        },
+        {
+            "name": "Việt Nam"
+        },
+        {
+            "name": "Đoản Văn"
+        },
+        {
+            "name": "Truyện Khác"
+        },
+        {
+            "name": "Truyện Convert"
+        }
+    ]
+}

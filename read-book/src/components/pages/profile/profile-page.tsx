@@ -10,14 +10,14 @@ const ProfilePage = () => {
 
     return (
         <div className="md:grid md:grid-cols-2">
-            <div className="profile grid grid-cols-3 p-4 gap-4 mb-2 md:flex md:col-span-2">
+            <div className="profile grid grid-cols-3 p-4 gap-4 mb-2 space-x-2 md:flex md:grid-cols-2">
                 <div className="col-span-1">
-                    <Avatar className="w-24 h-auto block align-middle">
+                    <Avatar className="w-20 h-auto block align-middle">
                         <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
                         <AvatarFallback>AVA</AvatarFallback>
                     </Avatar>
                 </div>
-                <div className="col-span-2 space-y-5">
+                <div className="col-span-2 space-y-5 pl-4">
                     <div className="w-full flex items-center justify-between">
                         <p className="text-foreground font-bold text-xl truncate max-w-36">ten</p>
                         <div>

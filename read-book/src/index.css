@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 
 @layer base {
   :root {
@@ -50,11 +52,16 @@
   }
 }
 
- 
+
 @layer base {
   * {
     @apply border-border;
   }
+
+  html {
+    @apply font-sans;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -64,8 +71,13 @@
   transition: top 0.3s linear;
 }
 
+
 .navbar-hidden {
   position: fixed;
   top: -80px;
   transition: top 0.3s linear;
 }
+
+/* *{
+    transition: all 0.3s ease-in-out;
+  } */

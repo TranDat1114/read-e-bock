@@ -196,9 +196,9 @@ const DemoData: Data[] = [
 
 const categoriesPage = () => {
     return (
-        <div className="navbar space-y-10 md:space-y-4">
+        <div className="navbar space-y-10 cursor-pointer md:space-y-4">
             <div className="flex flex-wrap items-center gap-3 w-full md:justify-center md:gap-12">
-                <div className="categories-list">
+                <div className="categories-list cursor-pointer">
                     <Sheet>
                         <SheetTrigger >
                             <Settings2 className="text-foreground mt-2" />
@@ -212,7 +212,7 @@ const categoriesPage = () => {
                                             <Accordion type="multiple" className="w-full">
                                                 <AccordionItem value="item-1">
                                                     <AccordionTrigger>
-                                                        <p className="md:text-xl">Thể loại</p>
+                                                        <p className="md:text-base">Thể loại</p>
                                                     </AccordionTrigger>
                                                     <AccordionContent>
                                                         <div className="flex flex-wrap text-left h-full gap-1.5">
@@ -229,7 +229,7 @@ const categoriesPage = () => {
                                                 </AccordionItem>
                                                 <AccordionItem value="item-2">
                                                     <AccordionTrigger>
-                                                        <p className="md:text-xl">Tình trạng</p>
+                                                        <p className="md:text-base">Tình trạng</p>
                                                     </AccordionTrigger>
                                                     <AccordionContent>
                                                         <div className="flex flex-wrap text-left h-full gap-1.5">
@@ -250,7 +250,7 @@ const categoriesPage = () => {
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <div className="flex items-center justify-center">
-                                <p className="font-semibold text-base md:text-xl">
+                                <p className="font-semibold text-base md:text-base">
                                     Mới cập nhật
                                 </p>
                                 <ChevronDown className="ml-1 w-4 h-4 block align-middle md:translate-y-0.5" />
@@ -272,7 +272,7 @@ const categoriesPage = () => {
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <div className="flex items-center justify-center">
-                                <p className="font-semibold text-base md:text-xl">
+                                <p className="font-semibold text-base md:text-base">
                                     Điểm đánh giá
                                 </p>
                                 <ChevronDown className="ml-1 w-4 h-4 block align-middle md:translate-y-0.5" />
@@ -291,12 +291,12 @@ const categoriesPage = () => {
                     </DropdownMenu>
                 </div>
                 <div className="archive">
-                    <p className="font-semibold text-base md:text-xl">
+                    <p className="font-semibold text-base md:text-base">
                         Cất giữ
                     </p>
                 </div>
                 <div className="likes">
-                    <p className="font-semibold text-base md:text-xl">
+                    <p className="font-semibold text-base md:text-base">
                         Yêu thích
                     </p>
                 </div>
@@ -304,7 +304,7 @@ const categoriesPage = () => {
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <div className="flex items-center justify-center">
-                                <p className="font-semibold text-base md:text-xl">
+                                <p className="font-semibold text-base md:text-base">
                                     Đề cử
                                 </p>
                                 <ChevronDown className="ml-1 w-4 h-4 block align-middle md:translate-y-0.5" />
@@ -329,12 +329,12 @@ const categoriesPage = () => {
                     </DropdownMenu>
                 </div>
                 <div className="comments">
-                    <p className="font-semibold text-base md:text-xl">
+                    <p className="font-semibold text-base md:text-base">
                         Bình luận
                     </p>
                 </div>
                 <div className="chapter-numbers">
-                    <p className="font-semibold text-base md:text-xl">
+                    <p className="font-semibold text-base md:text-base">
                         Số chương
                     </p>
                 </div>
@@ -374,7 +374,7 @@ const categoriesPage = () => {
                             <PaginationPrevious href="#" />
                         </PaginationItem>
                         <PaginationItem>
-                            <PaginationLink href="#" isActive>1</PaginationLink>
+                            <PaginationLink href="#">1</PaginationLink>
                         </PaginationItem>
                         <PaginationItem>
                             <PaginationLink href="#">

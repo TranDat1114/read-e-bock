@@ -12,6 +12,11 @@ import ReadBook from './components/pages/read/read-book';
 import ProfilePage from './components/pages/profile/profile-page';
 import SaveBooks from './components/pages/book-saves/book-save';
 import SettingsPage from './components/pages/settings/settings-page';
+import DieuKhoan from './components/pages/dieukhoan/dieukhoan-page';
+import BaoMat from './components/pages/baomat/baomat-page';
+import BanQuyen from './components/pages/banquyen/banquyen-page';
+import HoiDap from './components/pages/hoidap/hoidap-page';
+import TacGia from './components/pages/author/author-page';
 function App() {
 
   return (
@@ -22,14 +27,19 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/categories" element={<CategoriesPage />} />
+            <Route path="/the-loai" element={<CategoriesPage />} />
             <Route path='news' element={<div>news</div>} />
             <Route path="/demo" element={<DemoPage />} />
-            <Route path="/details" element={<Details />} />
-            <Route path='/read' element={<ReadBook />} />
-            <Route path='/profile' element={<ProfilePage />} />
-            <Route path='/archive' element={<SaveBooks />} />
-            <Route path='/settings' element={<SettingsPage />} />
+            <Route path="/truyen-tranh" element={<Details />} />
+            <Route path='/truyen' element={<ReadBook />} />
+            <Route path='/trang-ca-nhan' element={<ProfilePage />} />
+            <Route path='/luu-tru' element={<SaveBooks />} />
+            <Route path='/cai-dat' element={<SettingsPage />} />
+            <Route path='/dieu-khoan' element={<DieuKhoan />} />
+            <Route path='/bao-mat' element={<BaoMat />} />
+            <Route path='/ban-quyen' element={<BanQuyen />} />
+            <Route path='/hoi-dap' element={<HoiDap />} />
+            <Route path='/tac-gia' element={<TacGia />} />
             <Route
               path="*"
               element={

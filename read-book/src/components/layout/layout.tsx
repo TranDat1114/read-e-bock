@@ -2,10 +2,10 @@ import Footer from "./footer";
 import Header from "./header";
 
 import { ThemeProvider } from "@/components/theme/theme-provider"
-import { Card } from "@/components/ui/card";
+// import { Card } from "@/components/ui/card";
 import { useLocation } from "react-router-dom";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
-import imageByIndex from "../pages/home/imageByIndex";
+import headerData from "./headerdata.json"
 
 import { EmblaOptionsType } from 'embla-carousel'
 interface LayoutProps {
@@ -19,30 +19,34 @@ const Layout = ({ children }: LayoutProps) => {
     const isHomePage = () => {
         return location.pathname === '/' || location.pathname === '/home';
     };
+    const isReadPage = () => {
+        return location.pathname === '/truyen';
+    }
+
+
 
     const OPTIONS: EmblaOptionsType = { align: 'center', dragFree: false, loop: true }
-    const SLIDE_COUNT = 5
-    const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+    // const SLIDE_COUNT = 5
+    // const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
     return (
         <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-            <div className='flex flex-col w-full relative'>
+            <div className='flex flex-col relative bg-background/70 backdrop-contrast-75'>
                 <Header />
                 {
-
                     isHomePage() ?
-
                         <section className="w-full mt-20 relative h-96">
-                            <EmblaCarousel slides={SLIDES} options={OPTIONS} imageByIndex={imageByIndex} />
+                            <EmblaCarousel options={OPTIONS} variant="banner" details={headerData.books} />
                         </section>
-                        : <></>
-
+                        : <div className="mt-10"></div>
                 }
-                <main className="md:container my-12 min-h-dvh ">
-                    <Card className="p-4">
+                {isReadPage() ? <div className="w-full min-h-dvh">
+                    {children}
+                </div> :
+                    <main className="md:container my-8 min-h-dvh">
                         {children}
-                    </Card>
-                </main>
+                    </main>
+                }
                 <Footer />
             </div>
         </ThemeProvider>
